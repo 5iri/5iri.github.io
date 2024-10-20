@@ -1,1 +1,16 @@
-theme: Midnight
+title: ME
+email: shrivishakhdevanand@gmail.com
+description: >- # this means to ignore newlines until "baseurl: "
+
+  This is the second brain that's just public to the internet! I am just a guy who is dead, but somehow alive here. You can checkout my GitHub and stuff ig! cya!
+
+url: "https://5iri.github.io"
+github_username: 5iri
+
+
+# Build settings
+theme: jekyll-theme-cayman
+
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
