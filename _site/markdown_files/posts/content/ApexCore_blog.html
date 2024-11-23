@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta charset='utf-8'>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/assets/css/style.css?v=898d3110d6826781e621afe82683a9866e7567f9">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ApexCore A RISC-V based CPU | SHRI</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="ApexCore A RISC-V based CPU" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Designing RISC-V Single Core with IMA extensions" />
+<meta property="og:description" content="Designing RISC-V Single Core with IMA extensions" />
+<link rel="canonical" href="http://localhost:4000/markdown_files/posts/content/ApexCore_blog.html" />
+<meta property="og:url" content="http://localhost:4000/markdown_files/posts/content/ApexCore_blog.html" />
+<meta property="og:site_name" content="SHRI" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ApexCore A RISC-V based CPU" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Designing RISC-V Single Core with IMA extensions","headline":"ApexCore A RISC-V based CPU","url":"http://localhost:4000/markdown_files/posts/content/ApexCore_blog.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=563f1df5b5141d48d3452871d9da14af40b25060">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
-
-<!-- Setup theme-color -->
-<!-- start theme color meta headers -->
-<meta name="theme-color" content="#151515">
-<meta name="msapplication-navbutton-color" content="#151515">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<!-- end theme color meta headers -->
-
 
 <!-- Setup Google Analytics -->
 
@@ -24,50 +37,32 @@
 
 <!-- end custom head snippets -->
 
-
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>ApexCore A RISC-V based CPU | ME</title>
-<meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="ApexCore A RISC-V based CPU" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Designing RISC-V Single Core with IMA extensions" />
-<meta property="og:description" content="Designing RISC-V Single Core with IMA extensions" />
-<link rel="canonical" href="http://localhost:4000/markdown_files/posts/content/ApexCore_blog.html" />
-<meta property="og:url" content="http://localhost:4000/markdown_files/posts/content/ApexCore_blog.html" />
-<meta property="og:site_name" content="ME" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="ApexCore A RISC-V based CPU" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Designing RISC-V Single Core with IMA extensions","headline":"ApexCore A RISC-V based CPU","url":"http://localhost:4000/markdown_files/posts/content/ApexCore_blog.html"}</script>
-<!-- End Jekyll SEO tag -->
-
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">SHRI</a></h1>
 
-    <header>
-      <div class="container">
-        <a id="a-title" href="/">
-          <h1>ME</h1>
-        </a>
-        <h2>A simple website about me! :D</h2>
+        
 
-        <section id="downloads">
-          
-          <a href="https://github.com/LOuLOu-THEKing/LOuLOu-THEKing.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+        <p>A simple website about me! :D</p>
 
-    <div class="container">
-      <section id="main_content">
-        <small></small>
+        
+        <p class="view"><a href="https://github.com/LOuLOu-THEKing/LOuLOu-THEKing.github.io">View the Project on GitHub <small>LOuLOu-THEKing/LOuLOu-THEKing.github.io</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <small></small>
 <h1>ApexCore A RISC-V based CPU</h1>
 
 <p class="view">by </p>
 
-<p>–<a href="https://github.com/LOuLOu-THEKing">Shri Vishakh Devanand</a>
+<p>–<a href="https://github.com/5iri">Shri Vishakh Devanand</a>
 –<a href="https://github.com/aditya200523">Aditya Mahajan</a>
 –<a href="">Shaurya Rane</a></p>
 
@@ -76,7 +71,7 @@
 <p>The ApexCore project is an immersive journey into the world of computer architecture and organization (COA). Although the subject is vast and intricate, we, Shri Vishakh Devanand, Aditya Mahajan, and Shaurya Rane, began our exploration by understanding the core components of a CPU. We started with an edX course that, despite being taught in TLVerilog (a newer and less common programming language), provided us with the foundational knowledge necessary to progress.</p>
 
 <h2 id="a-simple-breakdown-of-the-cpu">A simple breakdown of the CPU</h2>
-<p><img src="../_assets/ApexCore/flowchart.png" alt="CPU_FLOWCHART" title="The Image shows a simple flowchart of CPU" />
+<p><img src="./../assets/ApexCore/flowchart.png" alt="CPU_FLOWCHART" title="The Image shows a simple flowchart of CPU" />
 To understand the logic of how it works, let’s go through the diagram with the flow.</p>
 
 <ol>
@@ -103,7 +98,7 @@ The instruction type is defined by the operation code.
   <li>Preparation for Hardware Testing: We have prepared the code for the upcoming hardware testing phase. This includes ensuring compatibility with our target FPGA platform and setting up the necessary testing environment.</li>
 </ol>
 
-<p><img src="../_assets/ApexCore/Simulation.png" alt="Simulation" /></p>
+<p><img src="/markdown_files/posts/assets/ApexCore/Simulation.png" alt="Simulation" /></p>
 
 <h2 id="plans-for-the-coming-days">Plans for the coming days</h2>
 <ol>
@@ -114,10 +109,16 @@ The instruction type is defined by the operation code.
 
 
 
-  <small>tags: <em>electronics microprocessor fpga embedded_systems computer_architecture</em></small>
 
 
       </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/LOuLOu-THEKing">LOuLOu-THEKing</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
+    <script src="/assets/js/scale.fix.js"></script>
   </body>
 </html>
