@@ -1,17 +1,8 @@
-title: SHRI
-email: shrivishakhdevanand@gmail.com
-
-markdown: kramdown
-kramdown:
-  math_engine: mathjax
-  mathjax:
-    cdn: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+title: 5iri
+description: I am an enthusiast of digital design
+remote_theme: just-the-docs/just-the-docs
 
 
-# Build settings
-remote_theme: pages-themes/minimal@v0.2.0
-plugins:
-  - jekyll-remote-theme # add this line to the plugins list if you already have one
-  - jekyll-feed
-  - jekyll-remote-theme
+# Color scheme supports "light" (default) and "dark"
+color_scheme: dark
 

@@ -1,21 +1,32 @@
-## About Me
+# About me
 
+ - Hey, there! 👋 I'm Shri, a passionate and curious sophomore Electrical Engineering student in India. My journey often involves designing novel solutions in VLSI, robotics, and embedded systems. I am very good at the module where hardware meets software; 
+ - I usually explore how they work together to bring ideas to life.  
+## What I Do
 
-# Hi.
- - I am shri. I am currently in VJTI, trying to be the best version of myself the day before. 
+### Digital Design Enthusiast
+ 
+ - Implemented a fully functional RISC-V CPU on FPGA from scratch, specializing in low-level digital design and computer architecture.
 
- - I am a **VLSI and digital design** fan! I am working on building a complete microprocessor using RISC-V Architecture! To test my skills, I am currently working on working on FPGA (in the Xilinx Ecosystem, also working on Intel Quartus Ecosystem right now)!
+ - Right now, I am working on verifying the same CPU formally.
+### Embedded Systems Developer
+ - Building RTOS solutions for ESP32, focusing on advanced features like task scheduling, context switching, and interrupt service routines.
 
- - I'm always exploring stuff in the field of robotics, where I am the most passionate about stuff like, mech design, Embedded systems, control systems, inclusion of DRL in the field of robotics (don't know much about them, but really eager to learn stuff).
+### Robotics Innovator
+ - Developing resilient robotic systems including a 3-DOF manipulator and lunar rover, with expertise in Gazebo simulation and real-world applications.
 
- - My projects are here all posted on [GitHub](https://github.com/5iri)! 
+ - Developing a Bio-inspired turtle-like robot for observing their habitat and ecosystem.
 
- - I am planning to starting to write blogs about stuff I have done before and I am going to do [here](/markdown_files/blog_stuff.md)!
- - I’m always open to collaborations and new opportunities, so feel free to [mail](mailto:shrivishakhdevanand@gmail.com), [linkedin](https://www.linkedin.com/in/shri-vishakh-devanand-85b72429a/)!
+### Sustainability Advocate
+ - Actively contributing to environmental initiatives, including beach cleanup projects, committed to creating lasting positive impact.
 
+## My Vision
 
+ - I am determined to create the boldest solutions bridging the gap between breakthrough technologies and real-world challenges, ensuring a much further advancement in VLSI design, and optimising robotics control systems for energy-efficient devices. I see this as an attempt to constantly push one's limits and that learning goes hand in hand; you get that way. 
 
+## Some Fun Facts About Me 
+ - I have a profound love for physics, where I delve into in-depth knowledge about JFETs to understand how the thing runs all the modern devices.
 
+ - I'm passionate about mentoring and teaching. I think part of my work includes imparting robotics and automation skills to freshmen at the university. 
 
----
- - Notes of papers and projects that I have worked on can be found [here](/markdown_files/notes_stuff.md).
+ - I thrive on creativity in my designs. My design is my creativity... I feel great about brainstorming on some crazy ideal ideas.
