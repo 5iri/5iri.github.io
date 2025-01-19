@@ -30,3 +30,8 @@
  - I'm passionate about mentoring and teaching. I think part of my work includes imparting robotics and automation skills to freshmen at the university. 
 
  - I thrive on creativity in my designs. My design is my creativity... I feel great about brainstorming on some crazy ideal ideas.
+
+
+
+
+ ![https://github.com/5iri](/markdown_files/posts/assets/github.png)
