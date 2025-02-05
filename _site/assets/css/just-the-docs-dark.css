@@ -2422,3 +2422,11 @@ a.skip-to-main { left: -999px; position: absolute; top: auto; width: 1px; height
 a.skip-to-main:focus, a.skip-to-main:active { color: #2c84fa; background-color: #27262b; left: auto; top: auto; width: 30%; height: auto; overflow: auto; margin: 10px 35%; padding: 5px; border-radius: 15px; border: 4px solid #264caf; text-align: center; font-size: 1.2em; z-index: 999; }
 
 div.opaque { background-color: #27262b; }
+
+.nav-footer-social { display: flex; gap: 10px; position: absolute; bottom: 10px; left: 10px; }
+
+.nav-footer-social a svg { fill: currentColor; width: 24px; height: 24px; transition: fill 0.3s; }
+
+.nav-footer-social a:hover svg { fill: #0077b5; /* LinkedIn color */ }
+
+.nav-footer-social a:first-child:hover svg { fill: #333; /* GitHub color */ }
