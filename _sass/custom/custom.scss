@@ -1,23 +1,22 @@
 .nav-footer-social {
-  display: flex;
-  gap: 10px;
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+    display: flex;
+    gap: 25px;
+    position: absolute;
+    bottom: 10px;
+    left: 450px;
 }
 
 .nav-footer-social a svg {
-  fill: currentColor;
-  width: 24px;
-  height: 24px;
-  transition: fill 0.3s;
+    fill: currentColor;
+    width: 30px;
+    height: 30px;
+    transition: fill 0.3s;
 }
 
 .nav-footer-social a:hover svg {
-  fill: #0077b5; /* LinkedIn color */
+    fill: #0077b5; /* LinkedIn color */
 }
 
 .nav-footer-social a:first-child:hover svg {
-  fill: #333; /* GitHub color */
+    fill: #333; /* GitHub color */
 }
-

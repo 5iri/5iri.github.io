@@ -1,37 +1,36 @@
-# About me
+# About Me
 
- - Hey, there! 👋 I'm Shri, a passionate and curious sophomore Electrical Engineering student in India. My journey often involves designing novel solutions in VLSI, robotics, and embedded systems. I am very good at the module where hardware meets software; 
- - I usually explore how they work together to bring ideas to life.  
+Hello! I'm **Shri Vishakh Devanand**, a sophomore Electrical Engineering student from India with a profound love for mathematics. My academic journey is driven by a relentless curiosity to understand and innovate at the intersection of hardware and software. I specialize in designing novel solutions in VLSI, robotics, embedded systems, and lithography, always striving to bridge theoretical concepts with practical applications.
+
 ## What I Do
 
-### Digital Design Enthusiast
- 
- - Implemented a fully functional RISC-V CPU on FPGA from scratch, specializing in low-level digital design and computer architecture.
+- **Digital Design Enthusiast**: Developed a fully functional RISC-V CPU on FPGA from scratch, focusing on low-level digital design and computer architecture. Currently engaged in formal verification of the same CPU.
 
- - Right now, I am working on verifying the same CPU formally.
-### Embedded Systems Developer
- - Building RTOS solutions for ESP32, focusing on advanced features like task scheduling, context switching, and interrupt service routines.
+- **Embedded Systems Developer**: Building RTOS solutions for ESP32, emphasizing advanced features like task scheduling, context switching, and interrupt service routines.
 
-### Robotics Innovator
- - Developing resilient robotic systems including a 3-DOF manipulator and lunar rover, with expertise in Gazebo simulation and real-world applications.
+- **Robotics Innovator**: Developing resilient robotic systems, including a 3-DOF manipulator and a bio-inspired turtle-like robot for habitat observation.
 
- - Developing a Bio-inspired turtle-like robot for observing their habitat and ecosystem.
+- **Lithography Researcher**: Exploring advanced lithographic techniques to enhance semiconductor fabrication processes, aiming to improve resolution and efficiency in microfabrication.
 
-### Sustainability Advocate
- - Actively contributing to environmental initiatives, including beach cleanup projects, committed to creating lasting positive impact.
+- **Sustainability Advocate**: Actively contributing to environmental initiatives, including beach cleanup projects, committed to creating a lasting positive impact.
 
 ## My Vision
 
- - I am determined to create the boldest solutions bridging the gap between breakthrough technologies and real-world challenges, ensuring a much further advancement in VLSI design, and optimising robotics control systems for energy-efficient devices. I see this as an attempt to constantly push one's limits and that learning goes hand in hand; you get that way. 
+I am determined to create bold solutions that bridge the gap between breakthrough technologies and real-world challenges. My focus is on advancing VLSI design, optimizing robotics control systems for energy-efficient devices, and innovating in lithographic processes to push the boundaries of microfabrication. I believe in embracing continuous learning and pushing the boundaries of innovation.
 
-## Some Fun Facts About Me 
- - I have a profound love for physics, where I delve into in-depth knowledge about JFETs to understand how the thing runs all the modern devices.
+## Some Fun Facts About Me
 
- - I'm passionate about mentoring and teaching. I think part of my work includes imparting robotics and automation skills to freshmen at the university. 
+- I have a profound love for mathematics, and I love delving deep into various abstract concepts, especially complex analysis. 
 
- - I thrive on creativity in my designs. My design is my creativity... I feel great about brainstorming on some crazy ideal ideas.
+- I'm passionate about mentoring and teaching, imparting robotics and automation skills to freshmen at the university.
 
+- I thrive on creativity in my designs, believing that brainstorming unconventional ideas leads to groundbreaking solutions.
 
+## Contact Me
 
+Feel free to reach out to me through the following channels:
 
- ![https://github.com/5iri](/markdown_files/posts/assets/github.png)
+- **Email**: [shrivishakhdevanand@gmail.com](mailto:shrivishakhdevanand@gmail.com)
+
+I look forward to connecting with like-minded individuals and exploring collaborative opportunities.
+
