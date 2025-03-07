@@ -2,12 +2,10 @@ title: 5iri
 description: I am an enthusiast of digital design
 remote_theme: just-the-docs/just-the-docs
 
-
 # Color scheme supports "light" (default) and "dark"
 color_scheme: dark
 
-
+# Load custom SCSS if needed
 sass:
   load_paths:
     - _sass
-

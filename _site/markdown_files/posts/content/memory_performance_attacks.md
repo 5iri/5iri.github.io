@@ -21,7 +21,7 @@
 
 ## DRAM Memory Systems
 
-![DRAM BANK ORGANIZATION](posts/assets/DRAM_block_diagram.png)
+![DRAM BANK ORGANIZATION](../assets/DRAM_Block_diagram.png)
 
 - **Row Hit:** Accessing a row already in the row-buffer. It has the lowest latency (around 40-50 ns in commodity DRAM).
 - **Row Conflict:** Accessing a different row than the one currently in the row-buffer, requiring the row-buffer to be written back before the new row can be accessed.

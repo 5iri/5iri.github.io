@@ -1,36 +1,23 @@
-# About Me
-
-Hello! I'm **Shri Vishakh Devanand**, a sophomore Electrical Engineering student from India with a profound love for mathematics. My academic journey is driven by a relentless curiosity to understand and innovate at the intersection of hardware and software. I specialize in designing novel solutions in VLSI, robotics, embedded systems, and lithography, always striving to bridge theoretical concepts with practical applications.
+# Yo!
+ I'm **Shri Vishakh Devanand**, a sophomore engineering student from India absolutely obsessed with mathematics, physics and electronics. I thrive at the intersection of hardware and software, applying complex mathematical concepts to solve real engineering challenges.
 
 ## What I Do
-
-- **Digital Design Enthusiast**: Developed a fully functional RISC-V CPU on FPGA from scratch, focusing on low-level digital design and computer architecture. Currently engaged in formal verification of the same CPU.
-
-- **Embedded Systems Developer**: Building RTOS solutions for ESP32, emphasizing advanced features like task scheduling, context switching, and interrupt service routines.
-
-- **Robotics Innovator**: Developing resilient robotic systems, including a 3-DOF manipulator and a bio-inspired turtle-like robot for habitat observation.
-
-- **Lithography Researcher**: Exploring advanced lithographic techniques to enhance semiconductor fabrication processes, aiming to improve resolution and efficiency in microfabrication.
-
-- **Sustainability Advocate**: Actively contributing to environmental initiatives, including beach cleanup projects, committed to creating a lasting positive impact.
+- Built a fully functional RISC-V CPU on FPGA from scratch
+- Dive deep into complex analysis, abstract algebra, and discrete mathematics
+- Developing custom zig based compiler for ESP32.
+- Create bio-inspired robots that mimic animal behavior.
 
 ## My Vision
+Mathematics is my universal language for innovation - whether optimizing algorithms, designing circuits, or modeling control systems. I'm constantly exploring the beautiful intersection where theoretical math meets practical engineering.
 
-I am determined to create bold solutions that bridge the gap between breakthrough technologies and real-world challenges. My focus is on advancing VLSI design, optimizing robotics control systems for energy-efficient devices, and innovating in lithographic processes to push the boundaries of microfabrication. I believe in embracing continuous learning and pushing the boundaries of innovation.
+## Fun Facts
+- Maintain a personal notebook of elegant mathematical proofs (collecting all of them into a single one is remaining 😅)
+- Can lose myself for hours in puzzles
+- Love to challenge myself
 
-## Some Fun Facts About Me
 
-- I have a profound love for mathematics, and I love delving deep into various abstract concepts, especially complex analysis. 
+Do check out my Github and LinkedIn profiles to know more about my projects and interests.
+Feel free to reach out to me for collaborations or discussions on any of the topics you are passionate about.
+I'm always up for a good chat!
 
-- I'm passionate about mentoring and teaching, imparting robotics and automation skills to freshmen at the university.
-
-- I thrive on creativity in my designs, believing that brainstorming unconventional ideas leads to groundbreaking solutions.
-
-## Contact Me
-
-Feel free to reach out to me through the following channels:
-
-- **Email**: [shrivishakhdevanand@gmail.com](mailto:shrivishakhdevanand@gmail.com)
-
-I look forward to connecting with like-minded individuals and exploring collaborative opportunities.
-
+Also check out my blogs on the navigation bar! 😄

@@ -2295,10 +2295,18 @@ a.skip-to-main:focus, a.skip-to-main:active { color: #7253ed; background-color: 
 
 div.opaque { background-color: #fff; }
 
-.nav-footer-social { display: flex; gap: 25px; position: absolute; bottom: 10px; left: 450px; }
+.nav-footer-social { display: flex; gap: 25px; margin: 20px 0 0 35px; /* Changed from absolute positioning */ }
+
+.side-bar { width: 10%; /* Increased from 10% to a more standard width */ }
 
 .nav-footer-social a svg { fill: currentColor; width: 30px; height: 30px; transition: fill 0.3s; }
+
+.nav-footer-social a.mail svg { width: 35px; height: 35px; transition: fill 0.3s; }
 
 .nav-footer-social a:hover svg { fill: #0077b5; /* LinkedIn color */ }
 
 .nav-footer-social a:first-child:hover svg { fill: #333; /* GitHub color */ }
+
+.nav-footer-social a.mail:hover svg { fill: #d44638; /* Gmail red color */ }
+
+.nav-footer-social a:last-child:hover svg { fill: #1da1f2; /* Twitter color */ }

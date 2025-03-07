@@ -1,6 +1,4 @@
-<script type="text/javascript" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
+
 
 # Multi-Agent Path Finding
 ---
@@ -19,7 +17,7 @@
 
 #### Description of the classical MAPF
 
- - The input to a classical MAPF problem with k agents is a tuple <G,s,t>, where G = (V, E) [Have some doubts here(1. What is V and E here? V can be assumed to be Vector but I have no idea what E is.) ]  is an undirected graph, 
+ - The input to a classical MAPF problem with k agents is a tuple <G,s,t>, where G = (V, E) [Have some doubts here(1. What is V and E here? V can be assumed to be Vector but I have no idea what E is.) ]  is an undirected graph,
 
  s : [1,.....,k] -> V maps an agent to a source vertex.
 
@@ -34,15 +32,15 @@
  - *wait* means that the agent stays exactly where it is.
  - *move* means the agents moves to another adjacent block (or *vertex* as written in the paper).
 
- - For a sequence of actions *represented as &pi;* = $(a_{1}, ..... a_{n})$, and an agent *i*, we denote by 
-$\pi_{i} \left[ x \right]$ = $a_{x}(a_{x-1}(...a_{1}(s(i)))$. 
+ - For a sequence of actions *represented as &pi;* = $$(a_{1}, ..... a_{n})$$, and an agent *i*, we denote by
+$$\pi_{i} \left[ x \right]$$ = $$a_{x}(a_{x-1}(...a_{1}(s(i)))$$.
 
- - $\pi$ is a **single-agent plan** for agent $i$ iff executing this sequence of actions in $s(i)$ results in being at $t(i)$,
+ - $$\pi$$ is a **single-agent plan** for agent $$i$$ iff executing this sequence of actions in $$s(i)$$ results in being at $$t(i)$$,
+						$$
+						\pi_{i}[|\pi |] = t(i)
+						$$
 
-
-						$\pi_{i}[|\pi |] = t(i)$
-
- - A solution is a set of $k$ single-agent plans, one for each agent. 
+ - A solution is a set of $k$ single-agent plans, one for each agent.
 
 
 				This means we could ig say it forms a $k * n$ matrix??
@@ -52,15 +50,15 @@ $\pi_{i} \left[ x \right]$ = $a_{x}(a_{x-1}(...a_{1}(s(i)))$.
 
 #### Types of Conflicts in Classical MAPF
 
- - There is a possibility of $vertex \ conflict$ between $\pi_{i}$ and $\pi_j$ occuring when both agents plans to occupy a particular positions.
+ - There is a possibility of $$vertex \ conflict$$ between $$\pi_{i}$$ and $$\pi_j$$ occuring when both agents plans to occupy a particular positions.
 
- - There is a possibility of $edge\ conflict$ between $\pi_{i}$ and $\pi_{j}$ occuring iff where both the agents plan to traverse to the same edge at the same time and step in the same direction. 
+ - There is a possibility of $$edge\ conflict$$ between $$\pi_{i}$$ and $$\pi_{j}$$ occuring iff where both the agents plan to traverse to the same edge at the same time and step in the same direction.
 
-   - Formally, there is an edge conflict between $\pi_{i}$ and $\pi_{j}$ iff there exists a time step $x$ such that $\pi_{i} [x] = \pi_{j} [x]$ and $\pi_{i}[x+1] = \pi_{j} [ x+1]$.  /// Don't know when is this possible, in the sense we already have vertex conflict which basically says that $\pi_{i} = \pi_{j}$ right?
+   - Formally, there is an edge conflict between $$\pi_{i}$$ and $$\pi_{j}$$ iff there exists a time step $x$ such that $$\pi_{i} [x] = \pi_{j} [x]$$ and $$\pi_{i}[x+1] = \pi_{j} [ x+1]$$.  /// Don't know when is this possible, in the sense we already have vertex conflict which basically says that $$\pi_{i} = \pi_{j}$$ right?
 
- - $Following\ conflict$ is between $\pi_{i}$ and $\pi_{j}$ occurs iff one agent is planned to occupy a vertex that was occupied by another agent in the previous time step. Now, that's gonna be ignored since occupied positions are something that we are neglecting in here.  // Why is this a big issue?
+ - $$Following\ conflict$$ is between $$\pi_{i}$$ and $$\pi_{j}$$ occurs iff one agent is planned to occupy a vertex that was occupied by another agent in the previous time step. Now, that's gonna be ignored since occupied positions are something that we are neglecting in here.  // Why is this a big issue?
 
-   - $\pi_{i} [x+1] = \pi_{j} [x]$ mathematically written.
+   - $$\pi_{i} [x+1] = \pi_{j} [x]$$ mathematically written.
 
  - A conflict where multiple agents can enter into a position forming a loop like
 
@@ -76,11 +74,11 @@ $\pi_{i} \left[ x \right]$ = $a_{x}(a_{x-1}(...a_{1}(s(i)))$.
 | x | x | x | x | x | x | x | x | x | x |
 | x | x | x | x | x | x | x | x | x | x |
 
- -- This is called as $Cycle\ conflict$.
+ -- This is called as $$Cycle\ conflict$$.
 
-- $π_{i}(x + 1) = π_{i+1}(x)$
- 
- - $Swapping\ conflict$ is like the cycle one, where it would just switch the vertices.
+- $$π_{i}(x + 1) = π_{i+1}(x)$$
+
+ - $$Swapping\ conflict$$ is like the cycle one, where it would just switch the vertices.
 
 
 
@@ -92,7 +90,7 @@ $\pi_{i} \left[ x \right]$ = $a_{x}(a_{x-1}(...a_{1}(s(i)))$.
 
  - This is also true vice versa.
 
- - To properly define a classical MAPF problem, one needs to specify which types of conflicts are allowed in a solution.  
+ - To properly define a classical MAPF problem, one needs to specify which types of conflicts are allowed in a solution.
   - The least constrained restriction is to only forbid edge conflicts. (In our task, ig Swapping and edge are not allowed so only 1 and 3 are forbidden per say).
 
 ---
@@ -103,13 +101,14 @@ $\pi_{i} \left[ x \right]$ = $a_{x}(a_{x-1}(...a_{1}(s(i)))$.
   - **Stay at target** : Under this assumption, an agent waits in its target untill all agents have reached their targets. This will then cause a vertex conflict with any plan that passes through its target after it has reached it.
 
   - **Disappear at target**: Under this assumption, when an agent reaches its target it immediately disappears. This means the plan of that agent will not have any conflict after the time step in which the corresponding agent has reached its target.
+
 ---
 ### Objective Functions in Classical MAPF
 
- - To capture the best solution, we consider something called as **objective functions** that is used to evaluate MAPF solutions. The two most common functions used for evaluating a solution in classical MAPF are $makespan$ and $sum\ of\ costs$.
+ - To capture the best solution, we consider something called as **objective functions** that is used to evaluate MAPF solutions. The two most common functions used for evaluating a solution in classical MAPF are $$makespan$$ and $$sum\ of\ costs$$.
 
-   - $Makespan$ : The number of time steps required for all agents to reach their target.
-   - $Sum\ of \ costs$: The sum of time steps required by each agent to reach its target. It is also called as *flowtime*.
+   - $$Makespan$$ : The number of time steps required for all agents to reach their target.
+   - $$Sum\ of \ costs$$: The sum of time steps required by each agent to reach its target. It is also called as *flowtime*.
 
  - For example, assume that agent i reaches its
 target at time step t, leaves its target at time step t
@@ -122,43 +121,43 @@ plan will contribute t'' to the sum of costs of the corresponding solution.
 
 ### Beyond Classical MAPF
 
- -  As of now, the assumptions taken are: 
+ -  As of now, the assumptions taken are:
  1. time is discretized into time steps,
  2. every action takes exactly one time step,
  3. in every time step, each agent occupies exactly a single vertex.
 ---
 ### MAPF on Weighted Graphs
 
- - The notation $G$ now is a weighted graph where the weight of each edge represents the duration it will take an agent to traverse this edge.
- 
+ - The notation $$G$$ now is a weighted graph where the weight of each edge represents the duration it will take an agent to traverse this edge.
+
  - Types of graphs that have been included in this paper:
- 1. MAPF in $2^k$-neighbor grids
+ 1. MAPF in $$2^k$$-neighbor grids
    -- These maps are restricted form of weighted graphs in which every vertex represents a cell in a two dimensional grid. **DID NOT UNDERSTAND THIS**
 
 2. MAPF in Euclidean space
--- These maps are a generalization of MAPF in which every node in $G$ represents a Euclidean point ($x$, $y$), and the edges represent allowed move actions. Such settings arise when the underlying graph is a roadmap generated for a continuous Euclidean environment. **ABSOLUTELY DID NOT UNDERSTAND THIS EITHER**.
+-- These maps are a generalization of MAPF in which every node in $$G$$ represents a Euclidean point ($$x$$, $$y$$), and the edges represent allowed move actions. Such settings arise when the underlying graph is a roadmap generated for a continuous Euclidean environment. **ABSOLUTELY DID NOT UNDERSTAND THIS EITHER**.
 
 
 ---
 
 ### Feasibility Rules
 
-- Depending on what you want to lose and what you want in priority, there are sufficient rules for the classical MAPF solution. 
+- Depending on what you want to lose and what you want in priority, there are sufficient rules for the classical MAPF solution.
 
- - **Robustness rules** -- These rules are designed to ensure that a MAPF solution considers inadvertant delays in execution. A $k-robust$ MAPF plan builds in a sufficient buffer for agents to be delayed up to $k$ time steps without resulting in a conflict. This is only when the probability of future delays are known (ig this is where we can use RL if I am not wrong, where we can use ML to predict the probability of a task in a delay.
+ - **Robustness rules** -- These rules are designed to ensure that a MAPF solution considers inadvertant delays in execution. A $$k-robust$$ MAPF plan builds in a sufficient buffer for agents to be delayed up to $$k$$ time steps without resulting in a conflict. This is only when the probability of future delays are known (ig this is where we can use RL if I am not wrong, where we can use ML to predict the probability of a task in a delay.
 
- - **Formation rules** -- this is restriction added whenever there is some action that needs to be decided by the bot (or "$agent$" as given in the paper). 
+ - **Formation rules** -- this is restriction added whenever there is some action that needs to be decided by the bot (or "$$agent$$" as given in the paper).
 
- 
+
 ---
 ### From Pathfinding to Motion planning
 
-- We are now considering bots now not in vertex but with something as a limited speed and a variety of sizes ($configuration$ is a better word). 
+- We are now considering bots now not in vertex but with something as a limited speed and a variety of sizes ($$configuration$$ is a better word).
 
- - **MAPF with large agents** -- This basically now introduces volume to the vertex, and now a single $agent$ can take up multiple vertices. Hence, it may prevent some other bot to move or even take use of those vertices.
- It may also not allow other $agents$ along the edge whenever one $agent$ is along the edge.
+ - **MAPF with large agents** -- This basically now introduces volume to the vertex, and now a single $$agent$$ can take up multiple vertices. Hence, it may prevent some other bot to move or even take use of those vertices.
+ It may also not allow other $$agents$$ along the edge whenever one $$agent$$ is along the edge.
 
--  * There are several approaches to solving these kinds of issues, including a CBS-based approach and a prioritized planning approach. 
+-  * There are several approaches to solving these kinds of issues, including a CBS-based approach and a prioritized planning approach.
 
 				A special case of agents with volume is the convoy setting, in which agents occupy a string of vertices and their connecting edges.
 
@@ -181,8 +180,7 @@ plan will contribute t'' to the sum of costs of the corresponding solution.
 
   - This can be generalised even further, assigning a target and an agent to multiple teams.
 
-- **Online MAPF** --- In $online$ MAPF, a sequence of MAPF problems are solved on the same graph. This setting has also been called "Lifelong MAPF". Online MAPF problems can be classified as follow.
+- **Online MAPF** --- In $$online$$ MAPF, a sequence of MAPF problems are solved on the same graph. This setting has also been called "Lifelong MAPF". Online MAPF problems can be classified as follow.
   - **warehouse model** -- This is the setting where a fixed set of agents, solve a MAPF problem, but after an agent finds a target, it may be tasked to go to different target. This setting is inspired by MAPF for autonomous warehouses. **(This is also another way to represent the task since, we do have fixed number of agents for each team, and they are always given some task "$target$", which once is done, it is made to go to another location to do another task, which is also what is being done, so basically we are doing a mix of colored and Online MAPF).**
 
   - **Interesection model** -- This is the setting where new agents may appear and each agent has one task --  to reach its target. This setting is inspired by autonomous vehicles entering and exiting intersections.
-
