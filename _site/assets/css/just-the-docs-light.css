@@ -2295,9 +2295,7 @@ a.skip-to-main:focus, a.skip-to-main:active { color: #7253ed; background-color: 
 
 div.opaque { background-color: #fff; }
 
-.nav-footer-social { display: flex; gap: 25px; margin: 20px 0 0 35px; /* Changed from absolute positioning */ }
-
-.side-bar { width: 10%; /* Increased from 10% to a more standard width */ }
+.nav-footer-social { display: flex; gap: 20px; position: absolute; bottom: 10px; left: 325px; }
 
 .nav-footer-social a svg { fill: currentColor; width: 30px; height: 30px; transition: fill 0.3s; }
 
