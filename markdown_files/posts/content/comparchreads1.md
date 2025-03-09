@@ -50,8 +50,10 @@ by yale patt
     - The demand for higher performance dictated that fetching one instruction at a time was not enough.
     - Examples like this forces evolution and creative solution thinking.
   - Agent II: Bottlenecks
-    - We have 3 components of instruction processing (instruction supply, data supply, and carrying out the operations of the instruction). 
+    - We have 3 components of instruction processing (instruction supply, data supply, and carrying out the operations of the instruction).
     - By far, most of the improvements to the microprocessor have come about due to attempts to eliminate bottlenecks that prevent these components from being fully utilized.
   - Agent III: Good Fortune
     - Good Fortune happens when something causes a windfall which can then be used to provide additional features to the microprocessor.
 
+# References
+- [Requirements, Bottlenecks, and Good Fortune: Agents for Microprocessor Evolution](https://course.ece.cmu.edu/~ece740/f13/lib/exe/fetch.php?media=r0_patt.pdf)

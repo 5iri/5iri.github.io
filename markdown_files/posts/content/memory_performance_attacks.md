@@ -1,7 +1,7 @@
 # Memory Performance Attacks: Denial of Memory Service in Multi-Core Systems
 
-**Thomas Moscibroda**  
-**Onur Mutlu**  
+**Thomas Moscibroda**
+**Onur Mutlu**
 @microsoft
 
 ## Introduction
@@ -65,3 +65,5 @@
 - The paper highlights the vulnerabilities of multi-core systems to DoS attacks due to unfair memory access scheduling.
 - By introducing the concept of Memory Performance Hogs and the Stall-Time Fair Memory Scheduler, the authors offer a framework to enhance fairness and improve both the performance and security of multi-core systems.
 
+## References
+- The paper is written by Professor Onur Mutlu which can be found [here](https://users.ece.cmu.edu/~omutlu/pub/mph_usenix_security07.pdf)
