@@ -1,3 +1,4 @@
+![Hi!](markdown_files/posts/assets/me.jpeg) ![Me teaching error correction for First Year Students](markdown_files/posts/assets/me2.png)
 # Yo!
  I'm **Shri Vishakh Devanand**, a sophomore engineering student from India absolutely obsessed with mathematics, physics and electronics. I thrive at the intersection of hardware and software, applying complex mathematical concepts to solve real engineering challenges.
 
