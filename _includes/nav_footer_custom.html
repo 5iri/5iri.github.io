@@ -1,71 +1,283 @@
-<div class="nav-footer-social">
-    <a
-        class="mail"
-        href="mailto:shrivishakhdevanand@gmail.com"
-        target="_blank"
-        aria-label="Gmail"
-    >
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-        >
-            <path
-                fill="currentColor"
-                d="M12 12.713l-11.715-8.08c-.175-.121-.285-.325-.285-.538v-1.57c0-.553.447-1 1-1h22c.553 0 1 .447 1 1v1.57c0 .213-.11.417-.285.538l-11.715 8.08zm11.715-6.086l-11.715 8.087-11.715-8.087v11.659c0 .553.447 1 1 1h21.43c.553 0 1-.447 1-1v-11.659z"
-            />
-        </svg>
-    </a>
-
-    <a href="https://github.com/5iri" target="_blank" aria-label="GitHub">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-        >
-            <path
-                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.744.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.76-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.467-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.62-5.475 5.92.42.36.81 1.096.81 2.21 0 1.595-.015 2.88-.015 3.27 0 .315.21.69.825.57 4.765-1.59 8.2-6.085 8.2-11.385 0-6.627-5.373-12-12-12z"
-            />
-        </svg>
-    </a>
-
-    <a
-        href="https://www.linkedin.com/in/shri-vishakh-devanand-85b72429a/"
-        target="_blank"
-        aria-label="LinkedIn"
-    >
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-        >
-            <path
-                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.5c0-1.381-1.119-2.5-2.5-2.5s-2.5 1.119-2.5 2.5v5.5h-3v-10h3v1.5c.881-1.32 2.5-1.5 3.5-1.5 2.481 0 4.5 2.019 4.5 4.5v5.5z"
-            />
-        </svg>
-    </a>
-
-    <a href="https://x.com/lazybanananann" target="_blank" aria-label="Twitter">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-        >
-            <path
-                fill="currentColor"
-                d="M18.75 2H21L14.5 10.25L22 22H15.75L10.75 14.75L4.5 22H2.25L9.25 13.25L2 2H8.5L12.75 8.5L18.75 2ZM17.75 20H19.25L7.5 4H6L17.75 20Z"
-            />
-        </svg>
-    </a>
+<div class="header-container">
+  <nav class="site-nav">
+    <div class="nav-wrapper">
+      {% for category in categories %}
+        <div class="nav-item dropdown">
+          <button class="dropdown-trigger" onclick="toggleDropdown(this)">
+            {{ category }}
+            <span class="dropdown-arrow">▼</span>
+          </button>
+          <div class="dropdown-content">
+            {% for page in site.pages %}
+              {% if page.category == category %}
+                <a href="{{ site.baseurl }}{{ page.url }}" 
+                   {% if page.url == page.url %}class="active"{% endif %}>
+                  {{ page.title }}
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </nav>
 </div>
 
+<div class="social-links">
+  <a href="mailto:shrivishakhdevanand@gmail.com" class="social-link" aria-label="Email">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 12.713l-11.715-8.08c-.175-.121-.285-.325-.285-.538v-1.57c0-.553.447-1 1-1h22c.553 0 1 .447 1 1v1.57c0 .213-.11.417-.285.538l-11.715 8.08zm11.715-6.086l-11.715 8.087-11.715-8.087v11.659c0 .553.447 1 1 1h21.43c.553 0 1-.447 1-1v-11.659z"/>
+    </svg>
+    <span class="sr-only">Email</span>
+  </a>
+  <a href="https://github.com/5iri" class="social-link" aria-label="GitHub">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.744.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.76-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.467-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.62-5.475 5.92.42.36.81 1.096.81 2.21 0 1.595-.015 2.88-.015 3.27 0 .315.21.69.825.57 4.765-1.59 8.2-6.085 8.2-11.385 0-6.627-5.373-12-12-12z"/>
+    </svg>
+    <span class="sr-only">GitHub</span>
+  </a>
+  <a href="https://www.linkedin.com/in/shri-vishakh-devanand-85b72429a/" class="social-link" aria-label="LinkedIn">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.5c0-1.381-1.119-2.5-2.5-2.5s-2.5 1.119-2.5 2.5v5.5h-3v-10h3v1.5c.881-1.32 2.5-1.5 3.5-1.5 2.481 0 4.5 2.019 4.5 4.5v5.5z"/>
+    </svg>
+    <span class="sr-only">LinkedIn</span>
+  </a>
+  <a href="https://x.com/lazybanananann" class="social-link" aria-label="Twitter">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M18.75 2H21L14.5 10.25L22 22H15.75L10.75 14.75L4.5 22H2.25L9.25 13.25L2 2H8.5L12.75 8.5L18.75 2ZM17.75 20H19.25L7.5 4H6L17.75 20Z"/>
+    </svg>
+    <span class="sr-only">Twitter</span>
+  </a>
+</div>
+
+<style>
+.header-container {
+  background: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.nav-item {
+  position: relative;
+  flex: 0 1 auto;
+}
+
+.dropdown-trigger {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.dropdown-arrow {
+  font-size: 0.8rem;
+  transition: transform 0.2s;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  min-width: 200px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--hover-color);
+}
+
+.dropdown-content a.active {
+  background-color: var(--active-color);
+}
+
+/* Social Links Styles */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0.5rem;
+  background: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.social-link {
+  color: var(--text-color);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+}
+
+.social-link:hover {
+  color: var(--link-color);
+  background: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.show {
+  display: block;
+}
+
+/* Responsive Design */
+@media (min-width: 1200px) {
+  .nav-wrapper {
+    justify-content: flex-start;
+  }
+  
+  .social-links {
+    justify-content: flex-start;
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .nav-wrapper {
+    justify-content: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-wrapper {
+    padding: 0.5rem;
+  }
+  
+  .dropdown-content {
+    left: 0;
+    transform: none;
+    width: 100%;
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .dropdown-trigger {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .social-links {
+    flex-wrap: wrap;
+  }
+}
+</style>
+
+<script>
+function toggleDropdown(button) {
+  const content = button.nextElementSibling;
+  const arrow = button.querySelector('.dropdown-arrow');
+  
+  // Close all other dropdowns
+  document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+    if (dropdown !== content) {
+      dropdown.classList.remove('show');
+    }
+  });
+  
+  document.querySelectorAll('.dropdown-arrow').forEach(dropdownArrow => {
+    if (dropdownArrow !== arrow) {
+      dropdownArrow.style.transform = 'rotate(0deg)';
+    }
+  });
+  
+  content.classList.toggle('show');
+  arrow.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.dropdown')) {
+    document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+      dropdown.classList.remove('show');
+    });
+    document.querySelectorAll('.dropdown-arrow').forEach(arrow => {
+      arrow.style.transform = 'rotate(0deg)';
+    });
+  }
+});
+</script>
+
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script
-    id="MathJax-script"
-    async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+{% assign current_category = nil %}
+{% assign categories = "" | split: "" %}
+
+{% for page in site.pages %}
+  {% if page.category %}
+    {% unless categories contains page.category %}
+      {% assign categories = categories | push: page.category %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}

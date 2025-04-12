@@ -5,7 +5,64 @@ remote_theme: just-the-docs/just-the-docs
 # Color scheme supports "light" (default) and "dark"
 color_scheme: dark
 
-# Load custom SCSS if needed
+# Enable search
+search_enabled: true
+
+# Enable the sidebar navigation
+aux_links:
+  "View on GitHub":
+    - "https://github.com/5iri/5iri.github.io"
+
+# Organize collections by folders
+collections:
+  docs:
+    permalink: "/:collection/:path/"
+    output: true
+
+# Default layout for pages
+defaults:
+  -
+    scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "default"
+      nav_order: 1
+      nav_exclude: false
+
+# Load custom SCSS
 sass:
+  style: compressed
   load_paths:
+    - _sass
+  sass_dir: _sass
+  style_dir: _sass
+  sourcemap: never
+  compressed: true
+  cache: false
+  trace: false
+  unix_newlines: true
+  quietDeps: true
+  quiet: true
+  update: true
+  check: true
+  watch: true
+  watch_dirs:
+    - _sass
+  style: compressed
+  load_paths:
+    - _sass
+  sass_dir: _sass
+  style_dir: _sass
+  sourcemap: never
+  compressed: true
+  cache: false
+  trace: false
+  unix_newlines: true
+  quietDeps: true
+  quiet: true
+  update: true
+  check: true
+  watch: true
+  watch_dirs:
     - _sass

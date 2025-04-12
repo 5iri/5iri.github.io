@@ -1,0 +1,72 @@
+// Adjust sidebar width and position
+.side-bar {
+  width: 300px;
+  max-width: 300px;
+  padding-left: 100px;
+  padding-right: 0;
+  border-right: none;
+  margin-left: 10px;
+}
+
+.main {
+  margin-left: 300px;
+  padding-left: 2rem;
+}
+
+// Adjust the main content area
+.main-content {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+// Adjust the search bar
+.search {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Adjust the navigation
+.nav-list {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Make the sidebar more compact but readable
+.nav-list .nav-list-item {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nav-list .nav-list-link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+// Adjust the site title
+.site-title {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Make the sidebar stick to the left
+.side-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+// Responsive adjustments
+@media (max-width: 50rem) {
+  .side-bar {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  
+  .main {
+    margin-left: 0;
+    padding-left: 1rem;
+  }
+} 
