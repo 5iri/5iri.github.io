@@ -1,9 +1,7 @@
-title: 5iri
+title: Shri
 description: I am an enthusiast of digital design
 remote_theme: just-the-docs/just-the-docs
 
-# Color scheme supports "light" (default) and "dark"
-color_scheme: dark
 
 # Enable search
 search_enabled: true
@@ -66,3 +64,9 @@ sass:
   watch: true
   watch_dirs:
     - _sass
+
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false

@@ -1,3 +1,8 @@
+--- 
+title: Memory Performance Attacts and DOS Attacks
+parent: Computer Architecture
+--- 
+
 # Memory Performance Attacks: Denial of Memory Service in Multi-Core Systems
 
 **Thomas Moscibroda**

@@ -1,5 +1,6 @@
 ---
-title: Kinematics Demo Redirect
+title: Kinematics Demo
+parent: Projects
 permalink: /kinematics-demo/
 ---
 

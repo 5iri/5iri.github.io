@@ -1,6 +1,6 @@
 ---
-layout: post
 title: ApexCore A RISC-V based CPU
+parent: Blog
 description : Designing RISC-V Single Core with IMA extensions
 ---
 

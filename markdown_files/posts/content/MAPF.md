@@ -1,4 +1,7 @@
-
+--- 
+title: Multi-Agent Path Finding Algorithms 
+parent: Other 
+--- 
 
 # Multi-Agent Path Finding
 ---

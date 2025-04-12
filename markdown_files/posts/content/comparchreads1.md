@@ -1,3 +1,8 @@
+--- 
+title: Agents for Microprocessor Evolution 
+parent: Computer Architecture 
+--- 
+
 # Requirements, Bottlenecks, and Good Fortune: Agents for Microprocessor Evolution
 ```
 by yale patt
