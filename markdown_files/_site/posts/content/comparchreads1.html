@@ -1,0 +1,102 @@
+<h1 id="requirements-bottlenecks-and-good-fortune-agents-for-microprocessor-evolution">Requirements, Bottlenecks, and Good Fortune: Agents for Microprocessor Evolution</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>by yale patt
+</code></pre></div></div>
+
+<h2 id="basic-framework">Basic Framework</h2>
+
+<ul>
+  <li>Computer Architecture: A science of tradeoffs
+    <ul>
+      <li>Comp arch is more “art” than “science”</li>
+      <li>Almost always the job of the comp architect requires using that fundamental knowledge to make tradeoffs.</li>
+    </ul>
+  </li>
+  <li>Levels of Transformation
+    <ul>
+      <li>There are levels of transformations that is being done whenever there’s a high level program that is being done.</li>
+      <li>Like take for example a C code, it first compiles into an assembly code (a lot more process that happens but not imp here).</li>
+      <li>This “assembly” code is basically converted into where ISA structure is used, where ISA defines on how the assembly code is being defined.</li>
+      <li>Now, Even though the “assembly” code is now converted into something in binary, how this binary is being processed is (which bits need to go where in order for the “assembly” line to be processed actually) [Instruction is being processed]</li>
+      <li>This is called microarchitecture.</li>
+      <li>This microarchitecture is defined by actual electronic circuit design, and in the end electrons.</li>
+      <li>These are the levels of transformation that occurs from any problem to actually making it solve by a circuit (or by electrons).</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="./../assets/comparchreads/image1.png" alt="Levels of Transformation" /></p>
+
+<ul>
+  <li>Design Points
+    <ul>
+      <li>When working in the microarchitecture part, there is always a purpose towards what you are trying to achieve.</li>
+      <li>This is called the Design Point.</li>
+      <li>It could be something like, making a core more power efficient , fault tolerant (server chips), highest power etc.</li>
+    </ul>
+  </li>
+  <li>Application Space
+    <ul>
+      <li>Sometimes the chips that we design are application specific, and sometimes generalistic in nature, this is what we call application space here.</li>
+    </ul>
+  </li>
+  <li>The Basics of Processing
+    <ul>
+      <li>Simply put, a microprocessor processes instructions.</li>
+      <li>To do this, it has to do three things:
+        <ul>
+          <li>Supply instructions to the core of the processor where the instructions are executed.</li>
+          <li>Supply data required for the instructions</li>
+          <li>Perform the operation required by each instruction.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Instruction Supply
+    <ul>
+      <li>fetching one instruction at a time is slow when processors are getting faster and better at processing them.</li>
+      <li>So, the fetching of instructions should be done in parallel, making it more efficient.</li>
+    </ul>
+  </li>
+  <li>Data Supply
+    <ul>
+      <li>Once the instruction is fetched, the data required for the instruction is supplied to the processor.</li>
+      <li>This must be done in a fast manner as well.</li>
+      <li>So faster caches (on-chip RAM) are used to supply the data for a particular instruction.</li>
+    </ul>
+  </li>
+  <li>Instruction Processing
+    <ul>
+      <li>Once the instruction is fetched and the data is supplied, the instruction must also be processed fast.</li>
+      <li>To perform the operations required by these instructions, the processor needs a sufficient number of functional units to process the data.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="agents-for-evolution">Agents for Evolution</h2>
+<ul>
+  <li>
+    <p>The creativity of engineers to come up with answers where there were problems— without solutions, there would be no Evolution.</p>
+  </li>
+  <li>Agent I: New Requirements
+    <ul>
+      <li>The demand for higher performance dictated that fetching one instruction at a time was not enough.</li>
+      <li>Examples like this forces evolution and creative solution thinking.</li>
+    </ul>
+  </li>
+  <li>Agent II: Bottlenecks
+    <ul>
+      <li>We have 3 components of instruction processing (instruction supply, data supply, and carrying out the operations of the instruction).</li>
+      <li>By far, most of the improvements to the microprocessor have come about due to attempts to eliminate bottlenecks that prevent these components from being fully utilized.</li>
+    </ul>
+  </li>
+  <li>Agent III: Good Fortune
+    <ul>
+      <li>Good Fortune happens when something causes a windfall which can then be used to provide additional features to the microprocessor.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="references">References</h1>
+<ul>
+  <li><a href="https://course.ece.cmu.edu/~ece740/f13/lib/exe/fetch.php?media=r0_patt.pdf">Requirements, Bottlenecks, and Good Fortune: Agents for Microprocessor Evolution</a></li>
+</ul>
