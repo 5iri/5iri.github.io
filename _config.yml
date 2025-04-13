@@ -3,6 +3,9 @@ description: I am an enthusiast of digital design
 remote_theme: just-the-docs/just-the-docs
 
 
+
+# Color scheme configuration
+color_scheme: retro
 # Enable search
 search_enabled: true
 

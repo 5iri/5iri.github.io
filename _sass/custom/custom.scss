@@ -18,3 +18,102 @@
     min-width: $nav-width;
   }
 }
+
+.main-content {
+  max-width: 850px !important;
+}
+
+// Make sidebar horizontal
+.side-nav {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff; // or your theme bg
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ccc;
+  z-index: 100;
+}
+
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+}
+
+// Navbar font customization
+
+// Sidebar nav (left-hand navigation)
+.side-nav {
+  font-family: 'VT323', monospace;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+}
+
+// Top navigation (if enabled)
+.site-nav,
+.site-title {
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+// Active or hovered nav items
+.nav-list .nav-list-item .nav-list-link:hover,
+.nav-list .nav-list-item .nav-list-link.active {
+  color: #C1121F; // Retro red for hover/active
+  font-weight: bold;
+}
+
+// Font sizes (adjust as needed)
+body {
+  font-size: 17px;
+  line-height: 1.6;
+  font-family: 'EB Garamond', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'VT323', monospace;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5,
+h6 {
+  font-size: 1.1rem;
+}
+
+code {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.95em;
+  background-color: #FFF8F0;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}

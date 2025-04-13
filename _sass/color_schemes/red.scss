@@ -1,0 +1,45 @@
+// _sass/color_schemes/te_style.scss
+
+@import "./color_schemes/light";
+
+// Font
+$body-font-family: 'Space Mono', monospace;
+$heading-font-family: 'Space Mono', monospace;
+$monospace-font-family: 'Space Mono', monospace;
+
+// Colors
+$grey-lt-000: #FCFCFC; // Main background
+$grey-lt-100: #FFFFFF; // Card bg
+$grey-dk-100: #D3D3D3; // Borders
+$grey-dk-200: #0B0B0B; // Main text
+
+$red-000: #FF3B3B; // Primary red
+$red-100: #FFA630; // Hover / Alt Accent
+
+// Body
+$body-background-color: $grey-lt-000;
+$body-text-color: $grey-dk-200;
+$body-heading-color: $red-000;
+
+// Links
+$link-color: $red-000;
+$link-color-hover: $red-100;
+
+// Buttons
+$btn-primary-color: $red-000;
+$btn-primary-color-hover: $red-100;
+$btn-primary-text-color: $grey-lt-100;
+
+// Navigation
+$nav-background-color: $grey-lt-100;
+$nav-text-color: $grey-dk-200;
+$nav-hover-color: $red-100;
+$nav-active-color: $red-000;
+
+// Code blocks
+$code-background-color: #F7F7F7;
+$code-text-color: #0B0B0B;
+
+// Callouts
+$callout-note-color: #FFF0F0;
+$callout-important-color: #FFE4D9;

@@ -1,6 +1,5 @@
 --- 
-title: GitHub 
-permalink: /github 
+title: GitHub
 --- 
 
 <meta http-equiv="refresh" content="0; url=https://github.com/5iri">
