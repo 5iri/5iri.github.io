@@ -9,6 +9,9 @@ color_scheme: retro
 # Enable search
 search_enabled: true
 
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
 # Enable the sidebar navigation
 aux_links:
   "View on GitHub":
@@ -69,7 +72,3 @@ sass:
     - _sass
 
 
-kramdown:
-  syntax_highlighter_opts:
-    block:
-      line_numbers: false
