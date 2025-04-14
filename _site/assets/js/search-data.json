@@ -293,312 +293,354 @@
     
     "relUrl": "/"
   },"42": {
+    "doc": "Agency and its meaning",
+    "title": "What Does Agency Really Mean?",
+    "content": "When you hear the word “agency,” you might think of some dictionary definition about taking action to make something happen. But to me, agency is so much more than that—it’s about choosing to act with purpose, chasing the best possible outcome for yourself and those around you, even when the path isn’t clear. For me, agency isn’t just about doing stuff. It’s about why you’re doing it. It’s that moment when you decide to step up, make a choice, and shape what happens next—especially when it’s tough or uncertain. It’s about having the freedom and the guts to say, “I’ve got this,” and mean it. But here’s the thing: agency doesn’t exist in a vacuum. If you’re in a place where you feel unsafe, ignored, or undervalued, it’s hard to feel like you can make a difference. That’s why I think agency is also about creating space—space where people feel heard, supported, and free to take action. One spot where I’ve seen this come to life is in my college club, the Society of Robotics and Automation at VJTI. It’s a place where we build cool things, sure, but more than that, it’s where we lift each other up to try, fail, and try again. So when I talk about agency, I’m not just talking about making moves. I’m talking about setting the stage for action—giving yourself and others a voice, owning your choices, and believing that what you do matters. Even the small stuff counts. ",
+    "url": "/markdown_files/posts/content/agency.html#what-does-agency-really-mean",
+    
+    "relUrl": "/markdown_files/posts/content/agency.html#what-does-agency-really-mean"
+  },"43": {
+    "doc": "Agency and its meaning",
+    "title": "Finding My Own Agency",
+    "content": "When I first started thinking about what agency means to me, I had to ask myself: What am I really about? Like, what do I want to stand for? Not just “I want to build robots” or “I want to get a degree,” but something deeper. ",
+    "url": "/markdown_files/posts/content/agency.html#finding-my-own-agency",
+    
+    "relUrl": "/markdown_files/posts/content/agency.html#finding-my-own-agency"
+  },"44": {
+    "doc": "Agency and its meaning",
+    "title": "What Kind of Person Do You Want to Be?",
+    "content": "We’ve all heard people say, “I want to be an astronaut!” or “I want to be a doctor!” And those are awesome dreams. But I think the real question is: What kind of person do you want to be, day in and day out? Maybe it’s “I want to be curious,” or “I want to make people feel seen,” or “I want to keep trying new things, no matter what.” . Those kinds of goals—they stick with you. They’re not just about hitting some finish line; they’re about how you show up every single day. When you start thinking like that, you figure out where your agency lives. It’s not just about what you accomplish—it’s about who you are in the moments that matter to you. ",
+    "url": "/markdown_files/posts/content/agency.html#what-kind-of-person-do-you-want-to-be",
+    
+    "relUrl": "/markdown_files/posts/content/agency.html#what-kind-of-person-do-you-want-to-be"
+  },"45": {
+    "doc": "Agency and its meaning",
+    "title": "Agency Is a Compass",
+    "content": "So, what’s agency, really? It’s that fire inside you, that stubborn push to make things better—for yourself, for others, for the world. It’s knowing you’ve got the power to shape your path and helping the people around you see they’ve got that power too. Whether you’re tinkering with circuits, leading a group, dreaming up new ideas, or just figuring out who you want to be, your agency is like a compass. It keeps you pointed toward what’s possible. And the more we nurture that spark—in ourselves and in each other—the bigger, brighter, and more incredible the results can be. ",
+    "url": "/markdown_files/posts/content/agency.html#agency-is-a-compass",
+    
+    "relUrl": "/markdown_files/posts/content/agency.html#agency-is-a-compass"
+  },"46": {
+    "doc": "Agency and its meaning",
+    "title": "Agency and its meaning",
+    "content": " ",
+    "url": "/markdown_files/posts/content/agency.html",
+    
+    "relUrl": "/markdown_files/posts/content/agency.html"
+  },"47": {
     "doc": "Single RISC-V Core",
     "title": "Single RISC-V Core",
     "content": "Redirecting to GitHub… Click here if not redirected. ",
     "url": "/markdown_files/posts/content/apexcore.html",
     
     "relUrl": "/markdown_files/posts/content/apexcore.html"
-  },"43": {
+  },"48": {
     "doc": "how cancer cells grow",
     "title": "Notes on how are cancer cells grow and spread through the body",
     "content": ". ",
     "url": "/markdown_files/posts/content/basics_of_cancer_cells.html#notes-on-how-are-cancer-cells-grow-and-spread-through-the-body",
     
     "relUrl": "/markdown_files/posts/content/basics_of_cancer_cells.html#notes-on-how-are-cancer-cells-grow-and-spread-through-the-body"
-  },"44": {
+  },"49": {
     "doc": "how cancer cells grow",
     "title": "What are cancer cells?",
     "content": ". | fuck ups in DNA causes genes to mutate, which makes a particular types of cells to not listen to the conditions for which the genes to mutate. | . ",
     "url": "/markdown_files/posts/content/basics_of_cancer_cells.html#what-are-cancer-cells",
     
     "relUrl": "/markdown_files/posts/content/basics_of_cancer_cells.html#what-are-cancer-cells"
-  },"45": {
+  },"50": {
     "doc": "how cancer cells grow",
     "title": "How does Cancer grow?",
     "content": ". | A cancer cell is different from normal ceels because they: . | divide out of control | are immature and don’t develop into doing their jobs | avoid the immune system. | ignore signals | don’t stick to each other very well and can spread to other parts of the body through the blood or lymphatic system | grow into and damage tissues and organs ",
     "url": "/markdown_files/posts/content/basics_of_cancer_cells.html#how-does-cancer-grow",
     
     "relUrl": "/markdown_files/posts/content/basics_of_cancer_cells.html#how-does-cancer-grow"
-  },"46": {
+  },"51": {
     "doc": "how cancer cells grow",
     "title": "How cancer spreads?",
     "content": "| . | Normal spread usually by pushing on normal tissues and growing into a big ball in the same place, this is called local invasion or invasive cancer. | Cancer can also spread from where it first started to other parts of the body. This process is called metastatis. Cancer cells can metastatsize when they break away from the tumour and travel to a new location in the body through the blood or lymphatic system. | . ",
     "url": "/markdown_files/posts/content/basics_of_cancer_cells.html#how-cancer-spreads",
     
     "relUrl": "/markdown_files/posts/content/basics_of_cancer_cells.html#how-cancer-spreads"
-  },"47": {
+  },"52": {
     "doc": "how cancer cells grow",
     "title": "Why does cancer come back sometimes?",
     "content": ". | even if 1 cancer cell is left begind during cancer treatment, it has the possibility of growing and dividing into a new tumour. | In some cases, treatment may stop working (become resistant) so cancer cells are no longer being destroyed. | . ",
     "url": "/markdown_files/posts/content/basics_of_cancer_cells.html#why-does-cancer-come-back-sometimes",
     
     "relUrl": "/markdown_files/posts/content/basics_of_cancer_cells.html#why-does-cancer-come-back-sometimes"
-  },"48": {
+  },"53": {
     "doc": "how cancer cells grow",
     "title": "Why use acoustic tweezers?",
     "content": ". | It produces high and low acoustic pressures, enabling the movement or positioning of target cells with precision. This allows them to be used for manipulating metastasis-related cancer cells. | The flow cytometry results prove that it is non-invasive. | It can be used to isolate circulating tumor cells (CTCs), and enables in developing targeted treatments. | . ",
     "url": "/markdown_files/posts/content/basics_of_cancer_cells.html#why-use-acoustic-tweezers",
     
     "relUrl": "/markdown_files/posts/content/basics_of_cancer_cells.html#why-use-acoustic-tweezers"
-  },"49": {
+  },"54": {
     "doc": "how cancer cells grow",
     "title": "how to make acoustic tweezers?",
     "content": ". | The new device works by placing sound-creating transducers on each side of a small square chamber filled with liquid. These four transducers work in step with those directly across from them, forming two pairs. One creates patterns in the chamber horizontally and the other vertically. The interaction of these two complex, quickly changing sound wave patterns creates dynamic abilities never before demonstrated within the field. | . ",
     "url": "/markdown_files/posts/content/basics_of_cancer_cells.html#how-to-make-acoustic-tweezers",
     
     "relUrl": "/markdown_files/posts/content/basics_of_cancer_cells.html#how-to-make-acoustic-tweezers"
-  },"50": {
+  },"55": {
     "doc": "how cancer cells grow",
     "title": "what is acoustic streaming?",
     "content": ". | Acoustic streaming is another important principle that underlies acoustic tweezers. When a sound wave passes through a fluid medium, it creates tiny vortexes of fluid around the edges of the wave. These vortexes can be used to move small objects within the fluid, even against the direction of the sound wave itself. | . ",
     "url": "/markdown_files/posts/content/basics_of_cancer_cells.html#what-is-acoustic-streaming",
     
     "relUrl": "/markdown_files/posts/content/basics_of_cancer_cells.html#what-is-acoustic-streaming"
-  },"51": {
+  },"56": {
     "doc": "how cancer cells grow",
     "title": "Use cases other than biomedicine",
     "content": ". | In microelectronics, acoustic tweezers have the potential to revolutionize the manufacturing process for microchips and other tiny electronic components. By using sound waves to position and manipulate these components, researchers can improve the accuracy and efficiency of the manufacturing process. | ",
     "url": "/markdown_files/posts/content/basics_of_cancer_cells.html#use-cases-other-than-biomedicine",
     
     "relUrl": "/markdown_files/posts/content/basics_of_cancer_cells.html#use-cases-other-than-biomedicine"
-  },"52": {
+  },"57": {
     "doc": "how cancer cells grow",
     "title": "resources",
     "content": "| How cancer starts, grows and spreads | acoustic tweezers | Cells Dancing to Harmonic Duets Could Enable Personalized Cancer Therapies | . ",
     "url": "/markdown_files/posts/content/basics_of_cancer_cells.html#resources",
     
     "relUrl": "/markdown_files/posts/content/basics_of_cancer_cells.html#resources"
-  },"53": {
+  },"58": {
     "doc": "how cancer cells grow",
     "title": "how cancer cells grow",
     "content": " ",
     "url": "/markdown_files/posts/content/basics_of_cancer_cells.html",
     
     "relUrl": "/markdown_files/posts/content/basics_of_cancer_cells.html"
-  },"54": {
+  },"59": {
     "doc": "Blog",
     "title": "Blog",
     "content": " ",
     "url": "/markdown_files/blog.html",
     
     "relUrl": "/markdown_files/blog.html"
-  },"55": {
+  },"60": {
     "doc": "Computer Architecture",
     "title": "Computer Architecture",
     "content": " ",
     "url": "/markdown_files/comparch.html",
     
     "relUrl": "/markdown_files/comparch.html"
-  },"56": {
+  },"61": {
     "doc": "Agents for Microprocessor Evolution",
     "title": "Requirements, Bottlenecks, and Good Fortune: Agents for Microprocessor Evolution",
     "content": "by yale patt . ",
     "url": "/markdown_files/posts/content/comparchreads1.html#requirements-bottlenecks-and-good-fortune-agents-for-microprocessor-evolution",
     
     "relUrl": "/markdown_files/posts/content/comparchreads1.html#requirements-bottlenecks-and-good-fortune-agents-for-microprocessor-evolution"
-  },"57": {
+  },"62": {
     "doc": "Agents for Microprocessor Evolution",
     "title": "Basic Framework",
     "content": ". | Computer Architecture: A science of tradeoffs . | Comp arch is more “art” than “science” | Almost always the job of the comp architect requires using that fundamental knowledge to make tradeoffs. | . | Levels of Transformation . | There are levels of transformations that is being done whenever there’s a high level program that is being done. | Like take for example a C code, it first compiles into an assembly code (a lot more process that happens but not imp here). | This “assembly” code is basically converted into where ISA structure is used, where ISA defines on how the assembly code is being defined. | Now, Even though the “assembly” code is now converted into something in binary, how this binary is being processed is (which bits need to go where in order for the “assembly” line to be processed actually) [Instruction is being processed] | This is called microarchitecture. | This microarchitecture is defined by actual electronic circuit design, and in the end electrons. | These are the levels of transformation that occurs from any problem to actually making it solve by a circuit (or by electrons). | . | . | Design Points . | When working in the microarchitecture part, there is always a purpose towards what you are trying to achieve. | This is called the Design Point. | It could be something like, making a core more power efficient , fault tolerant (server chips), highest power etc. | . | Application Space . | Sometimes the chips that we design are application specific, and sometimes generalistic in nature, this is what we call application space here. | . | The Basics of Processing . | Simply put, a microprocessor processes instructions. | To do this, it has to do three things: . | Supply instructions to the core of the processor where the instructions are executed. | Supply data required for the instructions | Perform the operation required by each instruction. | . | . | Instruction Supply . | fetching one instruction at a time is slow when processors are getting faster and better at processing them. | So, the fetching of instructions should be done in parallel, making it more efficient. | . | Data Supply . | Once the instruction is fetched, the data required for the instruction is supplied to the processor. | This must be done in a fast manner as well. | So faster caches (on-chip RAM) are used to supply the data for a particular instruction. | . | Instruction Processing . | Once the instruction is fetched and the data is supplied, the instruction must also be processed fast. | To perform the operations required by these instructions, the processor needs a sufficient number of functional units to process the data. | . | . ",
     "url": "/markdown_files/posts/content/comparchreads1.html#basic-framework",
     
     "relUrl": "/markdown_files/posts/content/comparchreads1.html#basic-framework"
-  },"58": {
+  },"63": {
     "doc": "Agents for Microprocessor Evolution",
     "title": "Agents for Evolution",
     "content": ". | The creativity of engineers to come up with answers where there were problems— without solutions, there would be no Evolution. | Agent I: New Requirements . | The demand for higher performance dictated that fetching one instruction at a time was not enough. | Examples like this forces evolution and creative solution thinking. | . | Agent II: Bottlenecks . | We have 3 components of instruction processing (instruction supply, data supply, and carrying out the operations of the instruction). | By far, most of the improvements to the microprocessor have come about due to attempts to eliminate bottlenecks that prevent these components from being fully utilized. | . | Agent III: Good Fortune . | Good Fortune happens when something causes a windfall which can then be used to provide additional features to the microprocessor. | . | . ",
     "url": "/markdown_files/posts/content/comparchreads1.html#agents-for-evolution",
     
     "relUrl": "/markdown_files/posts/content/comparchreads1.html#agents-for-evolution"
-  },"59": {
+  },"64": {
     "doc": "Agents for Microprocessor Evolution",
     "title": "References",
     "content": ". | Requirements, Bottlenecks, and Good Fortune: Agents for Microprocessor Evolution | . ",
     "url": "/markdown_files/posts/content/comparchreads1.html#references",
     
     "relUrl": "/markdown_files/posts/content/comparchreads1.html#references"
-  },"60": {
+  },"65": {
     "doc": "Agents for Microprocessor Evolution",
     "title": "Agents for Microprocessor Evolution",
     "content": " ",
     "url": "/markdown_files/posts/content/comparchreads1.html",
     
     "relUrl": "/markdown_files/posts/content/comparchreads1.html"
-  },"61": {
+  },"66": {
     "doc": "Email me!",
     "title": "Email me!",
     "content": "Redirecting to Email… Click here if not redirected. ",
     "url": "/markdown_files/email.html",
     
     "relUrl": "/markdown_files/email.html"
-  },"62": {
+  },"67": {
     "doc": "GitHub",
     "title": "GitHub",
     "content": "Redirecting to GitHub… Click here if not redirected. ",
     "url": "/markdown_files/github.html",
     
     "relUrl": "/markdown_files/github.html"
-  },"63": {
+  },"68": {
     "doc": "How do you get into Computer Architecture",
     "title": "How do you get into Computer Architecture?",
     "content": " ",
     "url": "/markdown_files/posts/content/intro_to_compArch.html#how-do-you-get-into-computer-architecture",
     
     "relUrl": "/markdown_files/posts/content/intro_to_compArch.html#how-do-you-get-into-computer-architecture"
-  },"64": {
+  },"69": {
     "doc": "How do you get into Computer Architecture",
     "title": "How do you get into Computer Architecture",
     "content": " ",
     "url": "/markdown_files/posts/content/intro_to_compArch.html",
     
     "relUrl": "/markdown_files/posts/content/intro_to_compArch.html"
-  },"65": {
+  },"70": {
     "doc": "Kinematics Demo",
     "title": "Kinematics Demo",
     "content": "Redirecting to the Kinematics Demo… Click here if not redirected. ",
     "url": "/kinematics-demo/",
     
     "relUrl": "/kinematics-demo/"
-  },"66": {
+  },"71": {
     "doc": "LinkedIn",
     "title": "LinkedIn",
     "content": "Redirecting to the LinkedIn… Click here if not redirected. ",
     "url": "/markdown_files/linkedin.html",
     
     "relUrl": "/markdown_files/linkedin.html"
-  },"67": {
+  },"72": {
     "doc": "Jee Rank Predictor",
     "title": "Jee Rank Predictor",
     "content": "Redirecting to GitHub… Click here if not redirected. ",
     "url": "/markdown_files/posts/content/mark2jee.html",
     
     "relUrl": "/markdown_files/posts/content/mark2jee.html"
-  },"68": {
+  },"73": {
     "doc": "Math",
     "title": "Math",
     "content": " ",
     "url": "/markdown_files/math.html",
     
     "relUrl": "/markdown_files/math.html"
-  },"69": {
+  },"74": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Memory Performance Attacks: Denial of Memory Service in Multi-Core Systems",
     "content": "Thomas Moscibroda Onur Mutlu @microsoft . ",
     "url": "/markdown_files/posts/content/memory_performance_attacks.html#memory-performance-attacks-denial-of-memory-service-in-multi-core-systems",
     
     "relUrl": "/markdown_files/posts/content/memory_performance_attacks.html#memory-performance-attacks-denial-of-memory-service-in-multi-core-systems"
-  },"70": {
+  },"75": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Introduction",
     "content": ". | The transition from single-core to multi-core systems has introduced major performance and security challenges. | Multiple programs running on shared DRAM systems can interfere with each other’s memory accesses, leading to performance degradation and security vulnerabilities. | This paper introduces a new security problem that arises due to the core design of multi-core architectures – a denial of service (DoS) attack that was not possible in single-core systems. | An aggressive memory-intensive program can severely impact the performance of other threads with which it is co-scheduled. This is called a Memory Performance Hog (MPH). | This problem worsens with an increasing number of cores, as the impact grows exponentially. | An MPH can be used to perform DoS attacks that fool users into thinking other applications are inherently slow, even without causing easily observable performance issues. | A regular application can unintentionally behave like an MPH and damage the memory-related performance of co-scheduled threads. | . ",
     "url": "/markdown_files/posts/content/memory_performance_attacks.html#introduction",
     
     "relUrl": "/markdown_files/posts/content/memory_performance_attacks.html#introduction"
-  },"71": {
+  },"76": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "DRAM Architectures",
     "content": ". | DRAM memory is an expensive resource in modern systems. Creating a separate DRAM system for each core is not feasible. | In a partitioned DRAM system, a processor accessing a memory location needs to issue a request to the DRAM partition that contains the data for that location. | . ",
     "url": "/markdown_files/posts/content/memory_performance_attacks.html#dram-architectures",
     
     "relUrl": "/markdown_files/posts/content/memory_performance_attacks.html#dram-architectures"
-  },"72": {
+  },"77": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "DRAM Memory Systems",
     "content": ". | Row Hit: Accessing a row already in the row-buffer. It has the lowest latency (around 40-50 ns in commodity DRAM). | Row Conflict: Accessing a different row than the one currently in the row-buffer, requiring the row-buffer to be written back before the new row can be accessed. | Row Closed: No row in the row-buffer, necessitating a read from the memory array before column access. | . ",
     "url": "/markdown_files/posts/content/memory_performance_attacks.html#dram-memory-systems",
     
     "relUrl": "/markdown_files/posts/content/memory_performance_attacks.html#dram-memory-systems"
-  },"73": {
+  },"78": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "DRAM Controller",
     "content": ". | The DRAM controller mediates between on-chip caches and off-chip DRAM memory. It receives read/write requests from L2 caches. | The memory access scheduler is responsible for selecting memory requests from the memory request buffer to send to the DRAM memory. | . ",
     "url": "/markdown_files/posts/content/memory_performance_attacks.html#dram-controller",
     
     "relUrl": "/markdown_files/posts/content/memory_performance_attacks.html#dram-controller"
-  },"74": {
+  },"79": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Memory Access Scheduling Algorithm",
     "content": ". | Current memory access schedulers typically employ the First-Ready First-Come-First-Serve (FR-FCFS) algorithm, which prioritizes requests in the following order: . | Row-hit first: Prioritizes requests that hit the row already in the row-buffer. | Oldest-within-bank first: Prioritizes requests that arrived earliest within the same bank. | Oldest-across-banks first: Prioritizes the earliest arrival time among requests selected by individual bank schedulers. | . | . ",
     "url": "/markdown_files/posts/content/memory_performance_attacks.html#memory-access-scheduling-algorithm",
     
     "relUrl": "/markdown_files/posts/content/memory_performance_attacks.html#memory-access-scheduling-algorithm"
-  },"75": {
+  },"80": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Vulnerabilities of Multi-Core DRAM Memory System to DoS Attacks",
     "content": ". | Current DRAM memory systems do not distinguish between the requests of different threads. | Unfairness of Row-Hit First Scheduling: A thread whose accesses result in row hits gets higher priority compared to a thread whose accesses result in row conflicts. | Unfairness of Oldest-First Scheduling: Oldest-first scheduling implicitly favors threads that can generate memory requests at a faster rate than others. | . ",
     "url": "/markdown_files/posts/content/memory_performance_attacks.html#vulnerabilities-of-multi-core-dram-memory-system-to-dos-attacks",
     
     "relUrl": "/markdown_files/posts/content/memory_performance_attacks.html#vulnerabilities-of-multi-core-dram-memory-system-to-dos-attacks"
-  },"76": {
+  },"81": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Examples of DoS in Existing Multi-Cores",
     "content": ". | When two threads use different access patterns, such as one streaming data and the other accessing memory randomly, the memory controller will prioritize the one with the optimized memory access pattern. | . ",
     "url": "/markdown_files/posts/content/memory_performance_attacks.html#examples-of-dos-in-existing-multi-cores",
     
     "relUrl": "/markdown_files/posts/content/memory_performance_attacks.html#examples-of-dos-in-existing-multi-cores"
-  },"77": {
+  },"82": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Fairness in DRAM Memory Systems",
     "content": ". | Defining fairness in DRAM systems is complex, and coming up with a reasonable definition is challenging. | . ",
     "url": "/markdown_files/posts/content/memory_performance_attacks.html#fairness-in-dram-memory-systems",
     
     "relUrl": "/markdown_files/posts/content/memory_performance_attacks.html#fairness-in-dram-memory-systems"
-  },"78": {
+  },"83": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Fair Memory Scheduling: A Model",
     "content": ". | The authors propose a model for fair memory scheduling to mitigate the impact of MPHs. | Fairness Definition: A memory scheduler is fair if equal-priority threads experience the same memory-related slowdowns when running together. | Stall-Time Fair Memory Scheduler (STFM): STFM prioritizes threads based on their stall times, ensuring that no thread monopolizes memory resources, thus promoting fairness. | Implementation Considerations: STFM requires modifications to the memory controller to track stall times for each thread, ensuring equitable memory access for co-scheduled threads. | . ",
     "url": "/markdown_files/posts/content/memory_performance_attacks.html#fair-memory-scheduling-a-model",
     
     "relUrl": "/markdown_files/posts/content/memory_performance_attacks.html#fair-memory-scheduling-a-model"
-  },"79": {
+  },"84": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Conclusion",
     "content": ". | The paper highlights the vulnerabilities of multi-core systems to DoS attacks due to unfair memory access scheduling. | By introducing the concept of Memory Performance Hogs and the Stall-Time Fair Memory Scheduler, the authors offer a framework to enhance fairness and improve both the performance and security of multi-core systems. | . ",
     "url": "/markdown_files/posts/content/memory_performance_attacks.html#conclusion",
     
     "relUrl": "/markdown_files/posts/content/memory_performance_attacks.html#conclusion"
-  },"80": {
+  },"85": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "References",
     "content": ". | The paper is written by Professor Onur Mutlu which can be found here | . ",
     "url": "/markdown_files/posts/content/memory_performance_attacks.html#references",
     
     "relUrl": "/markdown_files/posts/content/memory_performance_attacks.html#references"
-  },"81": {
+  },"86": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Memory Performance Attacts and DOS Attacks",
     "content": " ",
     "url": "/markdown_files/posts/content/memory_performance_attacks.html",
     
     "relUrl": "/markdown_files/posts/content/memory_performance_attacks.html"
-  },"82": {
+  },"87": {
     "doc": "Notes",
     "title": "Notes",
     "content": " ",
     "url": "/markdown_files/notes_stuff.html",
     
     "relUrl": "/markdown_files/notes_stuff.html"
-  },"83": {
+  },"88": {
     "doc": "Other",
     "title": "Other",
     "content": " ",
     "url": "/markdown_files/other.html",
     
     "relUrl": "/markdown_files/other.html"
-  },"84": {
+  },"89": {
     "doc": "Projects",
     "title": "Projects",
     "content": " ",
     "url": "/markdown_files/projects.html",
     
     "relUrl": "/markdown_files/projects.html"
-  },"85": {
+  },"90": {
     "doc": "C-level RISC-V Simulator",
     "title": "C-level RISC-V Simulator",
     "content": "Redirecting to GitHub… Click here if not redirected. ",
     "url": "/markdown_files/posts/content/riscv-in-c.html",
     
     "relUrl": "/markdown_files/posts/content/riscv-in-c.html"
+  },"91": {
+    "doc": "X",
+    "title": "X",
+    "content": "Redirecting to X.com… Click here if not redirected. ",
+    "url": "/markdown_files/twitter.html",
+    
+    "relUrl": "/markdown_files/twitter.html"
   }
 }
