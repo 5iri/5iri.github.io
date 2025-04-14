@@ -9,26 +9,24 @@ permalink: /
 
 
 
-# Yo!
- I'm **Shri Vishakh Devanand**, a sophomore engineering student from India absolutely obsessed with mathematics, physics and electronics. I thrive at the intersection of hardware and software, applying complex mathematical concepts to solve real engineering challenges.
+# Hey There!
+I'm Shri Vishakh Devanand, a second-year engineering student from India with a serious passion for math, physics, and electronics. I’m all about blending hardware and software, using math to tackle real-world engineering problems.
 
-## What I Do
-- Built a fully functional RISC-V CPU on FPGA from scratch
-- Dive deep into complex analysis, abstract algebra, and discrete mathematics
-- Developing custom zig based compiler for ESP32.
-- Create bio-inspired robots that mimic animal behavior.
+## What I’m Up To
 
-## My Vision
-Mathematics is my universal language for innovation - whether optimizing algorithms, designing circuits, or modeling control systems. I'm constantly exploring the beautiful intersection where theoretical math meets practical engineering.
+- Built my own RISC-V CPU on an FPGA from the ground up
+- Geek out over complex analysis, abstract algebra, and discrete math
+- Working on a custom Zig-based compiler for ESP32
+- Crafting bio-inspired robots that act like real animals
 
-## Fun Facts
-- Maintain a personal notebook of elegant mathematical proofs (collecting all of them into a single one is remaining 😅)
-- Can lose myself for hours in puzzles
-- Love to challenge myself
+## My Big Picture
+Math is my playground—it’s how I optimize code, design circuits, and build control systems. I love exploring that sweet spot where pure theory meets hands-on engineering.
 
+## A Bit About Me
 
-Do check out my Github and LinkedIn profiles to know more about my projects and interests.
-Feel free to reach out to me for collaborations or discussions on any of the topics you are passionate about.
-I'm always up for a good chat!
+ - I keep a notebook full of cool math proofs (still gotta organize them into one epic collection 😅)
+ - Puzzles? I can get lost in those for hours
+ - Always chasing a new challenge to keep things exciting
 
-Also check out my blogs on the navigation bar! 😄
+Swing by my GitHub or LinkedIn to check out my projects or just say hi—I’m always down to chat about math, tech, or anything you’re fired up about. Oh, and don’t miss my blogs in the nav bar! 😄
+
