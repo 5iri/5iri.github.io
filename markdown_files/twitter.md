@@ -1,5 +1,6 @@
 --- 
-title: X 
+title: X
+permalink: /twitter
 --- 
 
 <meta http-equiv="refresh" content="0; url=https://x.com/lazybanananann">

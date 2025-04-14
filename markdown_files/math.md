@@ -1,4 +1,5 @@
 --- 
 title: Math 
-parent: Notes  
+parent: Notes
+permalink: /notes/math
 --- 

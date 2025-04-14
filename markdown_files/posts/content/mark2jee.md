@@ -1,6 +1,7 @@
 --- 
 title: Jee Rank Predictor 
 parent: Projects
+permalink: /projects/mark2rank
 ---
 
 <meta http-equiv="refresh" content="0; url=https://github.com/5iri/Mark2Rank_JEE.git">

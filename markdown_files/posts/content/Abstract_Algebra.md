@@ -2,6 +2,7 @@
 title: Abstract Algebra 
 parent: Math 
 nav_order: 1
+permalink: notes/math/abstract_algebra
 --- 
 
 # What is Abstract Algebra?

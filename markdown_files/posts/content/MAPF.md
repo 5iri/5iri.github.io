@@ -1,6 +1,7 @@
 --- 
 title: Multi-Agent Path Finding Algorithms 
-parent: Other 
+parent: Other
+permalink: /notes/mapf
 --- 
 
 # Multi-Agent Path Finding

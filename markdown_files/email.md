@@ -1,5 +1,6 @@
 --- 
-title: Email me! 
+title: Email me!
+permalink: /email
 --- 
 
 <meta http-equiv="refresh" content="0; url=mailto:shrivishakhdevanand@gmail.com">

@@ -1,5 +1,6 @@
 --- 
 title: LinkedIn
+permalink: /linkedin
 --- 
 
 <meta http-equiv="refresh" content="0; url=https://www.linkedin.com/in/shri-vishakh-devanand">

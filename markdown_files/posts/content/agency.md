@@ -1,6 +1,7 @@
 --- 
 title: Agency and its meaning 
-parent: Blog 
+parent: Blog
+permalink: blog/agency
 --- 
 
 # What Does Agency Really Mean?
