@@ -259,32 +259,32 @@
     "relUrl": "/notes/mapf"
   },"37": {
     "doc": "Home",
-    "title": "Yo!",
-    "content": "I’m Shri Vishakh Devanand, a sophomore engineering student from India absolutely obsessed with mathematics, physics and electronics. I thrive at the intersection of hardware and software, applying complex mathematical concepts to solve real engineering challenges. ",
-    "url": "/#yo",
+    "title": "Hey There!",
+    "content": "I’m Shri Vishakh Devanand, a second-year engineering student from India with a serious passion for math, physics, and electronics. I’m all about blending hardware and software, using math to tackle real-world engineering problems. ",
+    "url": "/#hey-there",
     
-    "relUrl": "/#yo"
+    "relUrl": "/#hey-there"
   },"38": {
     "doc": "Home",
-    "title": "What I Do",
-    "content": ". | Built a fully functional RISC-V CPU on FPGA from scratch | Dive deep into complex analysis, abstract algebra, and discrete mathematics | Developing custom zig based compiler for ESP32. | Create bio-inspired robots that mimic animal behavior. | . ",
-    "url": "/#what-i-do",
+    "title": "What I’m Up To",
+    "content": ". | Built my own RISC-V CPU on an FPGA from the ground up | Geek out over complex analysis, abstract algebra, and discrete math | Working on a custom Zig-based compiler for ESP32 | Crafting bio-inspired robots that act like real animals | . ",
+    "url": "/#what-im-up-to",
     
-    "relUrl": "/#what-i-do"
+    "relUrl": "/#what-im-up-to"
   },"39": {
     "doc": "Home",
-    "title": "My Vision",
-    "content": "Mathematics is my universal language for innovation - whether optimizing algorithms, designing circuits, or modeling control systems. I’m constantly exploring the beautiful intersection where theoretical math meets practical engineering. ",
-    "url": "/#my-vision",
+    "title": "My Big Picture",
+    "content": "Math is my playground—it’s how I optimize code, design circuits, and build control systems. I love exploring that sweet spot where pure theory meets hands-on engineering. ",
+    "url": "/#my-big-picture",
     
-    "relUrl": "/#my-vision"
+    "relUrl": "/#my-big-picture"
   },"40": {
     "doc": "Home",
-    "title": "Fun Facts",
-    "content": ". | Maintain a personal notebook of elegant mathematical proofs (collecting all of them into a single one is remaining 😅) | Can lose myself for hours in puzzles | Love to challenge myself | . Do check out my Github and LinkedIn profiles to know more about my projects and interests. Feel free to reach out to me for collaborations or discussions on any of the topics you are passionate about. I’m always up for a good chat! . Also check out my blogs on the navigation bar! 😄 . ",
-    "url": "/#fun-facts",
+    "title": "A Bit About Me",
+    "content": ". | I keep a notebook full of cool math proofs (still gotta organize them into one epic collection 😅) | Puzzles? I can get lost in those for hours | Always chasing a new challenge to keep things exciting | . Swing by my GitHub or LinkedIn to check out my projects or just say hi—I’m always down to chat about math, tech, or anything you’re fired up about. Oh, and don’t miss my blogs in the nav bar! 😄 . ",
+    "url": "/#a-bit-about-me",
     
-    "relUrl": "/#fun-facts"
+    "relUrl": "/#a-bit-about-me"
   },"41": {
     "doc": "Home",
     "title": "Home",
@@ -419,223 +419,258 @@
     
     "relUrl": "/blog"
   },"60": {
+    "doc": "Why CPUs Use Caches (and What That Even Means)",
+    "title": "Why CPUs Use Caches (and What That Even Means)",
+    "content": "Let’s say you’re working on a project late at night, and you’ve got everything spread across three spots: . | The stuff on your desk — super handy. | A shelf nearby — still accessible. | A dusty cupboard across the room — slow to get to, but it has everything. | . Now imagine your CPU is doing the same — just a LOT faster (and without coffee). It has to fetch data to process, and depending on where that data lives, it either grabs it instantly or has to wait a while. That’s basically what cache memory is about: keeping important stuff close so the CPU doesn’t waste time waiting. ",
+    "url": "/markdown_files/posts/content/caches.html",
+    
+    "relUrl": "/markdown_files/posts/content/caches.html"
+  },"61": {
+    "doc": "Why CPUs Use Caches (and What That Even Means)",
+    "title": "The Memory Hierarchy — A Speed Pyramid",
+    "content": "CPUs are incredibly fast — like, billions-of-operations-per-second fast. RAM? Not quite as fast. And SSDs? Even slower. So if every time the CPU needed a number, it had to go all the way to RAM or disk, your programs would crawl. To fix this, CPUs use a memory hierarchy: . | Registers: Live inside the CPU. Super tiny. Super fast. | L1 Cache: Also on the CPU. Small (like 32–64KB), lightning fast. | L2 Cache: Slightly larger and slower (a few hundred KB to a couple MB). | L3 Cache: Bigger again (MBs), shared between CPU cores. | RAM: Your regular memory. Slower than all of the above. | Storage: HDD/SSD. Huge, but very, very slow in comparison. | . Each level is a compromise: faster = smaller &amp; expensive, slower = larger &amp; cheaper. The slowness is also not so obvious to many, but it is literally farer – as in, Caches and Registers are present inside the physical chip of the CPUs that you put inside, whereas the RAM and Storage are seperate chips with different controllers which assemble the stuff that we give it. ",
+    "url": "/markdown_files/posts/content/caches.html#the-memory-hierarchy--a-speed-pyramid",
+    
+    "relUrl": "/markdown_files/posts/content/caches.html#the-memory-hierarchy--a-speed-pyramid"
+  },"62": {
+    "doc": "Why CPUs Use Caches (and What That Even Means)",
+    "title": "Cache 101: Hits, Misses, and Why They Matter",
+    "content": "When the CPU needs a value, it checks the L1 cache first. | If the data is already there: that’s a cache hit — fast, good, everyone’s happy. | If it’s not there: cache miss. Then it tries L2, then L3, and finally RAM. | . Every time you “miss” and go down a level, you lose time. RAM might take 100x longer than L1. That’s like grabbing a pen from your desk vs. walking out to a store to buy one. So smart CPUs try really hard to keep things you probably need in cache — this is where locality comes in. ",
+    "url": "/markdown_files/posts/content/caches.html#cache-101-hits-misses-and-why-they-matter",
+    
+    "relUrl": "/markdown_files/posts/content/caches.html#cache-101-hits-misses-and-why-they-matter"
+  },"63": {
+    "doc": "Why CPUs Use Caches (and What That Even Means)",
+    "title": "Locality: CPUs Are Predictive (and Lazy)",
+    "content": "Most programs tend to reuse the same data or instructions in loops — this is called temporal locality. And when you access one part of an array, chances are you’ll access the nearby parts too — that’s spatial locality. So when the CPU fetches a memory location, it grabs a bit extra, just in case. This is why cache lines exist — chunks of memory are brought in, not just individual bytes. And modern CPUs even try to predict what you’ll use next and load it into cache ahead of time. Basically: CPUs are designed to be lazy — they avoid the long walk to RAM as much as possible. ",
+    "url": "/markdown_files/posts/content/caches.html#locality-cpus-are-predictive-and-lazy",
+    
+    "relUrl": "/markdown_files/posts/content/caches.html#locality-cpus-are-predictive-and-lazy"
+  },"64": {
+    "doc": "Why CPUs Use Caches (and What That Even Means)",
+    "title": "L1, L2, L3: The Cache Squad",
+    "content": "Here’s how it generally breaks down: . | L1: Super close to the core. Smallest, fastest. Split into instruction (I-cache) and data (D-cache). | L2: Larger, slightly slower. Usually per core. | L3: Even bigger, slower still. Shared by all cores on the chip. | . Let’s say you’re playing a game. The code you’re currently running (rendering, physics) will likely sit in L1. Your last few functions or variables might still be in L2. L3 is like a big backup warehouse — if it’s not in L3, it’ll have to go all the way to RAM (ouch). ",
+    "url": "/markdown_files/posts/content/caches.html#l1-l2-l3-the-cache-squad",
+    
+    "relUrl": "/markdown_files/posts/content/caches.html#l1-l2-l3-the-cache-squad"
+  },"65": {
+    "doc": "Why CPUs Use Caches (and What That Even Means)",
+    "title": "Why Not Just Make RAM Faster?",
+    "content": "Because it’s expensive, complex, and power-hungry. Making all memory as fast as cache would burn a hole in your laptop (and your wallet). Instead, we let RAM be big and slow, and use caches to smooth things over. Smart caching means you get the speed of small memory, but the flexibility of big memory. ",
+    "url": "/markdown_files/posts/content/caches.html#why-not-just-make-ram-faster",
+    
+    "relUrl": "/markdown_files/posts/content/caches.html#why-not-just-make-ram-faster"
+  },"66": {
+    "doc": "Why CPUs Use Caches (and What That Even Means)",
+    "title": "Final Thoughts",
+    "content": "So yeah, CPUs are fast — but memory can be a bottleneck. Caches are the clever workaround: they’re like tiny, super-speedy notebooks sitting next to your brain. Use them well, and everything flies. Next time your program is “slow,” maybe it’s not your code — maybe it just missed the drawer. ",
+    "url": "/markdown_files/posts/content/caches.html#final-thoughts",
+    
+    "relUrl": "/markdown_files/posts/content/caches.html#final-thoughts"
+  },"67": {
     "doc": "Computer Architecture",
     "title": "Computer Architecture",
     "content": " ",
     "url": "/markdown_files/comparch.html",
     
     "relUrl": "/markdown_files/comparch.html"
-  },"61": {
+  },"68": {
     "doc": "Agents for Microprocessor Evolution",
     "title": "Requirements, Bottlenecks, and Good Fortune: Agents for Microprocessor Evolution",
     "content": "by yale patt . ",
     "url": "/notes/comp_arch/agents_for_micro_eval#requirements-bottlenecks-and-good-fortune-agents-for-microprocessor-evolution",
     
     "relUrl": "/notes/comp_arch/agents_for_micro_eval#requirements-bottlenecks-and-good-fortune-agents-for-microprocessor-evolution"
-  },"62": {
+  },"69": {
     "doc": "Agents for Microprocessor Evolution",
     "title": "Basic Framework",
     "content": ". | Computer Architecture: A science of tradeoffs . | Comp arch is more “art” than “science” | Almost always the job of the comp architect requires using that fundamental knowledge to make tradeoffs. | . | Levels of Transformation . | There are levels of transformations that is being done whenever there’s a high level program that is being done. | Like take for example a C code, it first compiles into an assembly code (a lot more process that happens but not imp here). | This “assembly” code is basically converted into where ISA structure is used, where ISA defines on how the assembly code is being defined. | Now, Even though the “assembly” code is now converted into something in binary, how this binary is being processed is (which bits need to go where in order for the “assembly” line to be processed actually) [Instruction is being processed] | This is called microarchitecture. | This microarchitecture is defined by actual electronic circuit design, and in the end electrons. | These are the levels of transformation that occurs from any problem to actually making it solve by a circuit (or by electrons). | . | . | Design Points . | When working in the microarchitecture part, there is always a purpose towards what you are trying to achieve. | This is called the Design Point. | It could be something like, making a core more power efficient , fault tolerant (server chips), highest power etc. | . | Application Space . | Sometimes the chips that we design are application specific, and sometimes generalistic in nature, this is what we call application space here. | . | The Basics of Processing . | Simply put, a microprocessor processes instructions. | To do this, it has to do three things: . | Supply instructions to the core of the processor where the instructions are executed. | Supply data required for the instructions | Perform the operation required by each instruction. | . | . | Instruction Supply . | fetching one instruction at a time is slow when processors are getting faster and better at processing them. | So, the fetching of instructions should be done in parallel, making it more efficient. | . | Data Supply . | Once the instruction is fetched, the data required for the instruction is supplied to the processor. | This must be done in a fast manner as well. | So faster caches (on-chip RAM) are used to supply the data for a particular instruction. | . | Instruction Processing . | Once the instruction is fetched and the data is supplied, the instruction must also be processed fast. | To perform the operations required by these instructions, the processor needs a sufficient number of functional units to process the data. | . | . ",
     "url": "/notes/comp_arch/agents_for_micro_eval#basic-framework",
     
     "relUrl": "/notes/comp_arch/agents_for_micro_eval#basic-framework"
-  },"63": {
+  },"70": {
     "doc": "Agents for Microprocessor Evolution",
     "title": "Agents for Evolution",
     "content": ". | The creativity of engineers to come up with answers where there were problems— without solutions, there would be no Evolution. | Agent I: New Requirements . | The demand for higher performance dictated that fetching one instruction at a time was not enough. | Examples like this forces evolution and creative solution thinking. | . | Agent II: Bottlenecks . | We have 3 components of instruction processing (instruction supply, data supply, and carrying out the operations of the instruction). | By far, most of the improvements to the microprocessor have come about due to attempts to eliminate bottlenecks that prevent these components from being fully utilized. | . | Agent III: Good Fortune . | Good Fortune happens when something causes a windfall which can then be used to provide additional features to the microprocessor. | . | . ",
     "url": "/notes/comp_arch/agents_for_micro_eval#agents-for-evolution",
     
     "relUrl": "/notes/comp_arch/agents_for_micro_eval#agents-for-evolution"
-  },"64": {
+  },"71": {
     "doc": "Agents for Microprocessor Evolution",
     "title": "References",
     "content": ". | Requirements, Bottlenecks, and Good Fortune: Agents for Microprocessor Evolution | . ",
     "url": "/notes/comp_arch/agents_for_micro_eval#references",
     
     "relUrl": "/notes/comp_arch/agents_for_micro_eval#references"
-  },"65": {
+  },"72": {
     "doc": "Agents for Microprocessor Evolution",
     "title": "Agents for Microprocessor Evolution",
     "content": " ",
     "url": "/notes/comp_arch/agents_for_micro_eval",
     
     "relUrl": "/notes/comp_arch/agents_for_micro_eval"
-  },"66": {
+  },"73": {
     "doc": "Email me!",
     "title": "Email me!",
     "content": "Redirecting to Email… Click here if not redirected. ",
     "url": "/email",
     
     "relUrl": "/email"
-  },"67": {
+  },"74": {
     "doc": "GitHub",
     "title": "GitHub",
     "content": "Redirecting to GitHub… Click here if not redirected. ",
     "url": "/github",
     
     "relUrl": "/github"
-  },"68": {
-    "doc": "How do you get into Computer Architecture",
-    "title": "How do you get into Computer Architecture?",
-    "content": " ",
-    "url": "/markdown_files/posts/content/intro_to_compArch.html#how-do-you-get-into-computer-architecture",
-    
-    "relUrl": "/markdown_files/posts/content/intro_to_compArch.html#how-do-you-get-into-computer-architecture"
-  },"69": {
-    "doc": "How do you get into Computer Architecture",
-    "title": "How do you get into Computer Architecture",
-    "content": " ",
-    "url": "/markdown_files/posts/content/intro_to_compArch.html",
-    
-    "relUrl": "/markdown_files/posts/content/intro_to_compArch.html"
-  },"70": {
+  },"75": {
     "doc": "Kinematics Demo",
     "title": "Kinematics Demo",
     "content": "Redirecting to the Kinematics Demo… Click here if not redirected. ",
     "url": "/kinematics-demo/",
     
     "relUrl": "/kinematics-demo/"
-  },"71": {
+  },"76": {
     "doc": "LinkedIn",
     "title": "LinkedIn",
     "content": "Redirecting to the LinkedIn… Click here if not redirected. ",
     "url": "/linkedin",
     
     "relUrl": "/linkedin"
-  },"72": {
+  },"77": {
     "doc": "Jee Rank Predictor",
     "title": "Jee Rank Predictor",
     "content": "Redirecting to GitHub… Click here if not redirected. ",
     "url": "/projects/mark2rank",
     
     "relUrl": "/projects/mark2rank"
-  },"73": {
+  },"78": {
     "doc": "Math",
     "title": "Math",
     "content": " ",
     "url": "/notes/math",
     
     "relUrl": "/notes/math"
-  },"74": {
+  },"79": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Memory Performance Attacks: Denial of Memory Service in Multi-Core Systems",
     "content": "Thomas Moscibroda Onur Mutlu @microsoft . ",
     "url": "/notes/comp_arch/DDOS_attacks#memory-performance-attacks-denial-of-memory-service-in-multi-core-systems",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#memory-performance-attacks-denial-of-memory-service-in-multi-core-systems"
-  },"75": {
+  },"80": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Introduction",
     "content": ". | The transition from single-core to multi-core systems has introduced major performance and security challenges. | Multiple programs running on shared DRAM systems can interfere with each other’s memory accesses, leading to performance degradation and security vulnerabilities. | This paper introduces a new security problem that arises due to the core design of multi-core architectures – a denial of service (DoS) attack that was not possible in single-core systems. | An aggressive memory-intensive program can severely impact the performance of other threads with which it is co-scheduled. This is called a Memory Performance Hog (MPH). | This problem worsens with an increasing number of cores, as the impact grows exponentially. | An MPH can be used to perform DoS attacks that fool users into thinking other applications are inherently slow, even without causing easily observable performance issues. | A regular application can unintentionally behave like an MPH and damage the memory-related performance of co-scheduled threads. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#introduction",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#introduction"
-  },"76": {
+  },"81": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "DRAM Architectures",
     "content": ". | DRAM memory is an expensive resource in modern systems. Creating a separate DRAM system for each core is not feasible. | In a partitioned DRAM system, a processor accessing a memory location needs to issue a request to the DRAM partition that contains the data for that location. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#dram-architectures",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#dram-architectures"
-  },"77": {
+  },"82": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "DRAM Memory Systems",
     "content": ". | Row Hit: Accessing a row already in the row-buffer. It has the lowest latency (around 40-50 ns in commodity DRAM). | Row Conflict: Accessing a different row than the one currently in the row-buffer, requiring the row-buffer to be written back before the new row can be accessed. | Row Closed: No row in the row-buffer, necessitating a read from the memory array before column access. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#dram-memory-systems",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#dram-memory-systems"
-  },"78": {
+  },"83": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "DRAM Controller",
     "content": ". | The DRAM controller mediates between on-chip caches and off-chip DRAM memory. It receives read/write requests from L2 caches. | The memory access scheduler is responsible for selecting memory requests from the memory request buffer to send to the DRAM memory. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#dram-controller",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#dram-controller"
-  },"79": {
+  },"84": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Memory Access Scheduling Algorithm",
     "content": ". | Current memory access schedulers typically employ the First-Ready First-Come-First-Serve (FR-FCFS) algorithm, which prioritizes requests in the following order: . | Row-hit first: Prioritizes requests that hit the row already in the row-buffer. | Oldest-within-bank first: Prioritizes requests that arrived earliest within the same bank. | Oldest-across-banks first: Prioritizes the earliest arrival time among requests selected by individual bank schedulers. | . | . ",
     "url": "/notes/comp_arch/DDOS_attacks#memory-access-scheduling-algorithm",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#memory-access-scheduling-algorithm"
-  },"80": {
+  },"85": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Vulnerabilities of Multi-Core DRAM Memory System to DoS Attacks",
     "content": ". | Current DRAM memory systems do not distinguish between the requests of different threads. | Unfairness of Row-Hit First Scheduling: A thread whose accesses result in row hits gets higher priority compared to a thread whose accesses result in row conflicts. | Unfairness of Oldest-First Scheduling: Oldest-first scheduling implicitly favors threads that can generate memory requests at a faster rate than others. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#vulnerabilities-of-multi-core-dram-memory-system-to-dos-attacks",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#vulnerabilities-of-multi-core-dram-memory-system-to-dos-attacks"
-  },"81": {
+  },"86": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Examples of DoS in Existing Multi-Cores",
     "content": ". | When two threads use different access patterns, such as one streaming data and the other accessing memory randomly, the memory controller will prioritize the one with the optimized memory access pattern. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#examples-of-dos-in-existing-multi-cores",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#examples-of-dos-in-existing-multi-cores"
-  },"82": {
+  },"87": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Fairness in DRAM Memory Systems",
     "content": ". | Defining fairness in DRAM systems is complex, and coming up with a reasonable definition is challenging. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#fairness-in-dram-memory-systems",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#fairness-in-dram-memory-systems"
-  },"83": {
+  },"88": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Fair Memory Scheduling: A Model",
     "content": ". | The authors propose a model for fair memory scheduling to mitigate the impact of MPHs. | Fairness Definition: A memory scheduler is fair if equal-priority threads experience the same memory-related slowdowns when running together. | Stall-Time Fair Memory Scheduler (STFM): STFM prioritizes threads based on their stall times, ensuring that no thread monopolizes memory resources, thus promoting fairness. | Implementation Considerations: STFM requires modifications to the memory controller to track stall times for each thread, ensuring equitable memory access for co-scheduled threads. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#fair-memory-scheduling-a-model",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#fair-memory-scheduling-a-model"
-  },"84": {
+  },"89": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Conclusion",
     "content": ". | The paper highlights the vulnerabilities of multi-core systems to DoS attacks due to unfair memory access scheduling. | By introducing the concept of Memory Performance Hogs and the Stall-Time Fair Memory Scheduler, the authors offer a framework to enhance fairness and improve both the performance and security of multi-core systems. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#conclusion",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#conclusion"
-  },"85": {
+  },"90": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "References",
     "content": ". | The paper is written by Professor Onur Mutlu which can be found here | . ",
     "url": "/notes/comp_arch/DDOS_attacks#references",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#references"
-  },"86": {
+  },"91": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Memory Performance Attacts and DOS Attacks",
     "content": " ",
     "url": "/notes/comp_arch/DDOS_attacks",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks"
-  },"87": {
+  },"92": {
     "doc": "Notes",
     "title": "Notes",
     "content": " ",
     "url": "/notes",
     
     "relUrl": "/notes"
-  },"88": {
+  },"93": {
     "doc": "Other",
     "title": "Other",
     "content": " ",
     "url": "/markdown_files/other.html",
     
     "relUrl": "/markdown_files/other.html"
-  },"89": {
+  },"94": {
     "doc": "Projects",
     "title": "Projects",
     "content": " ",
     "url": "/Projects",
     
     "relUrl": "/Projects"
-  },"90": {
+  },"95": {
     "doc": "C-level RISC-V Simulator",
     "title": "C-level RISC-V Simulator",
     "content": "Redirecting to GitHub… Click here if not redirected. ",
     "url": "/markdown_files/posts/content/riscv-in-c.html",
     
     "relUrl": "/markdown_files/posts/content/riscv-in-c.html"
-  },"91": {
+  },"96": {
     "doc": "X",
     "title": "X",
     "content": "Redirecting to X.com… Click here if not redirected. ",
