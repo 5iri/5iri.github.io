@@ -524,153 +524,160 @@
     
     "relUrl": "/github"
   },"75": {
+    "doc": "Idea Bank",
+    "title": "Idea Bank",
+    "content": "Redirecting to the Kinematics Demo… Click here if not redirected. ",
+    "url": "/idea-bank",
+    
+    "relUrl": "/idea-bank"
+  },"76": {
     "doc": "Kinematics Demo",
     "title": "Kinematics Demo",
     "content": "Redirecting to the Kinematics Demo… Click here if not redirected. ",
     "url": "/kinematics-demo/",
     
     "relUrl": "/kinematics-demo/"
-  },"76": {
+  },"77": {
     "doc": "LinkedIn",
     "title": "LinkedIn",
     "content": "Redirecting to the LinkedIn… Click here if not redirected. ",
     "url": "/linkedin",
     
     "relUrl": "/linkedin"
-  },"77": {
+  },"78": {
     "doc": "Jee Rank Predictor",
     "title": "Jee Rank Predictor",
     "content": "Redirecting to GitHub… Click here if not redirected. ",
     "url": "/projects/mark2rank",
     
     "relUrl": "/projects/mark2rank"
-  },"78": {
+  },"79": {
     "doc": "Math",
     "title": "Math",
     "content": " ",
     "url": "/notes/math",
     
     "relUrl": "/notes/math"
-  },"79": {
+  },"80": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Memory Performance Attacks: Denial of Memory Service in Multi-Core Systems",
     "content": "Thomas Moscibroda Onur Mutlu @microsoft . ",
     "url": "/notes/comp_arch/DDOS_attacks#memory-performance-attacks-denial-of-memory-service-in-multi-core-systems",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#memory-performance-attacks-denial-of-memory-service-in-multi-core-systems"
-  },"80": {
+  },"81": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Introduction",
     "content": ". | The transition from single-core to multi-core systems has introduced major performance and security challenges. | Multiple programs running on shared DRAM systems can interfere with each other’s memory accesses, leading to performance degradation and security vulnerabilities. | This paper introduces a new security problem that arises due to the core design of multi-core architectures – a denial of service (DoS) attack that was not possible in single-core systems. | An aggressive memory-intensive program can severely impact the performance of other threads with which it is co-scheduled. This is called a Memory Performance Hog (MPH). | This problem worsens with an increasing number of cores, as the impact grows exponentially. | An MPH can be used to perform DoS attacks that fool users into thinking other applications are inherently slow, even without causing easily observable performance issues. | A regular application can unintentionally behave like an MPH and damage the memory-related performance of co-scheduled threads. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#introduction",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#introduction"
-  },"81": {
+  },"82": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "DRAM Architectures",
     "content": ". | DRAM memory is an expensive resource in modern systems. Creating a separate DRAM system for each core is not feasible. | In a partitioned DRAM system, a processor accessing a memory location needs to issue a request to the DRAM partition that contains the data for that location. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#dram-architectures",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#dram-architectures"
-  },"82": {
+  },"83": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "DRAM Memory Systems",
     "content": ". | Row Hit: Accessing a row already in the row-buffer. It has the lowest latency (around 40-50 ns in commodity DRAM). | Row Conflict: Accessing a different row than the one currently in the row-buffer, requiring the row-buffer to be written back before the new row can be accessed. | Row Closed: No row in the row-buffer, necessitating a read from the memory array before column access. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#dram-memory-systems",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#dram-memory-systems"
-  },"83": {
+  },"84": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "DRAM Controller",
     "content": ". | The DRAM controller mediates between on-chip caches and off-chip DRAM memory. It receives read/write requests from L2 caches. | The memory access scheduler is responsible for selecting memory requests from the memory request buffer to send to the DRAM memory. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#dram-controller",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#dram-controller"
-  },"84": {
+  },"85": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Memory Access Scheduling Algorithm",
     "content": ". | Current memory access schedulers typically employ the First-Ready First-Come-First-Serve (FR-FCFS) algorithm, which prioritizes requests in the following order: . | Row-hit first: Prioritizes requests that hit the row already in the row-buffer. | Oldest-within-bank first: Prioritizes requests that arrived earliest within the same bank. | Oldest-across-banks first: Prioritizes the earliest arrival time among requests selected by individual bank schedulers. | . | . ",
     "url": "/notes/comp_arch/DDOS_attacks#memory-access-scheduling-algorithm",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#memory-access-scheduling-algorithm"
-  },"85": {
+  },"86": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Vulnerabilities of Multi-Core DRAM Memory System to DoS Attacks",
     "content": ". | Current DRAM memory systems do not distinguish between the requests of different threads. | Unfairness of Row-Hit First Scheduling: A thread whose accesses result in row hits gets higher priority compared to a thread whose accesses result in row conflicts. | Unfairness of Oldest-First Scheduling: Oldest-first scheduling implicitly favors threads that can generate memory requests at a faster rate than others. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#vulnerabilities-of-multi-core-dram-memory-system-to-dos-attacks",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#vulnerabilities-of-multi-core-dram-memory-system-to-dos-attacks"
-  },"86": {
+  },"87": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Examples of DoS in Existing Multi-Cores",
     "content": ". | When two threads use different access patterns, such as one streaming data and the other accessing memory randomly, the memory controller will prioritize the one with the optimized memory access pattern. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#examples-of-dos-in-existing-multi-cores",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#examples-of-dos-in-existing-multi-cores"
-  },"87": {
+  },"88": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Fairness in DRAM Memory Systems",
     "content": ". | Defining fairness in DRAM systems is complex, and coming up with a reasonable definition is challenging. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#fairness-in-dram-memory-systems",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#fairness-in-dram-memory-systems"
-  },"88": {
+  },"89": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Fair Memory Scheduling: A Model",
     "content": ". | The authors propose a model for fair memory scheduling to mitigate the impact of MPHs. | Fairness Definition: A memory scheduler is fair if equal-priority threads experience the same memory-related slowdowns when running together. | Stall-Time Fair Memory Scheduler (STFM): STFM prioritizes threads based on their stall times, ensuring that no thread monopolizes memory resources, thus promoting fairness. | Implementation Considerations: STFM requires modifications to the memory controller to track stall times for each thread, ensuring equitable memory access for co-scheduled threads. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#fair-memory-scheduling-a-model",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#fair-memory-scheduling-a-model"
-  },"89": {
+  },"90": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Conclusion",
     "content": ". | The paper highlights the vulnerabilities of multi-core systems to DoS attacks due to unfair memory access scheduling. | By introducing the concept of Memory Performance Hogs and the Stall-Time Fair Memory Scheduler, the authors offer a framework to enhance fairness and improve both the performance and security of multi-core systems. | . ",
     "url": "/notes/comp_arch/DDOS_attacks#conclusion",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#conclusion"
-  },"90": {
+  },"91": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "References",
     "content": ". | The paper is written by Professor Onur Mutlu which can be found here | . ",
     "url": "/notes/comp_arch/DDOS_attacks#references",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks#references"
-  },"91": {
+  },"92": {
     "doc": "Memory Performance Attacts and DOS Attacks",
     "title": "Memory Performance Attacts and DOS Attacks",
     "content": " ",
     "url": "/notes/comp_arch/DDOS_attacks",
     
     "relUrl": "/notes/comp_arch/DDOS_attacks"
-  },"92": {
+  },"93": {
     "doc": "Notes",
     "title": "Notes",
     "content": " ",
     "url": "/notes",
     
     "relUrl": "/notes"
-  },"93": {
+  },"94": {
     "doc": "Other",
     "title": "Other",
     "content": " ",
     "url": "/markdown_files/other.html",
     
     "relUrl": "/markdown_files/other.html"
-  },"94": {
+  },"95": {
     "doc": "Projects",
     "title": "Projects",
     "content": " ",
     "url": "/Projects",
     
     "relUrl": "/Projects"
-  },"95": {
+  },"96": {
     "doc": "C-level RISC-V Simulator",
     "title": "C-level RISC-V Simulator",
     "content": "Redirecting to GitHub… Click here if not redirected. ",
     "url": "/markdown_files/posts/content/riscv-in-c.html",
     
     "relUrl": "/markdown_files/posts/content/riscv-in-c.html"
-  },"96": {
+  },"97": {
     "doc": "X",
     "title": "X",
     "content": "Redirecting to X.com… Click here if not redirected. ",
