@@ -678,6 +678,69 @@
     
     "relUrl": "/markdown_files/posts/content/riscv-in-c.html"
   },"97": {
+    "doc": "What is Spike Neural Networks?",
+    "title": "What is Spike Neural Networks? and why are FPGAs useful for it?",
+    "content": ". | Neural Networks that operate using discrete spikes. | A neuron remains silent until its membrane potential reaches a threshold, at points emits an action potential that is transmitted to other neurons. | . ",
+    "url": "/markdown_files/posts/content/snn.html#what-is-spike-neural-networks-and-why-are-fpgas-useful-for-it",
+    
+    "relUrl": "/markdown_files/posts/content/snn.html#what-is-spike-neural-networks-and-why-are-fpgas-useful-for-it"
+  },"98": {
+    "doc": "What is Spike Neural Networks?",
+    "title": "Advantages of SNNs",
+    "content": ". | They naturally encode the dimension of time, making them well-suited to dynamic or temporal data. | SNNs promise energy efficiency. This is because the SNN Activity is event-driven. | . ",
+    "url": "/markdown_files/posts/content/snn.html#advantages-of-snns",
+    
+    "relUrl": "/markdown_files/posts/content/snn.html#advantages-of-snns"
+  },"99": {
+    "doc": "What is Spike Neural Networks?",
+    "title": "Key differences between SNNs and ANNs",
+    "content": "|   | SNNs | ANNs | . | Signal Form | SNNs use binary spikes/impulses over time | ANNs use continuous activations | . | Timing | Spikes have precise timing, enabling temporal coding | ANNs ignore timing of input presentation | . | Dynamics | SNN Neurons have internal state (membrane potential) evolving over time | Typical ANN Neurons are stateless between the two inputs | . | Computation | SNNs comnpute only on spike events (which are sparse, asynchronous) | ANNs compute at every layer synchronously | . For example, SNNs can exploit temporal sparsity for energy efficiency and real-time processing, but their discrete non-differentiable nature makes their training harder. | SNN Architecture design largely parallels ANN Design (feedfoward, convolutional, recurrent, etc), with the added dimension that connectivity and neuron models must support temporal spiking behaviour. | Optimal SNN - specific architecture are still on active research area. | . ",
+    "url": "/markdown_files/posts/content/snn.html#key-differences-between-snns-and-anns",
+    
+    "relUrl": "/markdown_files/posts/content/snn.html#key-differences-between-snns-and-anns"
+  },"100": {
+    "doc": "What is Spike Neural Networks?",
+    "title": "Spike Encoding Schemes",
+    "content": ". | Rate Coding : Convert a value to the ‘spike rate’ =&gt; value \\(\\alpha\\) spike rate. This is appealing for rapid processes. | Temporal Coding : Convert a value into precise timing of spike. | Phase Coding: data is stored in the phase between one global oscillator. | Burst Coding: Burst of several spikes represent the input value. =&gt; no. of spike \\(\\alpha\\) input. | Direct/Analog Coding: Some systems use an analog value to drive spiking directly, but typically a discrete code is used. | . In Practice, the choice of which encoding scheme to use depends on the application: . rate coding -&gt; easy to implement . temporal and burst -&gt; complex but more efficient and biologically realistic. ",
+    "url": "/markdown_files/posts/content/snn.html#spike-encoding-schemes",
+    
+    "relUrl": "/markdown_files/posts/content/snn.html#spike-encoding-schemes"
+  },"101": {
+    "doc": "What is Spike Neural Networks?",
+    "title": "Learning Mechanics",
+    "content": "There are mainly 5 types of learning mechanism, . | Spike-Timing-Dependent Plasticity | Supervised Spike based learning | ANN-SNN Conversion | Reinforcement methods | Biology based methods | . Training, as of date, remains a major challenge. The non-differentiable nature of spikes makes traditional backprop less effective, and researchers are actively exploring surrogate gradient methods to overcome this limitation. ",
+    "url": "/markdown_files/posts/content/snn.html#learning-mechanics",
+    
+    "relUrl": "/markdown_files/posts/content/snn.html#learning-mechanics"
+  },"102": {
+    "doc": "What is Spike Neural Networks?",
+    "title": "Energy Efficiency and Neuromorphic Hardware",
+    "content": ". | Because neurons only compute when they spike SNNs can exploit temporal sparsity. | SNNs employ “event-driven” processing -&gt; only a small fraction of neurons are active at any time, potentially reducing power usage upto two orders of magnitude compared to ANNs. | Neuromorphic hardware chips like Intel Loihi and IBM TrueNorth implement large network of spiking neurons directly in silicon. | In practice, translating to an FPGA or ASIC could also bring benefits. FPGAs can implement parallel spiking architectures where neurons and synapses are customized as logic units or FSMs. The event-driven nature means that an FPGA-Based SNN can remain idle when no spikes occur. | . ",
+    "url": "/markdown_files/posts/content/snn.html#energy-efficiency-and-neuromorphic-hardware",
+    
+    "relUrl": "/markdown_files/posts/content/snn.html#energy-efficiency-and-neuromorphic-hardware"
+  },"103": {
+    "doc": "What is Spike Neural Networks?",
+    "title": "The reason why FPGA Implementation is better",
+    "content": "Firefly is a popular SNN-based Accelerator. The summary is of an extract from that paper. | Most SNN Accelerators adopt the fabric-only implementation without much optimization. | To implement with similar efficiency in a FPGA, we need to use hard blocks like the DSPs found with FPGAs like DSP48E2 found in Xilinx UltraScale FPGAs. (There are other methods, but this is most common right now with FPGA Based implementations). | It is possible to generalize the SNN Computation to the Arithmetic operations that the DSP48E2 can provide. | Another Aspect of the SNN Accelerator design is the memory system. | Everytime a neuron spikes (which is a 1-bit event), you need to read its multi-bit synaptic weights and update its multi-bit membrane voltage (8-16 bits). | If you increase the parallelization – more PEs – the more the number of weight reads and voltage reads/writes per cycle – yet spikes themselves haven’t ballooned in size. | While the computational complexity and the memory footprints of the binary spikes decrease, the memory access requirements of the synaptic weights and membrane voltages do not. | . | At present, most existing neuromorphic hardware/ Accelerators are inefficient in terms of resource utilization, computational density, and scalability. | . ",
+    "url": "/markdown_files/posts/content/snn.html#the-reason-why-fpga-implementation-is-better",
+    
+    "relUrl": "/markdown_files/posts/content/snn.html#the-reason-why-fpga-implementation-is-better"
+  },"104": {
+    "doc": "What is Spike Neural Networks?",
+    "title": "Types of Neuromorphic Hardware",
+    "content": ". | There are 4 types of dedicated neuromorphic hardware. | Hardware constructs its hardware substrates in a Network on Chip (NoC) fashion. Intel Loihi, Spinnaker and IBM TrueNorth come into this category. | Second type explores emerging devices, analogi hardwares, mem-resistors and optics etc. | ANN Accelerators based design except constructing dedicating hardware for synaptic operations and explores optimal dataflow for SNNs specifically. FPGA Platforms are an ideal choice for this type of hardware due to their flexibility and reconfigurability. | . | . ",
+    "url": "/markdown_files/posts/content/snn.html#types-of-neuromorphic-hardware",
+    
+    "relUrl": "/markdown_files/posts/content/snn.html#types-of-neuromorphic-hardware"
+  },"105": {
+    "doc": "What is Spike Neural Networks?",
+    "title": "What is Spike Neural Networks?",
+    "content": " ",
+    "url": "/markdown_files/posts/content/snn.html",
+    
+    "relUrl": "/markdown_files/posts/content/snn.html"
+  },"106": {
     "doc": "X",
     "title": "X",
     "content": "Redirecting to X.com… Click here if not redirected. ",
