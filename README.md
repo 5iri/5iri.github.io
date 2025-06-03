@@ -1,6 +1,7 @@
 ---
 layout: home
 title: Home
+permalink: /
 nav_order: 2
 description: "About Shri Vishakh Devanand - Engineering student passionate about math, physics, and electronics"
 ---
