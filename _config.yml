@@ -4,8 +4,6 @@ remote_theme: just-the-docs/just-the-docs
 
 repository: 5iri/5iri.github.io
 
-# Color scheme configuration
-color_scheme: retro
 # Enable search
 search_enabled: true
 
