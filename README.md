@@ -6,6 +6,13 @@ nav_order: 2
 description: "About Shri Vishakh Devanand - Engineering student passionate about math, physics, and electronics"
 ---
 
+<div class="dino-hero">
+  <h1>Welcome to the Jurassic Lab</h1>
+  <p>Dive into projects and notes while the dino runs!</p>
+</div>
+
+<div class="dino-content">
+
 # ABOUT
 {: .fs-9 .fw-900 }
 
@@ -108,6 +115,8 @@ My work is driven by the intersection of:
     <h4>APPROACH</h4>
     <p>I believe in learning by building. Whether it's a CPU, a compiler, or a robot, I dive deep into both the theoretical foundations and practical implementation. Every project is an opportunity to push boundaries and explore new possibilities.</p>
   </div>
+</div>
+
 </div>
 
 ---
