@@ -14,4 +14,5 @@ layout: content
 - [snn](/posts/content/snn.md)
 - [prosperity](/posts/content/prosperity.md)
 - [Stop Being Original](/posts/content/stopbeingoriginal.md)
+- [I got crippling Anxiety babyyy](/posts/content/igotanxietybabyyy.md)
 
