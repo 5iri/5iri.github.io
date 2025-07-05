@@ -13,4 +13,5 @@ layout: content
 - [agency](/posts/content/agency.md)
 - [snn](/posts/content/snn.md)
 - [prosperity](/posts/content/prosperity.md)
+- [Stop Being Original](/posts/content/stopbeingoriginal.md)
 
