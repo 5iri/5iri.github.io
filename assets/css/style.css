@@ -42,6 +42,14 @@ body {
   min-height   : 60vh;
 }
 
+/* Centering wrapper for terminal */
+.terminal-center-wrapper {
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  min-height      : 100vh;
+}
+
 /* Prompt line */
 .prompt-line {
   display      : flex;

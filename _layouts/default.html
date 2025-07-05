@@ -8,18 +8,20 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  <div class="terminal">
-    <div class="prompt-line has-time">
-      <a href="/" style="text-decoration:none;color:inherit;">
-        <span class="prompt-left">
-          <span class="segment user">5iri</span>
-          <span class="segment path">~</span>
-          <span class="dollar">$</span>
-        </span>
-      </a>
-      <span class="prompt-time" id="prompt-time"></span>
+  <div class="terminal-center-wrapper">
+    <div class="terminal">
+      <div class="prompt-line has-time">
+        <a href="/" style="text-decoration:none;color:inherit;">
+          <span class="prompt-left">
+            <span class="segment user">5iri</span>
+            <span class="segment path">~</span>
+            <span class="dollar">$</span>
+          </span>
+        </a>
+        <span class="prompt-time" id="prompt-time"></span>
+      </div>
+      {{ content }}
     </div>
-    {{ content }}
   </div>
   <script src="{{ '/assets/js/terminal.js' | relative_url }}"></script>
   <script>

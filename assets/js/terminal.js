@@ -6,13 +6,13 @@ function setupTerminal(){
   const files = [
     { name: 'about' },
     { name: 'blog' },
+    { name: 'notes' },
+    { name: 'projects' },
+    { name: 'other' },
     { name: 'email' },
     { name: 'github' },
     { name: 'idea_bank' },
     { name: 'linkedin' },
-    { name: 'notes' },
-    { name: 'other' },
-    { name: 'projects' },
     { name: 'twitter' }
   ];
 
@@ -30,17 +30,23 @@ function setupTerminal(){
     'twitter' : '/twitter.html'
   };
 
-  function print(text){
+  function print(text, options = {}){
     const div = document.createElement('div');
-    div.textContent = text;
+    if (options.isLs) {
+      // Split by double space and wrap each as a red link
+      const parts = text.split(/\s{2,}/g);
+      div.innerHTML = parts.map(name => `<span class="ls-link" style="color: var(--red);">${name}</span>`).join('  ');
+    } else {
+      div.textContent = text;
+    }
     output.appendChild(div);
   }
 
   function handle(cmd){
     if(cmd === 'ls'){
-      print(files.map(f => f.name).join('  '));
+      print(files.map(f => f.name).join('       '), { isLs: true });
     } else if(cmd === 'help'){
-      print('Available commands: ls, help, clear, open <filename>');
+      print('Available commands: ls, help, clear, open <filename>, exit');
     } else if(cmd === 'clear'){
       output.innerHTML = '';
       addPrompt(); // Immediately add prompt after clear
@@ -59,6 +65,9 @@ function setupTerminal(){
       } else {
         print(`File not found: ${filename}`);
       }
+    } else if(cmd === 'exit'){
+      print('Closing tab...');
+      setTimeout(() => { window.close(); }, 500);
     } else if(cmd){
       print(`Command not found: ${cmd}`);
     }
