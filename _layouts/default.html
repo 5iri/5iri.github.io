@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="terminal">
+    <div class="prompt-line has-time">
+      <a href="/" style="text-decoration:none;color:inherit;">
+        <span class="prompt-left">
+          <span class="segment user">5iri</span>
+          <span class="segment path">~</span>
+          <span class="dollar">$</span>
+        </span>
+      </a>
+      <span class="prompt-time" id="prompt-time"></span>
+    </div>
+    {{ content }}
+  </div>
+  <script src="{{ '/assets/js/terminal.js' | relative_url }}"></script>
+  <script>
+    function updatePromptTime() {
+      const el = document.getElementById('prompt-time');
+      if (!el) return;
+      const now = new Date();
+      el.textContent = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', second:'2-digit'});
+    }
+    setInterval(updatePromptTime, 1000);
+    updatePromptTime();
+    if (typeof setupTerminal === 'function') {
+      setupTerminal(window.terminalFiles || []);
+    }
+  </script>
+</body>
+</html>

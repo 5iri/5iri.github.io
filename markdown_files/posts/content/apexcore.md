@@ -3,6 +3,7 @@ title: Single RISC-V Core
 parent: Projects 
 nav_order: 1
 permalink: projects/single-riscv-core
+layout: content
 --- 
 
 

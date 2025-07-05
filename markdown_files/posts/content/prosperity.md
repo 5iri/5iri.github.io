@@ -1,6 +1,7 @@
 ---
 title: Accelerating SNNs via Product Sparsity
 parent: Other
+layout: content
 ---
 
 # Prosperity: Accelerating SNNs via Product Sparsity

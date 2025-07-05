@@ -2,6 +2,7 @@
 title: Agency and its meaning 
 parent: Blog
 permalink: blog/agency
+layout: content
 --- 
 
 # What Does Agency Really Mean?

@@ -1,8 +1,8 @@
 --- 
 title: Abstract Algebra 
 parent: Math 
-nav_order: 1
 permalink: notes/math/abstract_algebra
+layout: content
 --- 
 
 # What is Abstract Algebra?

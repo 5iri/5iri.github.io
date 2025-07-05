@@ -1,6 +1,7 @@
 --- 
 title: Why CPUs Use Caches (and What That Even Means)
 parent: Blog 
+layout: content
 --- 
 
 # Why CPUs Use Caches (and What That Even Means)

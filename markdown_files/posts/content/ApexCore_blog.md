@@ -3,6 +3,7 @@ title: ApexCore A RISC-V based CPU
 parent: Blog
 description : Designing RISC-V Single Core with IMA extensions
 permalink: blog/ApexCore
+layout: content
 ---
 
 --[Shri Vishakh Devanand](https://github.com/5iri)

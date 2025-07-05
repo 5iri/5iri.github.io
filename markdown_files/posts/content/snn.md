@@ -1,5 +1,6 @@
 --- 
 title: What is Spike Neural Networks?
+layout: content
 parent: Other
 --- 
 # What is Spike Neural Networks? and why are FPGAs useful for it?

@@ -1,6 +1,7 @@
 --- 
 title: how cancer cells grow
 parent:  Other 
+layout: content
 ---
 # Notes on how are cancer cells grow and spread through the body
 ---
