@@ -26,7 +26,7 @@ function setupTerminal(){
     'linkedin': '/linkedin.html',
     'notes': '/notes.html',
     'other': '/other.html',
-    'projects': '/Projects.html',
+    'projects': '/projects.html',
     'twitter' : '/twitter.html'
   };
 
