@@ -1,0 +1,90 @@
+/* --- Theme: Retro minimalist (black / red / white) ---------------------- */
+:root{
+  --bg:#000;
+  --fg:#fff;
+  --accent:#e11; /* slightly soft red for better readability */
+  --muted:#bbb;
+  --grid: 8px;   /* pixel rhythm */
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:'Roboto Mono', monospace;
+  line-height:1.65;
+  letter-spacing:0.1px;
+}
+
+/* Header / Nav */
+.site-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:calc(var(--grid)*2) calc(var(--grid)*3);
+  border-bottom:1px solid #111;
+  position:sticky; top:0; background:rgba(0,0,0,.9); backdrop-filter:saturate(120%) blur(2px);
+}
+.brand{ display:flex; gap:10px; align-items:center; text-decoration:none; }
+.brand-dot{
+  width:18px; height:18px; background:var(--accent);
+  box-shadow: 0 0 0 3px #000, 0 0 0 4px var(--accent);
+  image-rendering: pixelated;
+}
+.brand-text{
+  font-family:'Press Start 2P', monospace;
+  font-size:14px; color:var(--fg);
+  letter-spacing:1px;
+}
+
+.site-nav a{
+  color:var(--fg); text-decoration:none; margin-left:18px; font-size:14px;
+  padding:6px 8px; border:1px solid transparent;
+}
+.site-nav a:hover{ border-color:#111; background:#090909; }
+.site-nav a.active{ color:var(--accent); border-color:var(--accent); }
+
+/* Main */
+.site-main{ max-width:980px; margin:0 auto; padding:40px 20px; }
+
+/* Page hero */
+.page-hero{ margin-bottom:24px; }
+.page-hero .glitch{
+  font-family:'Press Start 2P', monospace;
+  font-size: clamp(18px, 3.6vw, 36px);
+  line-height:1.2; position:relative; display:inline-block;
+  text-transform: none;
+}
+.page-hero .glitch::before,
+.page-hero .glitch::after{
+  content:attr(data-text);
+  position:absolute; left:0; top:0; width:100%; overflow:hidden;
+  image-rendering: pixelated;
+}
+.page-hero .glitch::before{ color:#fff; clip-path:inset(0 0 40% 0); transform:translate(-2px,-1px); mix-blend-mode:screen; }
+.page-hero .glitch::after { color:var(--accent); clip-path:inset(60% 0 0 0); transform:translate(2px,1px); mix-blend-mode:screen; }
+
+.page-desc{ color:var(--muted); margin-top:8px; }
+
+/* Markdown content defaults */
+.page-content h1,.page-content h2,.page-content h3{ font-family:'Press Start 2P', monospace; letter-spacing:1px; }
+.page-content h1{ font-size:22px; margin:28px 0 12px; }
+.page-content h2{ font-size:18px; margin:24px 0 10px; }
+.page-content h3{ font-size:16px; margin:20px 0 8px; }
+.page-content p{ margin:12px 0; }
+.page-content a{ color:var(--accent); }
+.page-content ul{ padding-left:24px; }
+.page-content li{ margin:6px 0; }
+
+/* Footer */
+.site-footer{
+  border-top:1px solid #111; color:#888;
+  display:flex; gap:10px; justify-content:center; padding:18px 10px; font-size:12px;
+}
+.site-footer .sep{ opacity:.5; }
+
+/* Home only: give a little “game over” vibe */
+.is-home .page-hero .glitch{
+  text-shadow: 0 0 1px #fff, 0 0 8px rgba(255,0,0,.25);
+}
+

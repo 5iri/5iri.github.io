@@ -1,0 +1,196 @@
+/* Retro minimalist theme: black background, red and white accents */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap');
+
+/* Base styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: #ff3333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #ff6666;
+}
+
+header {
+  background-color: #0a0a0a;
+  border-bottom: 2px solid #ff3333;
+  padding: 1rem 2rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+nav a {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+nav a.active {
+  color: #ff3333;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Glitch effect for hero heading */
+.glitch {
+  position: relative;
+  display: inline-block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+}
+
+.glitch::before {
+  animation: glitch-1 2s infinite linear alternate-reverse;
+  color: #ff3333;
+  z-index: -2;
+}
+
+.glitch::after {
+  animation: glitch-2 3s infinite linear alternate-reverse;
+  color: #33ffff;
+  z-index: -1;
+}
+
+@keyframes glitch-1 {
+  0% {
+    clip: rect(12px, 9999px, 14px, 0);
+    transform: translate(-3px, -2px);
+  }
+  20% {
+    clip: rect(85px, 9999px, 90px, 0);
+    transform: translate(3px, 2px);
+  }
+  40% {
+    clip: rect(45px, 9999px, 50px, 0);
+    transform: translate(-3px, 1px);
+  }
+  60% {
+    clip: rect(25px, 9999px, 30px, 0);
+    transform: translate(3px, -1px);
+  }
+  80% {
+    clip: rect(65px, 9999px, 70px, 0);
+    transform: translate(-3px, 2px);
+  }
+  100% {
+    clip: rect(95px, 9999px, 100px, 0);
+    transform: translate(3px, -2px);
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    clip: rect(15px, 9999px, 20px, 0);
+    transform: translate(3px, 1px);
+  }
+  20% {
+    clip: rect(75px, 9999px, 80px, 0);
+    transform: translate(-3px, -1px);
+  }
+  40% {
+    clip: rect(35px, 9999px, 40px, 0);
+    transform: translate(3px, 2px);
+  }
+  60% {
+    clip: rect(5px, 9999px, 10px, 0);
+    transform: translate(-3px, -2px);
+  }
+  80% {
+    clip: rect(55px, 9999px, 60px, 0);
+    transform: translate(3px, 1px);
+  }
+  100% {
+    clip: rect(85px, 9999px, 90px, 0);
+    transform: translate(-3px, -1px);
+  }
+}
+
+/* Section styles */
+.section-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1.2rem;
+  margin: 2rem 0 1rem;
+  color: #ff3333;
+}
+
+.list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.list li {
+  margin-bottom: 0.8rem;
+}
+
+.list a {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+  border-bottom: 1px dashed #ff3333;
+  padding-bottom: 0.2rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.list a:hover {
+  color: #33ffff;
+  border-color: #33ffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  nav ul {
+    gap: 1rem;
+  }
+  .glitch {
+    font-size: 2rem;
+  }
+}

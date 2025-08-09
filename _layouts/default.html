@@ -1,41 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title | default: "5iri" }}</title>
+
+  <!-- Fonts (8-bit / terminal feel) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-</head>
-<body>
-  <div class="terminal-center-wrapper">
-    <div class="terminal">
-      <div class="prompt-line has-time">
-        <a href="/" style="text-decoration:none;color:inherit;">
-          <span class="prompt-left">
-            <span class="segment user">5iri</span>
-            <span class="segment path">~</span>
-            <span class="dollar">$</span>
-          </span>
-        </a>
-        <span class="prompt-time" id="prompt-time"></span>
-      </div>
-      {{ content }}
-    </div>
-  </div>
-  <script src="{{ '/assets/js/terminal.js' | relative_url }}"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ '/assets/css/retro.css' | relative_url }}">
+  
+  <!-- MathJax for LaTeX math rendering -->
   <script>
-    function updatePromptTime() {
-      const el = document.getElementById('prompt-time');
-      if (!el) return;
-      const now = new Date();
-      el.textContent = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', second:'2-digit'});
-    }
-    setInterval(updatePromptTime, 1000);
-    updatePromptTime();
-    if (typeof setupTerminal === 'function') {
-      setupTerminal(window.terminalFiles || []);
-    }
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
   </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="{% if page.url == '/' or page.permalink == '/aboutme' %}is-home{% endif %}">
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-dot"></span>
+      <span class="brand-text">5iri</span>
+    </a>
+    <nav class="site-nav">
+      {% assign here = page.url %}
+      <a href="{{ '/aboutme' | relative_url }}" class="{% if here == '/aboutme' %}active{% endif %}">about</a>
+      <a href="{{ '/notes'   | relative_url }}" class="{% if here == '/notes' %}active{% endif %}">notes</a>
+      <a href="{{ '/blog'    | relative_url }}" class="{% if here == '/blog' %}active{% endif %}">blog</a>
+      <a href="{{ '/projects'| relative_url }}" class="{% if here == '/projects' %}active{% endif %}">projects</a>
+      <a href="{{ '/idea-bank'| relative_url }}" class="{% if here == '/idea-bank' %}active{% endif %}">ideas</a>
+      <a href="{{ '/other'   | relative_url }}" class="{% if here == '/other' %}active{% endif %}">other</a>
+      <a href="{{ '/friends' | relative_url }}" class="{% if here == '/friends' %}active{% endif %}">friends</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <span>© {{ site.time | date: '%Y' }} {{ site.author | default: 'Shri Vishakh Devanand' }}</span>
+    <span class="sep">•</span>
+    <span>built on github pages</span>
+  </footer>
+
+  <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>
 </html>
+
