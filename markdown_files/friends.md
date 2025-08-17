@@ -16,6 +16,7 @@ Here are some awesome people and their websites/accounts:
 - [Sujal Dwivedi](https://5usu.github.io/index.html) - My FPGA/ML buddy
 - [Suchit Garad](https://ilegend509.me/) - FPGA guy but hates RISCV for some reason
 - [Shaunak Datar](https://shaunakkdatar.github.io/) - GSoC Rich (My go to embedded Buddy)
+- [Ansh Semwal](https://de-funkd.github.io/) - RL Super God
 
 ... and a lot more
 
