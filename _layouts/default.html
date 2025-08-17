@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title | default: "5iri" }}</title>
 
+  {% if page.description %}
+    <meta name="description" content="{{ page.description | strip_newlines | escape }}">
+  {% endif %}
+
   <!-- Fonts (8-bit / terminal feel) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
