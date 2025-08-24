@@ -1,0 +1,231 @@
+/* Modal Styles */
+.idea-modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.idea-modal-content {
+  background: #181818;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 18px 14px 14px 14px;
+  min-width: 260px;
+  max-width: 400px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  position: relative;
+  color: var(--fg);
+}
+.idea-modal-content h3 {
+  margin-top: 0;
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  font-family: 'Roboto Mono', monospace;
+}
+.idea-modal-content label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95em;
+}
+.idea-modal-content input,
+.idea-modal-content select {
+  width: 100%;
+  padding: 6px 8px;
+  margin-top: 3px;
+  background: #222;
+  border: 1px solid #444;
+  color: var(--fg);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.95em;
+  border-radius: 4px;
+}
+.idea-modal-content button[type="submit"] {
+  margin-top: 12px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 7px 18px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.95em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.idea-modal-content button[type="submit"]:hover {
+  background: #fff200;
+}
+.close-modal {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.2em;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.close-modal:hover {
+  color: var(--accent);
+}
+/* Idea Bank Page Styles */
+.idea-bank {
+  font-family: 'Roboto Mono', monospace;
+}
+.idea-controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.search-box {
+  background: #111;
+  border: 1px solid #333;
+  color: var(--fg);
+  padding: 8px 12px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  min-width: 200px;
+}
+.search-box:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.category-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.category-btn {
+  background: transparent;
+  border: 1px solid #333;
+  color: var(--muted);
+  padding: 6px 12px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.category-btn:hover {
+  border-color: var(--accent);
+  color: var(--fg);
+}
+.category-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+}
+.ideas-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.idea-card {
+  background: #111;
+  border: 1px solid #333;
+  padding: 20px;
+  transition: all 0.2s;
+  position: relative;
+}
+.idea-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.idea-title {
+  font-size: 16px;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.idea-description {
+  color: var(--fg);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.idea-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+.idea-category {
+  background: var(--accent);
+  color: #000;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: bold;
+}
+.idea-status {
+  color: var(--muted);
+  font-size: 10px;
+}
+.add-idea-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(238, 17, 17, 0.3);
+  transition: all 0.2s;
+}
+.add-idea-btn:hover {
+  transform: scale(1.1);
+}
+.stats {
+  background: #111;
+  border: 1px solid #333;
+  padding: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  text-align: center;
+}
+.stat-number {
+  font-size: 24px;
+  color: var(--accent);
+  font-weight: bold;
+  display: block;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.no-results {
+  text-align: center;
+  color: var(--muted);
+  padding: 40px;
+  font-style: italic;
+}
+@media (max-width: 768px) {
+  .idea-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-box {
+    min-width: auto;
+  }
+  .ideas-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats {
+    justify-content: center;
+  }
+}
