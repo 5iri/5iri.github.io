@@ -1,5 +1,6 @@
 ---
 layout: content
+parent: Blog
 permalink: blog/stopbeingoriginal
 ---
 

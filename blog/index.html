@@ -1,0 +1,68 @@
+---
+layout: content
+title: Blog
+permalink: /blog
+---
+
+<ul class="post-list">
+{% assign by_parent = site.pages | where: "parent", "Blog" %}
+{% assign by_url = site.pages | where_exp: "p", "p.url contains '/blog'" %}
+{% assign blog_pages_all = by_parent | concat: by_url | uniq %}
+{% assign blog_pages = blog_pages_all | where_exp: "p", "p.url != '/blog'" %}
+
+{% assign dated = blog_pages | where_exp: "p", "p.date" | sort: "date" | reverse %}
+{% assign undated = blog_pages | where_exp: "p", "p.date == nil" | sort: "title" %}
+
+{% for p in dated %}
+  <li data-src="{{ p.path | escape }}" data-date="{{ p.date | date: '%Y-%m-%d' }}">
+    <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+    <span class="post-date">{{ p.date | date: "%Y-%m-%d" }}</span>
+  </li>
+{% endfor %}
+
+{% for p in undated %}
+  <li data-src="{{ p.path | escape }}">
+    <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+    <span class="post-date post-date--muted">no date</span>
+  </li>
+{% endfor %}
+</ul>
+
+<p class="page-desc">Tip: add <code>date: YYYY-MM-DD</code> to a post’s front matter to control ordering.</p>
+
+<script>
+// Progressive enhancement: fill missing dates via GitHub commits and reorder
+(function(){
+  const list = document.querySelector('.post-list');
+  if (!list) return;
+  const items = Array.from(list.querySelectorAll('li[data-src]'));
+  const owner = '5iri';
+  const repo = '5iri.github.io';
+
+  function fmt(d){ const t=new Date(d); return t.toISOString().slice(0,10); }
+
+  Promise.all(items.map(async (li)=>{
+    if (li.dataset.date) return; // already has date
+    const path = li.dataset.src;
+    try{
+      const url = `https://api.github.com/repos/${owner}/${repo}/commits?path=${encodeURIComponent(path)}&per_page=1`;
+      const res = await fetch(url, {headers:{'Accept':'application/vnd.github+json'}});
+      if (!res.ok) return;
+      const data = await res.json();
+      if (Array.isArray(data) && data.length){
+        const date = data[0].commit && (data[0].commit.author?.date || data[0].commit.committer?.date);
+        if (date){
+          li.dataset.date = fmt(date);
+          const span = li.querySelector('.post-date');
+          if (span){ span.textContent = li.dataset.date; span.classList.remove('post-date--muted'); }
+        }
+      }
+    }catch(e){ /* ignore */ }
+  })).then(()=>{
+    const dated = items.filter(li=>li.dataset.date).sort((a,b)=> (a.dataset.date < b.dataset.date ? 1 : -1));
+    const undated = items.filter(li=>!li.dataset.date);
+    [...dated, ...undated].forEach(li=> list.appendChild(li));
+  });
+})();
+</script>
+

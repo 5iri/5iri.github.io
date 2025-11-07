@@ -58,7 +58,7 @@
   transition: background 0.2s;
 }
 .idea-modal-content button[type="submit"]:hover {
-  background: #fff200;
+  background: #bffff5;
 }
 .close-modal {
   position: absolute;
@@ -179,7 +179,7 @@
   border-radius: 50%;
   font-size: 24px;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(238, 17, 17, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 255, 224, 0.3);
   transition: all 0.2s;
 }
 .add-idea-btn:hover {

@@ -1,5 +1,6 @@
 ---
 layout: content
+parent: Blog
 permalink: blog/why-people-should-ask-more-questions
 ---
 

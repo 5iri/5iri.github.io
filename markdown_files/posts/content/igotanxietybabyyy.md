@@ -1,5 +1,6 @@
 ---
 layout: content
+parent: Blog
 permalink: /blog/anxietyyyyy
 ---
 
@@ -36,4 +37,3 @@ And we go again.
 Fuck, in the last couple of years, I've debugged so many weird ass codebases at fucking 3 AM cause I can't stop.
 
 I still don’t know how to just sit and let myself be without thinking I'm wasting potential.
-

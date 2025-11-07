@@ -1,10 +1,11 @@
-/* --- Theme: Retro minimalist (black / red / white) ---------------------- */
+/* --- Theme: Cyber/Retro (dark, neon, glitch) --------------------------- */
 :root{
-  --bg:#000;
-  --fg:#fff;
-  --accent:#e11; /* slightly soft red for better readability */
-  --muted:#bbb;
-  --grid: 8px;   /* pixel rhythm */
+  --bg: #000;
+  --fg: #f5f7ff;
+  --accent: #00ffe0;   /* primary accent: aqua */
+  --neon: #8a5cf6;     /* secondary accent: violet */
+  --muted: #aab;       /* muted copy */
+  --grid: 8px;         /* pixel rhythm */
 }
 
 *{ box-sizing:border-box; }
@@ -16,7 +17,28 @@ body{
   font-family:'Roboto Mono', monospace;
   line-height:1.65;
   letter-spacing:0.1px;
+  /* layered background: subtle radial glow + grid */
+  position: relative;
 }
+/* Subtle animated grid + glow overlay */
+body::before{
+  content:"";
+  position: fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+    radial-gradient(circle at 20% 15%, rgba(0,255,224,.08), transparent 35%),
+    radial-gradient(circle at 85% 80%, rgba(138,92,246,.06), transparent 35%);
+  background-size: 32px 32px, 32px 32px, auto, auto;
+  animation: bg-pan 40s linear infinite;
+  mix-blend-mode: screen;
+}
+@keyframes bg-pan{
+  0%{ background-position: 0 0, 0 0, 0 0, 0 0; }
+  100%{ background-position: 128px 64px, -128px -64px, 0 0, 0 0; }
+}
+
+::selection{ background: rgba(0,255,240,.25); color:#fff; }
 
 /* Header / Nav */
 .site-header{
@@ -24,12 +46,19 @@ body{
   padding:calc(var(--grid)*2) calc(var(--grid)*3);
   border-bottom:1px solid #111;
   position:sticky; top:0; background:rgba(0,0,0,.9); backdrop-filter:saturate(120%) blur(2px);
+  z-index:3;
 }
-.brand{ display:flex; gap:10px; align-items:center; text-decoration:none; }
+.brand{ display:flex; gap:10px; align-items:center; text-decoration:none; position:relative; }
 .brand-dot{
   width:18px; height:18px; background:var(--accent);
-  box-shadow: 0 0 0 3px #000, 0 0 0 4px var(--accent);
+  box-shadow: 0 0 0 3px #000, 0 0 12px 0 rgba(0,255,224,.6), 0 0 0 4px var(--accent);
   image-rendering: pixelated;
+  border-radius:2px;
+  animation: led-pulse 2.4s ease-in-out infinite;
+}
+@keyframes led-pulse{
+  0%,100%{ filter: drop-shadow(0 0 2px rgba(0,255,224,.85)) drop-shadow(0 0 8px rgba(0,255,224,.35)); }
+  50%{ filter: drop-shadow(0 0 6px rgba(0,255,224,1)) drop-shadow(0 0 14px rgba(0,255,224,.6)); }
 }
 .brand-text{
   font-family:'Press Start 2P', monospace;
@@ -38,14 +67,21 @@ body{
 }
 
 .site-nav a{
+  position:relative;
   color:var(--fg); text-decoration:none; margin-left:18px; font-size:14px;
   padding:6px 8px; border:1px solid transparent;
 }
+.site-nav a::after{
+  content:""; position:absolute; left:8px; right:8px; bottom:2px; height:2px;
+  background: linear-gradient(90deg, var(--neon), var(--accent));
+  opacity:0; transform: translateY(2px) scaleX(.6); transform-origin:center; transition: all .18s ease;
+}
 .site-nav a:hover{ border-color:#111; background:#090909; }
+.site-nav a:hover::after{ opacity:.6; transform: translateY(0) scaleX(1); }
 .site-nav a.active{ color:var(--accent); border-color:var(--accent); }
 
 /* Main */
-.site-main{ max-width:980px; margin:0 auto; padding:40px 20px; }
+.site-main{ max-width:980px; margin:0 auto; padding:40px 20px; position:relative; z-index:2; }
 
 /* Page hero */
 .page-hero{ margin-bottom:24px; }
@@ -66,6 +102,22 @@ body{
 
 .page-desc{ color:var(--muted); margin-top:8px; }
 
+/* Code & pre formatting (Rouge-compatible) */
+.page-content pre,
+.page-content .highlight pre{
+  background:#070a0b; border:1px solid #112225; border-radius:8px;
+  box-shadow: 0 0 0 1px rgba(0,255,240,.08), 0 0 18px rgba(0,255,240,.06) inset;
+  padding:14px 16px; overflow:auto; font-size:13px; line-height:1.55;
+}
+.page-content code{
+  background:#0a0d10; color:#bff; border:1px solid #123; border-radius:4px; padding:1px 5px;
+}
+.page-content pre code{ border:none; background:transparent; color:#d8faff; }
+
+blockquote{
+  margin:14px 0; padding:8px 14px; border-left:3px solid var(--neon); background:rgba(0,255,240,.04); color:#d5f9f7;
+}
+
 /* Markdown content defaults */
 .page-content h1,.page-content h2,.page-content h3{ font-family:'Press Start 2P', monospace; letter-spacing:1px; }
 .page-content h1{ font-size:22px; margin:28px 0 12px; }
@@ -76,15 +128,65 @@ body{
 .page-content ul{ padding-left:24px; }
 .page-content li{ margin:6px 0; }
 
+/* Blog list */
+.post-list{ list-style:none; padding:0; margin: 8px 0 0; }
+.post-list li{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:14px; padding:8px 0; border-bottom:1px dashed #111;
+}
+.post-list a{ color:var(--fg); text-decoration:none; }
+.post-list a:hover{ color:var(--neon); }
+.post-date{ color:var(--muted); font-size:12px; white-space:nowrap; }
+.post-date--muted{ opacity:.6; }
+
+/* Projects grid */
+.project-grid{
+  list-style:none; padding:0; margin: 10px 0 0;
+  display:grid; gap:14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.project-card{ margin:0; }
+.project-card a{
+  display:block; padding:14px 16px; border:1px solid #122; border-radius:8px;
+  color:var(--fg); text-decoration:none;
+  background:linear-gradient(180deg, rgba(0,255,240,.04), rgba(0,0,0,0));
+  box-shadow: 0 0 0 1px rgba(0,255,240,.05) inset;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease, color .15s ease;
+}
+.project-card a:hover{
+  border-color: var(--neon);
+  color: var(--neon);
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(0,255,240,.08), 0 0 0 1px rgba(0,255,240,.18) inset;
+}
+.project-card .ext{ opacity:.8; margin-left:8px; font-size:0.9em; }
+
+/* Home hero panel */
+.neon-panel{
+  background:#0a0a0a; border:1px solid #113;
+  border-radius:10px; overflow:hidden;
+  box-shadow: 0 0 0 1px rgba(0,255,240,.07), 0 10px 24px rgba(0,0,0,.5), inset 0 0 24px rgba(0,255,240,.05);
+}
+.bootlog{
+  margin:0; padding:12px 14px; height:120px; overflow:auto;
+  background:linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.25));
+  color:#bff; font-family:'Roboto Mono', monospace; font-size:13px;
+}
+
 /* Footer */
 .site-footer{
   border-top:1px solid #111; color:#888;
   display:flex; gap:10px; justify-content:center; padding:18px 10px; font-size:12px;
+  position:relative; z-index:2;
 }
 .site-footer .sep{ opacity:.5; }
 
 /* Home only: give a little “game over” vibe */
 .is-home .page-hero .glitch{
-  text-shadow: 0 0 1px #fff, 0 0 8px rgba(255,0,0,.25);
+  text-shadow: 0 0 1px #fff, 0 0 10px rgba(138,92,246,.24), 0 0 14px rgba(0,255,224,.24);
 }
 
+/* Matrix canvas sits behind content */
+canvas.matrix-bg{
+  position:fixed; inset:0; width:100vw; height:100vh; z-index:1; pointer-events:none;
+}
