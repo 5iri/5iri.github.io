@@ -1,5 +1,5 @@
 ---
-layout: content
+layout: default
 title: Shri
 permalink: /
 nav_order: 1
@@ -10,7 +10,21 @@ nav_order: 1
     <div>
       <span class="hero-tag mono">lab log · {{ site.time | date: '%B %Y' }}</span>
       <h1>always curious.</h1>
-      <p class="hero-lede">I love working on silicon, hardware, and seeing my vision come up everything from scratch. <br>I’m 19, I love drinking redbull and eating chips.</p>
+      <p class="hero-lede">I am
+        <span class="hover-peek">
+          <span class="hover-peek__trigger">Shri</span>
+          <span class="hover-peek__card">
+            <img src="{{ '/markdown_files/posts/assets/me.jpeg' | relative_url }}">
+          </span>
+        </span>.
+        I love working on silicon, hardware, and seeing my vision come up everything from scratch. I’m 19, I love
+        <span class="hover-peek">
+          <span class="hover-peek__trigger">drinking redbull and eating chips</span>
+          <span class="hover-peek__card">
+            <img src="{{ '/markdown_files/posts/assets/catcoke.png' | relative_url }}">
+          </span>
+        </span>.
+      </p>
       <div class="actions">
         <a class="btn btn--solid" href="/blog">My blogs</a>
         <a class="btn btn--ghost" href="/projects">My projects</a>

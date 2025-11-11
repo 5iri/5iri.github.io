@@ -3,7 +3,19 @@ layout: default
 ---
 <section class="page-wrap">
   <header class="page-hero">
-    <h1 class="glitch" data-text="{{ page.title | default: site.title | escape }}">{{ page.title | default: site.title }}</h1>
+    {% assign heading_text = page.title | default: site.title %}
+    {% if page.hover_image %}
+      <h1 class="glitch" data-text="{{ heading_text | escape }}">
+        <span class="hover-peek">
+          <span class="hover-peek__trigger mono">{{ heading_text }}</span>
+          <span class="hover-peek__card">
+            <img src="{{ page.hover_image | relative_url }}" alt="{{ page.hover_image_alt | default: heading_text }}">
+          </span>
+        </span>
+      </h1>
+    {% else %}
+      <h1 class="glitch" data-text="{{ heading_text | escape }}">{{ heading_text }}</h1>
+    {% endif %}
     {% if page.description %}
     <p class="page-desc">{{ page.description }}</p>
     {% endif %}
