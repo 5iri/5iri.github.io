@@ -5,94 +5,92 @@ permalink: /
 nav_order: 1
 ---
 
-I'm Shri — I build hardware, chase math, and ship things.
+<section class="hero reveal" data-parallax="0.02" style="margin: 1.5rem 0;">
+  <div class="hero-grid">
+    <div>
+      <span class="hero-tag mono">lab log · {{ site.time | date: '%B %Y' }}</span>
+      <h1>always curious.</h1>
+      <p class="hero-lede">I love working on silicon, hardware, and seeing my vision come up everything from scratch. <br>I’m 19, I love drinking redbull and eating chips.</p>
+      <div class="actions">
+        <a class="btn btn--solid" href="/blog">My blogs</a>
+        <a class="btn btn--ghost" href="/projects">My projects</a>
+      </div>
+    </div>
 
-<div class="neon-panel" style="margin:2rem 0;">
-  <canvas id="hero_wire" style="display:block;width:100%;height:360px;"></canvas>
-  <pre id="bootlog" class="bootlog" aria-label="system log"></pre>
-</div>
+    <div>
+      <dl class="hero-meta">
+        <div>
+          <dt>Now</dt>
+          <dd>Working on a bunch of work, mostly towards energy efficient compuation.</dd>
+        </div>
+        <div>
+          <dt>Focus</dt>
+          <dd>Current Work: CXL Emulators</dd>
+        </div>
+        <div>
+          <dt>Next session</dt>
+          <dd>Saturday cowork, 20:00 IST (remote) (thinking of going live on kick)</dd>
+        </div>
+      </dl>
+      <ul class="hero-list">
+        <li><span> working on writing a complete view of computer architecture.</span><span><a href="github.com/5iri/comp-arch-study-group">github repo </a></span></li>
+        <li><span>Simultaneously working on a bunch of projects. </span><span><a href="/blog">Check my blogs!</a></span></li>
+        <li><span>Currently busy with exams.</span><span></span></li>
+      </ul>
+      <p class="hero-note">Check out my <a href="/twitter"> twitter</a> for my sanity.</p>
+    </div>
+  </div>
+</section>
 
-<script>
-(function(){
-  // Neon wireframe icosahedron
-  const cvs = document.getElementById('hero_wire');
-  const ctx = cvs.getContext('2d');
-  let W=0,H=0, DPR=Math.min(2, window.devicePixelRatio||1);
-  const fit = () => {
-    const rect = cvs.getBoundingClientRect();
-    W = Math.floor(rect.width * DPR);
-    H = Math.floor(rect.height * DPR);
-    cvs.width = W; cvs.height = H; ctx.setTransform(DPR,0,0,DPR,0,0);
-  };
-  fit();
-  window.addEventListener('resize', fit);
+<section class="section reveal">
+  <h2 class="section-title">Current quests</h2>
+  <p class="section-desc">Which tracks am I actively publishing about?</p>
+  <ul class="list-ruled">
+    <li>Neuromorphic Hardware</li>
+    <li>CXLMemSim</li>
+    <li>open source CPU which is actually industry usable</li>
+  </ul>
+</section>
 
-  const phi = (1+Math.sqrt(5))/2; const s=1;
-  const V = [];
-  const add=(x,y,z)=>V.push([x*s,y*s,z*s]);
-  // vertices
-  [[0,1,phi],[0,-1,phi],[0,1,-phi],[0,-1,-phi],
-   [1,phi,0],[-1,phi,0],[1,-phi,0],[-1,-phi,0],
-   [phi,0,1],[-phi,0,1],[phi,0,-1],[-phi,0,-1]].forEach(v=>{add(v[0],v[1],v[2]);});
-  // build edges by proximity
-  const E = [];
-  const dist=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1],a[2]-b[2]);
-  let minD=Infinity; for(let i=0;i<V.length;i++)for(let j=i+1;j<V.length;j++){minD=Math.min(minD,dist(V[i],V[j]));}
-  const TH = minD*1.05;
-  for(let i=0;i<V.length;i++)for(let j=i+1;j<V.length;j++){ if(dist(V[i],V[j])<=TH) E.push([i,j]); }
+<section class="section reveal">
+  <h2 class="section-title">Latest writing</h2>
+  <div class="grid grid-3">
+  {% assign by_parent = site.pages | where: "parent", "Blog" %}
+  {% assign by_url = site.pages | where_exp: "p", "p.url contains '/blog'" %}
+  {% assign blog_pages_all = by_parent | concat: by_url | uniq %}
+  {% assign blog_pages = blog_pages_all | where_exp: "p", "p.url != '/blog'" %}
 
-  let t=0;
-  function proj([x,y,z]){
-    const f=2.8; const zc = z+3.2; // perspective
-    return [ x/(zc)*H*0.28 + (cvs.clientWidth/2), y/(zc)*H*0.28 + (cvs.clientHeight/2) ];
-  }
-  function rotY([x,y,z],a){ const c=Math.cos(a), s=Math.sin(a); return [ c*x+ s*z, y, -s*x + c*z ]; }
-  function rotX([x,y,z],a){ const c=Math.cos(a), s=Math.sin(a); return [ x, c*y - s*z, s*y + c*z ]; }
+  {% assign dated = blog_pages | where_exp: "p", "p.date" | sort: "date" | reverse %}
+  {% assign undated = blog_pages | where_exp: "p", "p.date == nil" | sort: "title" %}
+  {% assign combined = dated | concat: undated %}
+  {% for p in combined limit:3 %}
+    <a class="card" href="{{ p.url | relative_url }}">
+      <div class="card-kicker">blog</div>
+      <div class="card-title">{{ p.title | default: p.url }}</div>
+      {% capture ex %}{{ p.content | markdownify | strip_html | strip_newlines | truncate: 140 }}{% endcapture %}
+      <div class="card-excerpt">{{ ex }}</div>
+    </a>
+  {% endfor %}
+  </div>
+</section>
 
-  function tick(){
-    t+=0.012;
-    ctx.fillStyle='rgba(0,0,0,0.25)';
-    ctx.fillRect(0,0,cvs.clientWidth,cvs.clientHeight);
-    ctx.save();
-    ctx.lineWidth=2; ctx.strokeStyle='#00ffe0';
-    ctx.shadowColor='rgba(0,255,240,0.6)'; ctx.shadowBlur=12;
-    for(const [i,j] of E){
-      let a=V[i], b=V[j];
-      a=rotX(rotY(a, t*0.9), Math.sin(t)*0.3);
-      b=rotX(rotY(b, t*0.9), Math.sin(t)*0.3);
-      const [ax,ay]=proj(a), [bx,by]=proj(b);
-      ctx.beginPath(); ctx.moveTo(ax,ay); ctx.lineTo(bx,by); ctx.stroke();
-    }
-    // accent edges
-    ctx.strokeStyle='#8a5cf6'; ctx.shadowColor='rgba(138,92,246,0.6)';
-    for(let k=0;k<5;k++){
-      const [i,j]=E[(Math.floor((t*60+k)) % E.length)];
-      let a=V[i], b=V[j]; a=rotX(rotY(a,t*0.9), Math.sin(t)*0.3); b=rotX(rotY(b,t*0.9), Math.sin(t)*0.3);
-      const [ax,ay]=proj(a), [bx,by]=proj(b);
-      ctx.beginPath(); ctx.moveTo(ax,ay); ctx.lineTo(bx,by); ctx.stroke();
-    }
-    ctx.restore();
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
+<section class="section reveal">
+  <h2 class="section-title">Contact</h2>
+  <p class="section-desc">Places where I might be alive or sane enough to respond.</p>
+  <div class="contact-links">
+    <a class="contact-link" href="/email">email</a>
+    <a class="contact-link" href="/github">github</a>
+    <a class="contact-link" href="/twitter">x / @lazybananann</a>
+    <a class="contact-link" href="/linkedin">linkedin</a>
+  </div>
+</section>
 
-  // Boot log typewriter
-  const log = document.getElementById('bootlog');
-  const lines = [
-    '$ boot: 5iri kernel v0.1',
-    'cpu: rv64gc   clocks: 3.20GHz (sim)',
-    'mem:  64KB L1 | 8MB L3 | 16GB dram',
-    'accel: neon-wire vshader online',
-    'status: all systems nominal',
-  ];
-  let li=0, ci=0;
-  function type(){
-    if(li>=lines.length) return; 
-    log.textContent += (ci===0? (li? '\n':'') : '') + lines[li].charAt(ci);
-    ci++;
-    if(ci>lines[li].length){ li++; ci=0; setTimeout(type, 300); }
-    else setTimeout(type, 18 + Math.random()*40);
-  }
-  type();
-})();
-</script>
+<section class="section reveal">
+  <h2 class="section-title">Hobbies</h2>
+  <p class="section-desc">What keeps me sane?</p>
+  <ul class="list-ruled">
+    <li>I love mathematics! I try to sit down and work on some problems whenever I can! current progres <a href="/notes/math/abstract_algebra">here </a></li>
+    <li>I love listening to music!! Here's my <a href="https://open.spotify.com/user/wdzf3o8vx7fff8lxn35cxts43?si=ad4511d4896647aa">spotify </a>:)</li>
+    <li>revamp my website for the 1000th time.</li>
+  </ul>
+</section>

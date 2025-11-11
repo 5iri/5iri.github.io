@@ -2,7 +2,7 @@
 title: Projects
 layout: content
 permalink: /projects
-description: Projects I’ve built or shipped.
+description: Stuff I have worked on.
 ---
 
 ## Projects

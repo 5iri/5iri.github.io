@@ -12,9 +12,41 @@
 })();
 
 // home-only: lightweight matrix rain background
+// motion: scroll reveal
 (function() {
+  const els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.08 });
+  els.forEach(el => io.observe(el));
+})();
+
+// parallax effect for elements with data-parallax attribute
+(function() {
+  const els = Array.from(document.querySelectorAll('[data-parallax]'));
+  if (!els.length) return;
+  const onScroll = () => {
+    const y = window.scrollY || 0;
+    for (const el of els) {
+      const sp = parseFloat(el.getAttribute('data-parallax')) || 0.2;
+      el.style.setProperty('--py', (y * sp) + 'px');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+// keep matrix rain only for retro theme (retro.css)
+(function() {
+  const hasRetro = !!document.querySelector('link[href*="retro.css"]');
   const isHome = document.body.classList.contains('is-home');
-  if (!isHome) return;
+  if (!hasRetro || !isHome) return;
 
   const canvas = document.createElement('canvas');
   canvas.className = 'matrix-bg';
@@ -35,10 +67,8 @@
   };
 
   const tick = () => {
-    // trail fade
     ctx.fillStyle = 'rgba(0, 0, 0, 0.06)';
     ctx.fillRect(0, 0, W, H);
-    // neon glyphs
     ctx.fillStyle = '#00ffe0';
     ctx.shadowColor = 'rgba(0,255,240,0.35)';
     ctx.shadowBlur = 8;
@@ -49,7 +79,6 @@
       const x = i * fontSize;
       const y = drops[i] * fontSize;
       ctx.fillText(ch, x, y);
-
       if (y > H && Math.random() > 0.975) drops[i] = 0;
       drops[i]++;
     }

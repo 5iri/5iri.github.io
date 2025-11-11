@@ -6,12 +6,11 @@
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title | default: "5iri" }}</title>
 
 
-  <!-- Fonts (8-bit / terminal feel) -->
+  <!-- Fonts (Playfair + IBM Plex Mono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="{{ '/assets/css/retro.css' | relative_url }}">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/socratica.css' | relative_url }}">
   
   <!-- MathJax for LaTeX math rendering -->
   <script>
@@ -32,16 +31,13 @@
 <body class="{% if page.url == '/' or page.permalink == '/aboutme' %}is-home{% endif %}">
   <header class="site-header">
     <a class="brand" href="{{ '/' | relative_url }}">
-      <span class="brand-dot"></span>
-      <span class="brand-text">5iri</span>
+      <span class="brand-text">{{ site.title | default: '5iri' }}</span>
     </a>
     <nav class="site-nav">
       {% assign here = page.url %}
-      <a href="{{ '/aboutme' | relative_url }}" class="{% if here == '/aboutme' %}active{% endif %}">about</a>
       <a href="{{ '/notes'   | relative_url }}" class="{% if here == '/notes' %}active{% endif %}">notes</a>
       <a href="{{ '/blog'    | relative_url }}" class="{% if here == '/blog' %}active{% endif %}">blog</a>
       <a href="{{ '/projects'| relative_url }}" class="{% if here == '/projects' %}active{% endif %}">projects</a>
-      <a href="{{ '/idea-bank'| relative_url }}" class="{% if here == '/idea-bank' %}active{% endif %}">ideas</a>
       <a href="{{ '/other'   | relative_url }}" class="{% if here == '/other' %}active{% endif %}">other</a>
       <a href="{{ '/friends' | relative_url }}" class="{% if here == '/friends' %}active{% endif %}">friends</a>
     </nav>
