@@ -3,6 +3,7 @@ title: Agency and its meaning
 parent: Blog
 permalink: blog/agency
 layout: content
+date: 2025-04-14
 --- 
 
 When you hear the word "agency," you might think of some dictionary definition about taking action to make something happen. But to me, agency is so much more than that—it’s about *choosing* to act with purpose, chasing the best possible outcome for yourself and those around you, even when the path isn’t clear.

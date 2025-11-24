@@ -3,6 +3,7 @@ title: The Best Ideas Come When I Stop Trying to be original
 layout: content
 parent: Blog
 permalink: blog/stopbeingoriginal
+date: 2025-07-06
 ---
 
 There was a point in my life where I was constantly chasing "originality".

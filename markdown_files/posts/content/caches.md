@@ -2,6 +2,7 @@
 title: Why CPUs Use Caches (and What That Even Means)
 parent: Blog 
 layout: content
+date: 2025-04-30
 --- 
 
 

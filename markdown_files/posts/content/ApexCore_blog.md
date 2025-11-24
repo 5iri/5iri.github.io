@@ -4,6 +4,7 @@ parent: Blog
 description : Designing RISC-V Single Core with IMA extensions
 permalink: blog/ApexCore
 layout: content
+date: 2024-10-25
 ---
 
 --[Shri Vishakh Devanand](https://github.com/5iri)

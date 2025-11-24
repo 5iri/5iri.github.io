@@ -3,6 +3,7 @@ title: The Smartest People I know Love asking Questions
 layout: content
 parent: Blog
 permalink: blog/why-people-should-ask-more-questions
+date: 2025-07-06
 ---
 
 ukw, most people are human. <br>
