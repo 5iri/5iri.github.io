@@ -1,10 +1,9 @@
 ---
+title: The Smartest People I know Love asking Questions
 layout: content
 parent: Blog
 permalink: blog/why-people-should-ask-more-questions
 ---
-
-# The Smartest People I know Love asking Questions
 
 ukw, most people are human. <br>
 people forget that.
@@ -28,7 +27,7 @@ That was the first time in my life that I had observed someone with similar inte
 
 ---
 
-# Ask out loud.
+## Ask out loud.
 
 In a call. <br>
 In a classroom. <br>

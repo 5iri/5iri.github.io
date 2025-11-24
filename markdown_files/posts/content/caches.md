@@ -4,8 +4,6 @@ parent: Blog
 layout: content
 --- 
 
-# Why CPUs Use Caches (and What That Even Means)
-
 
 
 Let’s say you're working on a project late at night, and you've got everything spread across three spots:  
@@ -69,5 +67,3 @@ Smart caching means **you get the speed of small memory, but the flexibility of 
 So yeah, CPUs are fast — but memory can be a bottleneck. Caches are the clever workaround: they’re like tiny, super-speedy notebooks sitting next to your brain. Use them well, and everything flies.
 
 Next time your program is “slow,” maybe it's not your code — maybe it just missed the drawer.
-
-

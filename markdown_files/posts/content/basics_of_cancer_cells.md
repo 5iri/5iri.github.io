@@ -3,7 +3,7 @@ title: how cancer cells grow
 parent:  Other 
 layout: content
 ---
-# Notes on how are cancer cells grow and spread through the body
+## Notes on how are cancer cells grow and spread through the body
 ---
 ## What are cancer cells?
  - fuck ups in DNA causes genes to mutate, which makes a particular types of cells to not listen to the conditions for which the genes to mutate.

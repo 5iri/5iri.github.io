@@ -5,7 +5,7 @@ layout: content
 description: "Cool people I know on the internet"
 ---
 
-# Friends & Cool People
+## Friends & Cool People
 
 Here are some awesome people and their websites/accounts:
 

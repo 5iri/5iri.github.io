@@ -4,7 +4,7 @@ parent: Other
 layout: content
 ---
 
-# Prosperity: Accelerating SNNs via Product Sparsity
+## Prosperity: Accelerating SNNs via Product Sparsity
 
 This study introduces a novel sparsity paradigm called **product sparsity**, which re-uses identical or nested spike patterns during matrix multiplication to eliminate redundant work and dramatically speed up spiking-neural-network (SNN) inference.
 

@@ -5,8 +5,6 @@ permalink: blog/agency
 layout: content
 --- 
 
-# What Does Agency Really Mean?
-
 When you hear the word "agency," you might think of some dictionary definition about taking action to make something happen. But to me, agency is so much more than that—it’s about *choosing* to act with purpose, chasing the best possible outcome for yourself and those around you, even when the path isn’t clear.
 
 For me, agency isn’t just about doing stuff. It’s about *why* you’re doing it. It’s that moment when you decide to step up, make a choice, and shape what happens next—especially when it’s tough or uncertain. It’s about having the freedom and the guts to say, “I’ve got this,” and mean it.
@@ -30,4 +28,3 @@ Those kinds of goals—they stick with you. They’re not just about hitting som
 So, what’s agency, really? It’s that fire inside you, that stubborn push to make things better—for yourself, for others, for the world. It’s knowing you’ve got the power to shape your path and helping the people around you see they’ve got that power too. Whether you’re tinkering with circuits, leading a group, dreaming up new ideas, or just figuring out who you want to be, your agency is like a compass. It keeps you pointed toward what’s possible.
 
 And the more we nurture that spark—in ourselves and in each other—the bigger, brighter, and more incredible the results can be.
-

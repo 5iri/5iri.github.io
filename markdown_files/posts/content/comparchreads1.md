@@ -5,7 +5,7 @@ permalink: notes/comp_arch/agents_for_micro_eval
 layout: content
 --- 
 
-# Requirements, Bottlenecks, and Good Fortune: Agents for Microprocessor Evolution
+## Requirements, Bottlenecks, and Good Fortune: Agents for Microprocessor Evolution
 ```
 by yale patt
 ```
@@ -62,5 +62,5 @@ by yale patt
   - Agent III: Good Fortune
     - Good Fortune happens when something causes a windfall which can then be used to provide additional features to the microprocessor.
 
-# References
+## References
 - [Requirements, Bottlenecks, and Good Fortune: Agents for Microprocessor Evolution](https://course.ece.cmu.edu/~ece740/f13/lib/exe/fetch.php?media=r0_patt.pdf)

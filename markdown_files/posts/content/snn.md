@@ -3,7 +3,7 @@ title: What is Spike Neural Networks?
 layout: content
 parent: Other
 --- 
-# What is Spike Neural Networks? and why are FPGAs useful for it?
+## What is Spike Neural Networks? and why are FPGAs useful for it?
 
 ## What is a Spike Neural Network?
 
@@ -102,6 +102,5 @@ Firefly is a popular SNN-based Accelerator. The summary is of an extract from th
 * [Spiking Neural Networks: The next “Big Thing” in AI?](https://medium.com/@deanshorak/spiking-neural-networks-the-next-big-thing-in-ai-efe3310709b0) 
 * [Spiking Neurons: A Digital Hardware Implementation](https://open-neuromorphic.org/blog/spiking-neurons-digital-hardware-implementation/) 
 * [FireFly: A High-Throughput Hardware Accelerator for Spiking Neural Networks with Efficient DSP and Memory Optimization](https://arxiv.org/pdf/2301.01905)
-
 
 

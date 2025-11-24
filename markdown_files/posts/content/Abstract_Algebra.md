@@ -5,7 +5,7 @@ permalink: notes/math/abstract_algebra
 layout: content
 --- 
 
-# What is Abstract Algebra?
+## What is Abstract Algebra?
 
 Abstract Algebra is the fascinating study of algebraic structures that generalize the arithmetic of numbers. It's a field that revolutionized mathematics in the 19th century and continues to be fundamental to many branches of mathematics today.
 

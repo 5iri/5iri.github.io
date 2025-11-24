@@ -5,7 +5,7 @@ permalink: notes/comp_arch/DDOS_attacks
 layout: content
 --- 
 
-# Memory Performance Attacks: Denial of Memory Service in Multi-Core Systems
+## Memory Performance Attacks: Denial of Memory Service in Multi-Core Systems
 
 **Thomas Moscibroda**
 **Onur Mutlu**

@@ -19,6 +19,13 @@ layout: default
     {% if page.description %}
     <p class="page-desc">{{ page.description }}</p>
     {% endif %}
+    {% if page.date %}
+    <p class="page-meta mono">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%Y-%m-%d" }}
+      </time>
+    </p>
+    {% endif %}
   </header>
 
   <article class="page-content">

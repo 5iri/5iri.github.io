@@ -5,7 +5,7 @@ permalink: /notes/mapf
 layout: content
 --- 
 
-# Multi-Agent Path Finding
+## Multi-Agent Path Finding
 ---
 ## Introduction
 

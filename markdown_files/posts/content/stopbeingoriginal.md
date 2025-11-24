@@ -1,10 +1,9 @@
 ---
+title: The Best Ideas Come When I Stop Trying to be original
 layout: content
 parent: Blog
 permalink: blog/stopbeingoriginal
 ---
-
-# The Best Ideas Come When I Stop Trying to be original
 
 There was a point in my life where I was constantly chasing "originality".
 

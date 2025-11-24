@@ -1,10 +1,9 @@
 ---
+title: My Anxiety is weird
 layout: content
 parent: Blog
 permalink: /blog/anxietyyyyy
 ---
-
-# My Anxiety is weird
 
 I used to think I was just hardworking. Or at least I used to. But it's not the calm, confident kind of hardworking you would imagine. 
 
