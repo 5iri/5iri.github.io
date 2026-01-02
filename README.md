@@ -8,7 +8,7 @@ nav_order: 1
 <section class="hero reveal" data-parallax="0.02" style="margin: 1.5rem 0;">
   <div class="hero-grid">
     <div>
-      <span class="hero-tag mono">lab log · {{ site.time | date: '%B %Y' }}</span>
+      <span class="hero-tag mono">lab log · January 2026</span>
       <h1>always curious.</h1>
       <p class="hero-lede">I am
         <span class="hover-peek">
@@ -17,7 +17,7 @@ nav_order: 1
             <img src="{{ '/markdown_files/posts/assets/me.jpeg' | relative_url }}">
           </span>
         </span>.
-        I love working on silicon, hardware, and seeing my vision come up everything from scratch. I’m 19, I love
+        I love working on silicon, hardware, and seeing my vision come up everything from scratch. I’m 20, I love
         <span class="hover-peek">
           <span class="hover-peek__trigger">drinking redbull and eating chips</span>
           <span class="hover-peek__card">

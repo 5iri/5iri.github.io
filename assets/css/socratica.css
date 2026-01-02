@@ -14,9 +14,23 @@ body{
   margin:0;
   color:var(--fg);
   --tw-bg-opacity: 1;
-  background-color: rgb(251 248 239 / var(--tw-bg-opacity));
+  background-color: #fdfcf7;
+  /* ruled notebook background: faint blue lines + margin + warm paper tint */
+  background-image:
+    repeating-linear-gradient(180deg, rgba(100,149,237,0.15) 0, rgba(100,149,237,0.15) 1px, transparent 1px, transparent 32px),
+    linear-gradient(90deg, rgba(220,80,80,0.22) 64px, transparent 64px),
+    linear-gradient(120deg, rgba(255,255,255,0.97), rgba(248,244,232,0.9));
+  background-size:
+    100% 32px,
+    100% 100%,
+    100% 100%;
+  background-position:
+    0 0,
+    0 0,
+    0 0;
   font-family:'IBM Plex Mono', 'Space Mono', monospace;
-  line-height:1.5;
+  font-size:18px;
+  line-height:2;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
   padding:48px 24px 80px;
