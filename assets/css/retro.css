@@ -153,12 +153,18 @@ blockquote{
   box-shadow: 0 0 0 1px rgba(0,255,240,.05) inset;
   transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease, color .15s ease;
 }
+.project-card .project-title{ display:block; font-weight:700; }
+.project-card .project-summary{
+  display:block; margin-top:6px; font-size:0.9em; line-height:1.4;
+  color:var(--muted);
+}
 .project-card a:hover{
   border-color: var(--neon);
   color: var(--neon);
   transform: translateY(-2px);
   box-shadow: 0 0 18px rgba(0,255,240,.08), 0 0 0 1px rgba(0,255,240,.18) inset;
 }
+.project-card a:hover .project-summary{ color:var(--muted); }
 .project-card .ext{ opacity:.8; margin-left:8px; font-size:0.9em; }
 
 /* Home hero panel */
