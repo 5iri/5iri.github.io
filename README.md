@@ -8,7 +8,7 @@ nav_order: 1
 <section class="hero reveal" data-parallax="0.02" style="margin: 1.5rem 0;">
   <div class="hero-grid">
     <div>
-      <span class="hero-tag mono">lab log · January 2026</span>
+      <span class="hero-tag mono">lab log · February 2026</span>
       <h1>always curious.</h1>
       <p class="hero-lede">I am
         <span class="hover-peek">
@@ -25,10 +25,6 @@ nav_order: 1
           </span>
         </span>.
       </p>
-      <div class="actions">
-        <a class="btn btn--solid" href="/blog">My blogs</a>
-        <a class="btn btn--ghost" href="/projects">My projects</a>
-      </div>
     </div>
 
     <div>
@@ -39,7 +35,7 @@ nav_order: 1
         </div>
         <div>
           <dt>Focus</dt>
-          <dd>Current Work: CXL Emulators</dd>
+          <dd>Systems level engineering. FPGA inferencing LLMs and some more cool stuff.</dd>
         </div>
         <div>
           <dt>Next session</dt>
@@ -47,9 +43,9 @@ nav_order: 1
         </div>
       </dl>
       <ul class="hero-list">
-        <li><span> working on writing a complete view of computer architecture.</span><span><a href="github.com/5iri/comp-arch-study-group">github repo </a></span></li>
+        <li><span> working on writing a complete view of computer architecture.</span><span><a href="https://comparch.5iri.me">comparch site</a></span></li>
         <li><span>Simultaneously working on a bunch of projects. </span><span><a href="/blog">Check my blogs!</a></span></li>
-        <li><span>Currently busy with exams.</span><span></span></li>
+        <li><span>Currently busy with four different things.</span><span></span></li>
       </ul>
       <p class="hero-note">Check out my <a href="/twitter"> twitter</a> for my sanity.</p>
     </div>

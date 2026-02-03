@@ -9,7 +9,6 @@ tags:
   - cxl
 description: Understanding Compute Express Link (CXL) and why it matters for modern systems
 ---
--- [Shri Vishakh Devanand](https://5iri.me)
 
 Everyone working on modern AI eventually hits the HBM wall. A 70B-parameter model stored in bfloat16 is already ~140 GB before optimizer states and activation checkpoints; even eight 80 GB H100s have to shard weights, replay activations, or spill tensors back to host memory. CXL entered the datacenter conversation because it lets those GPUs, CPUs, and specialized accelerators tap into coherent pools of cheaper DDR or storage-class memory without rewriting the entire training stack.
 
