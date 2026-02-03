@@ -108,7 +108,7 @@ a:hover { color: var(--accent); border-color: var(--accent); }
 .hero-grid {
   display: grid;
   gap: var(--grid);
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: 3fr 4fr;
 }
 @media(max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
 
@@ -182,6 +182,51 @@ a:hover { color: var(--accent); border-color: var(--accent); }
   font-size: 14px;
   color: var(--muted);
   line-height: var(--grid);
+}
+
+/* Hero bubbles */
+.hero-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--grid) / 2);
+  margin: var(--grid) 0;
+}
+
+.hero-bubble {
+  flex: 1 1 0;
+  min-width: 160px;
+  max-width: none;
+  padding: 16px;
+  border: 2px solid var(--border);
+  background: transparent;
+  border-radius: 12px;
+}
+
+.hero-bubble-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: calc(var(--grid) / 4);
+  line-height: var(--grid);
+}
+
+.hero-bubble-text {
+  font-size: 14px;
+  line-height: var(--grid);
+}
+
+.hero-bubble-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-bubble-link a {
+  margin-top: calc(var(--grid) / 4);
+  font-size: 12px;
+  border-bottom: 2px solid var(--accent);
+  align-self: flex-start;
 }
 
 /* Sections */

@@ -6,8 +6,6 @@ nav_order: 1
 ---
 
 <section class="hero reveal" data-parallax="0.02" style="margin: 1.5rem 0;">
-  <div class="hero-grid">
-    <div>
       <span class="hero-tag mono">lab log · February 2026</span>
       <h1>always curious.</h1>
       <p class="hero-lede">I am
@@ -25,31 +23,32 @@ nav_order: 1
           </span>
         </span>.
       </p>
-    </div>
 
-    <div>
-      <dl class="hero-meta">
-        <div>
-          <dt>Now</dt>
-          <dd>Working on a bunch of work, mostly towards energy efficient compuation.</dd>
+      <div class="hero-bubbles">
+        <div class="hero-bubble">
+          <div class="hero-bubble-label">NOW</div>
+          <div class="hero-bubble-text">Working on a bunch of work, mostly towards energy efficient compuation.</div>
         </div>
-        <div>
-          <dt>Focus</dt>
-          <dd>Systems level engineering. FPGA inferencing LLMs and some more cool stuff.</dd>
+        <div class="hero-bubble">
+          <div class="hero-bubble-label">FOCUS</div>
+          <div class="hero-bubble-text">Systems level engineering. FPGA inferencing LLMs and some more cool stuff.</div>
         </div>
-        <div>
-          <dt>Next session</dt>
-          <dd>Saturday cowork, 20:00 IST (remote) (thinking of going live on kick)</dd>
+        <div class="hero-bubble">
+          <div class="hero-bubble-label">NEXT SESSION</div>
+          <div class="hero-bubble-text">Saturday cowork, 20:00 IST (remote) (thinking of going live on kick)</div>
         </div>
-      </dl>
-      <ul class="hero-list">
-        <li><span> working on writing a complete view of computer architecture.</span><span><a href="https://comparch.5iri.me">comparch site</a></span></li>
-        <li><span>Simultaneously working on a bunch of projects. </span><span><a href="/blog">Check my blogs!</a></span></li>
-        <li><span>Currently busy with four different things.</span><span></span></li>
-      </ul>
+      </div>
+      <div class="hero-bubbles hero-bubbles-secondary">
+        <div class="hero-bubble hero-bubble-link">
+          <div class="hero-bubble-text">working on writing a complete view of computer architecture.</div>
+          <a href="https://comparch.5iri.me">comparch site</a>
+        </div>
+        <div class="hero-bubble hero-bubble-link">
+          <div class="hero-bubble-text">Simultaneously working on a bunch of projects.</div>
+          <a href="/blog">Check my blogs!</a>
+        </div>
+      </div>
       <p class="hero-note">Check out my <a href="/twitter"> twitter</a> for my sanity.</p>
-    </div>
-  </div>
 </section>
 
 <section class="section reveal">
