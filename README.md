@@ -5,7 +5,7 @@ permalink: /
 nav_order: 1
 ---
 
-<section class="hero reveal" data-parallax="0.02" style="margin: 1.5rem 0;">
+<section class="hero reveal" data-parallax="0.02">
       <span class="hero-tag mono">lab log · February 2026</span>
       <h1>always curious.</h1>
       <p class="hero-lede">I am

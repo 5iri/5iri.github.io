@@ -11,6 +11,80 @@
   });
 })();
 
+// keep the ruled-paper background perfectly synced to the real line height/baseline
+(function() {
+  const root = document.documentElement;
+  const target = document.body;
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  const probe = document.createElement('span');
+
+  if (!root || !target) return;
+  // hidden inline probe for DOM baseline measurement
+  probe.textContent = 'H';
+  probe.style.position = 'fixed';
+  probe.style.visibility = 'hidden';
+  probe.style.whiteSpace = 'nowrap';
+  probe.style.padding = probe.style.margin = '0';
+  probe.style.left = '0';
+  probe.style.top = '0';
+  document.body.appendChild(probe);
+
+  const measure = () => {
+    const cs = getComputedStyle(target);
+    const lineHeight = parseFloat(cs.lineHeight);
+    if (!lineHeight) return null;
+
+    let baseline = lineHeight * 0.68; // sensible default if metrics are unavailable
+
+    if (ctx) {
+      // use simplified font string so canvas metrics match our layout font
+      ctx.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+      const metrics = ctx.measureText('Hgyqp');
+      const ascent = metrics.actualBoundingBoxAscent || 0;
+      const descent = metrics.actualBoundingBoxDescent || 0;
+      if (ascent || descent) {
+        const textHeight = ascent + descent;
+        const leading = Math.max(lineHeight - textHeight, 0);
+        baseline = Math.min(lineHeight, (leading * 0.5) + ascent);
+      }
+    }
+
+    // DOM-based adjustment: measure where the actual baseline renders
+    probe.style.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+    probe.style.lineHeight = `${lineHeight}px`;
+    const rectProbe = probe.getBoundingClientRect();
+    const domBaseline = rectProbe.bottom - rectProbe.top;
+    if (domBaseline) baseline = domBaseline;
+
+    return { lineHeight, baseline };
+  };
+
+  const apply = () => {
+    const m = measure();
+    if (!m) return;
+    root.style.setProperty('--grid', `${m.lineHeight}px`);
+    root.style.setProperty('--rule-offset', `${m.baseline}px`);
+
+    // align repeating grid to the first content line baseline
+    const main = document.querySelector('.site-main');
+    const first = main ? main.firstElementChild : null;
+    const mainTop = main ? (main.getBoundingClientRect().top + window.scrollY) : 0;
+    const firstMargin = first ? (parseFloat(getComputedStyle(first).marginTop) || 0) : 0;
+    const firstBaseline = mainTop + firstMargin + m.baseline;
+    const offset = ((firstBaseline % m.lineHeight) - m.baseline + m.lineHeight * 2) % m.lineHeight;
+    root.style.setProperty('--grid-offset', `${offset}px`);
+  };
+
+  const schedule = () => requestAnimationFrame(apply);
+
+  schedule();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(schedule);
+  }
+  window.addEventListener('resize', schedule, { passive: true });
+})();
+
 // home-only: lightweight matrix rain background
 // motion: scroll reveal
 (function() {

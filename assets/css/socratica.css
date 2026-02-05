@@ -15,14 +15,12 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body { min-height: 100%; }
+html { background: var(--bg); }
 
 body {
   color: var(--fg);
   background-color: var(--bg);
   background-image:
-    radial-gradient(circle at 12% 20%, rgba(0,0,0,0.028) 0 8%, transparent 18%),
-    radial-gradient(circle at 78% 10%, rgba(0,0,0,0.020) 0 7%, transparent 18%),
-    radial-gradient(circle at 60% 72%, rgba(0,0,0,0.018) 0 10%, transparent 22%),
     repeating-linear-gradient(
       180deg,
       transparent 0,
@@ -34,17 +32,13 @@ body {
     ),
     linear-gradient(90deg, var(--margin) 64px, transparent 64px);
   background-size:
-    320px 320px,
-    320px 320px,
-    420px 420px,
     100% var(--grid),
     100% 100%;
   background-position:
-    0 0,
-    0 0,
-    0 0,
-    0 0,
+    0 var(--grid-offset, 0px),
     0 0;
+  background-attachment: scroll, scroll;
+  background-origin: border-box;
   font-family: 'IBM Plex Mono', 'Space Mono', monospace;
   font-size: 18px;
   line-height: var(--grid);
@@ -55,6 +49,8 @@ body {
   margin: 0 auto;
   box-shadow: 0 14px 38px rgba(0,0,0,0.06);
   border: 1px solid rgba(0,0,0,0.04);
+  position: relative;
+  z-index: 0;
 }
 
 /* Everything must be multiples of 32px */
@@ -188,7 +184,7 @@ a:hover { color: var(--accent); border-color: var(--accent); }
 .hero-bubbles {
   display: flex;
   flex-wrap: wrap;
-  gap: calc(var(--grid) / 2);
+  gap: var(--grid);
   margin: var(--grid) 0;
 }
 
@@ -196,8 +192,9 @@ a:hover { color: var(--accent); border-color: var(--accent); }
   flex: 1 1 0;
   min-width: 160px;
   max-width: none;
-  padding: 16px;
-  border: 2px solid var(--border);
+  padding: var(--grid);
+  border: none;
+  box-shadow: 0 0 0 2px var(--border);
   background: transparent;
   border-radius: 12px;
 }
@@ -207,7 +204,7 @@ a:hover { color: var(--accent); border-color: var(--accent); }
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--muted);
-  margin-bottom: calc(var(--grid) / 4);
+  margin-bottom: 0;
   line-height: var(--grid);
 }
 
@@ -223,7 +220,7 @@ a:hover { color: var(--accent); border-color: var(--accent); }
 }
 
 .hero-bubble-link a {
-  margin-top: calc(var(--grid) / 4);
+  margin-top: var(--grid);
   font-size: 12px;
   border-bottom: 2px solid var(--accent);
   align-self: flex-start;
