@@ -85,6 +85,56 @@
   window.addEventListener('resize', schedule, { passive: true });
 })();
 
+// snap notebook images to the grid so following text starts on a ruled line
+(function() {
+  const root = document.documentElement;
+
+  const parsePx = (value) => {
+    const n = parseFloat(value);
+    return Number.isFinite(n) ? n : 0;
+  };
+
+  const snap = () => {
+    const grid = parsePx(getComputedStyle(root).getPropertyValue('--grid'));
+    if (!grid) return;
+
+    const images = document.querySelectorAll('.page-content img');
+    images.forEach((img) => {
+      if (!img.isConnected) return;
+
+      const cs = getComputedStyle(img);
+      if (cs.display === 'none') return;
+
+      const cached = parsePx(img.dataset.baseMarginBottom || '');
+      const baseMarginBottom = cached || parsePx(cs.marginBottom);
+      if (!img.dataset.baseMarginBottom) {
+        img.dataset.baseMarginBottom = String(baseMarginBottom);
+      }
+
+      // reset first, then compute extra spacing needed to reach next grid row
+      img.style.marginBottom = `${baseMarginBottom}px`;
+
+      const marginTop = parsePx(cs.marginTop);
+      const total = marginTop + img.offsetHeight + baseMarginBottom;
+      const remainder = ((total % grid) + grid) % grid;
+      const adjustment = remainder === 0 ? 0 : (grid - remainder);
+
+      img.style.marginBottom = `${baseMarginBottom + adjustment}px`;
+    });
+  };
+
+  const schedule = () => requestAnimationFrame(snap);
+
+  schedule();
+  window.addEventListener('resize', schedule, { passive: true });
+  window.addEventListener('load', schedule, { once: true });
+
+  document.querySelectorAll('.page-content img').forEach((img) => {
+    if (img.complete) return;
+    img.addEventListener('load', schedule, { once: true });
+  });
+})();
+
 // home-only: lightweight matrix rain background
 // motion: scroll reveal
 (function() {
