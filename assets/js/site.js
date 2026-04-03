@@ -135,31 +135,39 @@
   });
 })();
 
-// Dynamic ruled journal lines — DOM-probe baseline, never drifts
+// Dynamic ruled journal lines — measure every element, never trust CSS alone
 (function() {
   const canvas = document.createElement('canvas');
   canvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:-1;opacity:0;transition:opacity .4s ease;';
   document.body.insertBefore(canvas, document.body.firstChild);
   const ctx = canvas.getContext('2d');
 
-  // A 0×0 inline-block with vertical-align:baseline sits its *bottom* edge
-  // exactly on the rendered text baseline — no font-metric approximation.
+  // A 0x0 inline-block at vertical-align:baseline: its bottom edge is placed
+  // by the browser's own layout engine exactly on the text baseline.
   const probe = document.createElement('span');
   probe.setAttribute('aria-hidden', 'true');
   probe.style.cssText = 'display:inline-block;width:0;height:0;overflow:hidden;vertical-align:baseline;';
 
-  const domBaseline = (el) => {
+  // Cache keyed by computed style signature so we only DOM-probe once per
+  // unique (font, size, weight, line-height) combination per draw call.
+  const bCache = new Map();
+
+  const baselineOff = (el) => {
+    const cs  = getComputedStyle(el);
+    const key = `${cs.fontFamily}|${cs.fontSize}|${cs.fontWeight}|${cs.lineHeight}`;
+    if (bCache.has(key)) return bCache.get(key);
     el.insertBefore(probe, el.firstChild);
-    const bottom = probe.getBoundingClientRect().bottom;
-    const top    = el.getBoundingClientRect().top;
+    const off = probe.getBoundingClientRect().bottom - el.getBoundingClientRect().top;
     el.removeChild(probe);
-    return bottom - top; // px from element top to actual rendered baseline
+    bCache.set(key, off);
+    return off;
   };
 
   const draw = () => {
-    const dpr = window.devicePixelRatio || 1;
-    const W   = document.body.offsetWidth;
-    const H   = document.body.offsetHeight;
+    bCache.clear();
+    const dpr  = window.devicePixelRatio || 1;
+    const W    = document.body.offsetWidth;
+    const H    = document.body.offsetHeight;
     if (!W || !H) return;
 
     canvas.width  = W * dpr;
@@ -170,25 +178,42 @@
     ctx.clearRect(0, 0, W, H);
 
     const bodyY = document.body.getBoundingClientRect().top;
-
-    // ── anchor: first visible <p> or <li>, baseline via DOM probe ────────
-    let anchorY = null;
     const grid  = parseFloat(getComputedStyle(document.documentElement)
                     .getPropertyValue('--grid')) || 32;
 
+    // Measure every p and li independently via DOM probe
+    const rawYs = [];
     for (const el of document.querySelectorAll('p, li')) {
       if (!el.isConnected) continue;
       const cs = getComputedStyle(el);
       if (cs.display === 'none' || cs.visibility === 'hidden') continue;
       const rect = el.getBoundingClientRect();
       if (!rect.width || !rect.height) continue;
-      anchorY = (rect.top - bodyY) + domBaseline(el);
-      break;
+      const lh       = parseFloat(cs.lineHeight) || grid;
+      const bOff     = baselineOff(el);
+      const elTop    = rect.top - bodyY;
+      const numLines = Math.max(1, Math.round(rect.height / lh));
+      for (let i = 0; i < numLines; i++) rawYs.push(elTop + bOff + i * lh);
     }
 
-    if (anchorY === null) { canvas.style.opacity = '1'; return; }
+    rawYs.sort((a, b) => a - b);
 
-    // ── image exclusion zones (body-relative) ─────────────────────────────
+    // Build full line set: measured baselines + fill gaps + extend to page edges
+    const lineSet = new Set(rawYs.map(y => Math.round(y)));
+
+    for (let i = 1; i < rawYs.length; i++) {
+      const steps = Math.round((rawYs[i] - rawYs[i - 1]) / grid);
+      for (let s = 1; s < steps; s++) {
+        lineSet.add(Math.round(rawYs[i - 1] + s * grid));
+      }
+    }
+
+    if (rawYs.length) {
+      for (let y = Math.round(rawYs[0]) - grid; y >= 0; y -= grid) lineSet.add(y);
+      for (let y = Math.round(rawYs[rawYs.length - 1]) + grid; y <= H; y += grid) lineSet.add(y);
+    }
+
+    // Image exclusion zones
     const GAP   = 4;
     const zones = Array.from(document.querySelectorAll('.page-content img'))
       .filter(img => img.isConnected && getComputedStyle(img).display !== 'none')
@@ -201,32 +226,29 @@
         };
       });
 
-    // ── draw lines anchored to actual text baseline, filled across full height
+    // Draw
     const MARGIN_X = 64;
-    // walk back from anchor to y <= 0
-    let y = anchorY - Math.ceil(anchorY / grid) * grid;
+    for (const rawY of Array.from(lineSet).sort((a, b) => a - b)) {
+      const yr = rawY + 0.5;
+      if (yr <= 0 || yr > H) continue;
+      if (zones.some(z => yr >= z.top && yr <= z.bottom)) continue;
 
-    while (y <= H) {
-      const yr = Math.round(y) + 0.5;
-      if (yr > 0 && !zones.some(z => yr >= z.top && yr <= z.bottom)) {
-        ctx.beginPath();
-        ctx.strokeStyle = 'rgba(56,110,184,0.12)';
-        ctx.lineWidth   = 1;
-        ctx.moveTo(0,         yr);
-        ctx.lineTo(MARGIN_X,  yr);
-        ctx.stroke();
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(56,110,184,0.12)';
+      ctx.lineWidth   = 1;
+      ctx.moveTo(0,        yr);
+      ctx.lineTo(MARGIN_X, yr);
+      ctx.stroke();
 
-        ctx.beginPath();
-        ctx.strokeStyle = 'rgba(56,110,184,0.38)';
-        ctx.lineWidth   = 1;
-        ctx.moveTo(MARGIN_X, yr);
-        ctx.lineTo(W,        yr);
-        ctx.stroke();
-      }
-      y += grid;
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(56,110,184,0.38)';
+      ctx.lineWidth   = 1;
+      ctx.moveTo(MARGIN_X, yr);
+      ctx.lineTo(W,        yr);
+      ctx.stroke();
     }
 
-    // ── margin line ───────────────────────────────────────────────────────
+    // Margin line
     ctx.beginPath();
     ctx.strokeStyle = 'rgba(206,68,68,0.55)';
     ctx.lineWidth   = 1;
@@ -237,7 +259,6 @@
     canvas.style.opacity = '1';
   };
 
-  // double-rAF so image-snap margins are finalised before we measure zones
   const schedule = () => requestAnimationFrame(() => requestAnimationFrame(draw));
 
   schedule();
@@ -248,6 +269,7 @@
   });
   if (document.fonts?.ready) document.fonts.ready.then(schedule);
 })();
+
 
 // home-only: lightweight matrix rain background
 // motion: scroll reveal

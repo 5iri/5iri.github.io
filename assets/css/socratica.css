@@ -206,6 +206,8 @@ a:hover { color: var(--accent); border-color: var(--accent); }
 .hero-bubble-link a {
   margin-top: var(--grid);
   font-size: 12px;
+  /* line-height + border-bottom must sum to exactly --grid (32px) */
+  line-height: calc(var(--grid) - 2px); /* 30px line + 2px border = 32px box */
   border-bottom: 2px solid var(--accent);
   align-self: flex-start;
 }
