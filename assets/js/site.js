@@ -135,6 +135,120 @@
   });
 })();
 
+// Dynamic ruled journal lines — DOM-probe baseline, never drifts
+(function() {
+  const canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:-1;opacity:0;transition:opacity .4s ease;';
+  document.body.insertBefore(canvas, document.body.firstChild);
+  const ctx = canvas.getContext('2d');
+
+  // A 0×0 inline-block with vertical-align:baseline sits its *bottom* edge
+  // exactly on the rendered text baseline — no font-metric approximation.
+  const probe = document.createElement('span');
+  probe.setAttribute('aria-hidden', 'true');
+  probe.style.cssText = 'display:inline-block;width:0;height:0;overflow:hidden;vertical-align:baseline;';
+
+  const domBaseline = (el) => {
+    el.insertBefore(probe, el.firstChild);
+    const bottom = probe.getBoundingClientRect().bottom;
+    const top    = el.getBoundingClientRect().top;
+    el.removeChild(probe);
+    return bottom - top; // px from element top to actual rendered baseline
+  };
+
+  const draw = () => {
+    const dpr = window.devicePixelRatio || 1;
+    const W   = document.body.offsetWidth;
+    const H   = document.body.offsetHeight;
+    if (!W || !H) return;
+
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+
+    const bodyY = document.body.getBoundingClientRect().top;
+
+    // ── anchor: first visible <p> or <li>, baseline via DOM probe ────────
+    let anchorY = null;
+    const grid  = parseFloat(getComputedStyle(document.documentElement)
+                    .getPropertyValue('--grid')) || 32;
+
+    for (const el of document.querySelectorAll('p, li')) {
+      if (!el.isConnected) continue;
+      const cs = getComputedStyle(el);
+      if (cs.display === 'none' || cs.visibility === 'hidden') continue;
+      const rect = el.getBoundingClientRect();
+      if (!rect.width || !rect.height) continue;
+      anchorY = (rect.top - bodyY) + domBaseline(el);
+      break;
+    }
+
+    if (anchorY === null) { canvas.style.opacity = '1'; return; }
+
+    // ── image exclusion zones (body-relative) ─────────────────────────────
+    const GAP   = 4;
+    const zones = Array.from(document.querySelectorAll('.page-content img'))
+      .filter(img => img.isConnected && getComputedStyle(img).display !== 'none')
+      .map(img => {
+        const r  = img.getBoundingClientRect();
+        const cs = getComputedStyle(img);
+        return {
+          top:    r.top    - bodyY - (parseFloat(cs.marginTop)    || 0) - GAP,
+          bottom: r.bottom - bodyY + (parseFloat(cs.marginBottom) || 0) + GAP,
+        };
+      });
+
+    // ── draw lines anchored to actual text baseline, filled across full height
+    const MARGIN_X = 64;
+    // walk back from anchor to y <= 0
+    let y = anchorY - Math.ceil(anchorY / grid) * grid;
+
+    while (y <= H) {
+      const yr = Math.round(y) + 0.5;
+      if (yr > 0 && !zones.some(z => yr >= z.top && yr <= z.bottom)) {
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(56,110,184,0.12)';
+        ctx.lineWidth   = 1;
+        ctx.moveTo(0,         yr);
+        ctx.lineTo(MARGIN_X,  yr);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(56,110,184,0.38)';
+        ctx.lineWidth   = 1;
+        ctx.moveTo(MARGIN_X, yr);
+        ctx.lineTo(W,        yr);
+        ctx.stroke();
+      }
+      y += grid;
+    }
+
+    // ── margin line ───────────────────────────────────────────────────────
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(206,68,68,0.55)';
+    ctx.lineWidth   = 1;
+    ctx.moveTo(MARGIN_X + 0.5, 0);
+    ctx.lineTo(MARGIN_X + 0.5, H);
+    ctx.stroke();
+
+    canvas.style.opacity = '1';
+  };
+
+  // double-rAF so image-snap margins are finalised before we measure zones
+  const schedule = () => requestAnimationFrame(() => requestAnimationFrame(draw));
+
+  schedule();
+  window.addEventListener('resize', schedule, { passive: true });
+  window.addEventListener('load',   schedule, { once: true });
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete) img.addEventListener('load', schedule, { once: true });
+  });
+  if (document.fonts?.ready) document.fonts.ready.then(schedule);
+})();
+
 // home-only: lightweight matrix rain background
 // motion: scroll reveal
 (function() {

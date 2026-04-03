@@ -11,8 +11,7 @@
   --photo-bg: #fffdf9;
   --photo-edge: rgba(54, 45, 31, 0.3);
   --photo-shadow: rgba(31, 24, 14, 0.22);
-  /* place the rule where the text baseline actually sits (22px on a 32px row) */
-  --rule-offset: calc(var(--grid) * 0.6875);
+  --rule-offset: calc(var(--grid) * 0.6875); /* kept for reference; canvas ignores this */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,25 +22,7 @@ html { background: var(--bg); }
 body {
   color: var(--fg);
   background-color: var(--bg);
-  background-image:
-    repeating-linear-gradient(
-      180deg,
-      transparent 0,
-      transparent calc(var(--rule-offset) - 1px),
-      var(--line) calc(var(--rule-offset) - 1px),
-      var(--line) var(--rule-offset),
-      transparent var(--rule-offset),
-      transparent var(--grid)
-    ),
-    linear-gradient(90deg, var(--margin) 64px, transparent 64px);
-  background-size:
-    100% var(--grid),
-    100% 100%;
-  background-position:
-    0 var(--grid-offset, 0px),
-    0 0;
-  background-attachment: scroll, scroll;
-  background-origin: border-box;
+  /* ruled lines and margin are drawn by site.js canvas for proper image flow */
   font-family: 'IBM Plex Mono', 'Space Mono', monospace;
   font-size: 18px;
   line-height: var(--grid);
