@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 <section class="hero reveal" data-parallax="0.02">
-      <span class="hero-tag mono">lab log · March 2026</span>
+      <span class="hero-tag mono">lab log · April 2026</span>
       <h1>always curious.</h1>
       <p class="hero-lede">I am
         <span class="hover-peek">
