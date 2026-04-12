@@ -6,49 +6,56 @@ nav_order: 1
 ---
 
 <section class="hero reveal" data-parallax="0.02">
+  <div class="hero-intro">
+    <div class="hero-photo">
+      <img src="/assets/img/siri.jpeg" alt="Shri" />
+    </div>
+    <div class="hero-text">
       <span class="hero-tag mono">lab log · April 2026</span>
       <h1>always curious.</h1>
       <p class="hero-lede">I am
         <span class="hover-peek">
           <span class="hover-peek__trigger">Shri</span>
           <span class="hover-peek__card">
-            <img src="{{ '/markdown_files/posts/assets/me.jpeg' | relative_url }}">
+            <img src="/markdown_files/posts/assets/me.jpeg">
           </span>
         </span>.
         I love working on silicon, hardware, and seeing my vision come up everything from scratch. I’m 20, I love
         <span class="hover-peek">
           <span class="hover-peek__trigger">drinking redbull and eating chips</span>
           <span class="hover-peek__card">
-            <img src="{{ '/markdown_files/posts/assets/catcoke.png' | relative_url }}">
+            <img src="/markdown_files/posts/assets/catcoke.png">
           </span>
         </span>.
       </p>
+    </div>
+  </div>
 
-      <div class="hero-bubbles">
-        <div class="hero-bubble">
-          <div class="hero-bubble-label">NOW</div>
-          <div class="hero-bubble-text">Working on a bunch of work, mostly towards energy efficient compuation.</div>
-        </div>
-        <div class="hero-bubble">
-          <div class="hero-bubble-label">FOCUS</div>
-          <div class="hero-bubble-text">Systems level engineering. FPGA inferencing LLMs and some more cool stuff.</div>
-        </div>
-        <div class="hero-bubble">
-          <div class="hero-bubble-label">NEXT SESSION</div>
-          <div class="hero-bubble-text">Saturday cowork, 20:00 IST (remote) (thinking of going live on kick)</div>
-        </div>
-      </div>
-      <div class="hero-bubbles hero-bubbles-secondary">
-        <div class="hero-bubble hero-bubble-link">
-          <div class="hero-bubble-text">working on writing a complete view of computer architecture.</div>
-          <a href="https://comparch.5iri.me">comparch site</a>
-        </div>
-        <div class="hero-bubble hero-bubble-link">
-          <div class="hero-bubble-text">Simultaneously working on a bunch of projects.</div>
-          <a href="/blog">Check my blogs!</a>
-        </div>
-      </div>
-      <p class="hero-note">Check out my <a href="/twitter"> twitter</a> for my sanity.</p>
+  <div class="hero-status">
+    <div class="hero-status-item">
+      <span class="hero-status-label">now</span>
+      <span class="hero-status-text">Working on a bunch of work, mostly towards energy efficient computation.</span>
+    </div>
+    <div class="hero-status-item">
+      <span class="hero-status-label">focus</span>
+      <span class="hero-status-text">Systems level engineering. FPGA inferencing LLMs and some more cool stuff.</span>
+    </div>
+    <div class="hero-status-item">
+      <span class="hero-status-label">next session</span>
+      <span class="hero-status-text">Saturday cowork, 20:00 IST (remote) (thinking of going live on kick)</span>
+    </div>
+  </div>
+
+  <div class="hero-status hero-status--links">
+    <div class="hero-status-item">
+      <span class="hero-status-text">Writing a complete view of computer architecture. <a href="https://comparch.5iri.me">comparch site &rarr;</a></span>
+    </div>
+    <div class="hero-status-item">
+      <span class="hero-status-text">Simultaneously working on a bunch of projects. <a href="/blog">Check my blogs! &rarr;</a></span>
+    </div>
+  </div>
+
+  <p class="hero-note">Check out my <a href="/twitter"> twitter</a> for my sanity.</p>
 </section>
 
 <section class="section reveal">
