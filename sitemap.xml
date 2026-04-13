@@ -1,0 +1,34 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% assign site_base_url = "https://5iri.me" %}
+{% assign page_urls = site.pages | sort: "url" %}
+{% for p in page_urls %}
+  {% assign url = p.url | default: '' %}
+  {% assign include_url = true %}
+  {% if url == '' or url == '/sitemap.xml' or url == '/robots.txt' or p.sitemap == false %}
+    {% assign include_url = false %}
+  {% endif %}
+  {% if url contains '/assets/' %}
+    {% assign include_url = false %}
+  {% endif %}
+  {% if url contains '.' %}
+    {% assign include_url = false %}
+  {% endif %}
+  {% if include_url %}
+  <url>
+    {% assign normalized_url = url | replace: site.url, '' | replace: 'https://localhost:4000', '' | replace: 'http://localhost:4000', '' %}
+    {% if normalized_url == '' %}
+      {% assign normalized_url = '/' %}
+    {% endif %}
+    <loc>{{ site_base_url }}{{ site.baseurl }}{{ normalized_url }}</loc>
+    {% if p.date %}
+    <lastmod>{{ p.date | date_to_xmlschema }}</lastmod>
+    {% endif %}
+  </url>
+  {% endif %}
+{% endfor %}
+</urlset>

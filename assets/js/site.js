@@ -141,12 +141,19 @@
   canvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:-1;opacity:0;transition:opacity .4s ease;';
   document.body.insertBefore(canvas, document.body.firstChild);
   const ctx = canvas.getContext('2d');
+  const TEXT_LINE_SELECTOR = [
+    'p', 'li', 'dt', 'dd', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+    '.hero-tag', '.hero-note', '.hero-status-label', '.hero-status-text',
+    '.section-title', '.section-desc', '.card-kicker', '.card-title',
+    '.card-excerpt', '.contact-link'
+  ].join(', ');
 
   // A 0x0 inline-block at vertical-align:baseline: its bottom edge is placed
   // by the browser's own layout engine exactly on the text baseline.
   const probe = document.createElement('span');
   probe.setAttribute('aria-hidden', 'true');
   probe.style.cssText = 'display:inline-block;width:0;height:0;overflow:hidden;vertical-align:baseline;';
+  const textRange = document.createRange();
 
   // Cache keyed by computed style signature so we only DOM-probe once per
   // unique (font, size, weight, line-height) combination per draw call.
@@ -158,9 +165,36 @@
     if (bCache.has(key)) return bCache.get(key);
     el.insertBefore(probe, el.firstChild);
     const off = probe.getBoundingClientRect().bottom - el.getBoundingClientRect().top;
-    el.removeChild(probe);
+    if (probe.parentNode === el) el.removeChild(probe);
     bCache.set(key, off);
     return off;
+  };
+
+  const collectLineTops = (el, bodyY) => {
+    const tops = [];
+    const seen = new Set();
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        return node.nodeValue && node.nodeValue.trim()
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      }
+    });
+
+    while (walker.nextNode()) {
+      textRange.selectNodeContents(walker.currentNode);
+      for (const rect of textRange.getClientRects()) {
+        if (!rect.width || !rect.height) continue;
+        const top = rect.top - bodyY;
+        const key = Math.round(top * 2) / 2;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        tops.push(top);
+      }
+    }
+
+    tops.sort((a, b) => a - b);
+    return tops;
   };
 
   const draw = () => {
@@ -181,9 +215,9 @@
     const grid  = parseFloat(getComputedStyle(document.documentElement)
                     .getPropertyValue('--grid')) || 32;
 
-    // Measure every p and li independently via DOM probe
+    // Measure rendered lines from text nodes, then anchor each to its baseline.
     const rawYs = [];
-    for (const el of document.querySelectorAll('p, li')) {
+    for (const el of document.querySelectorAll(TEXT_LINE_SELECTOR)) {
       if (!el.isConnected) continue;
       const cs = getComputedStyle(el);
       if (cs.display === 'none' || cs.visibility === 'hidden') continue;
@@ -192,8 +226,16 @@
       const lh       = parseFloat(cs.lineHeight) || grid;
       const bOff     = baselineOff(el);
       const elTop    = rect.top - bodyY;
-      const numLines = Math.max(1, Math.round(rect.height / lh));
-      for (let i = 0; i < numLines; i++) rawYs.push(elTop + bOff + i * lh);
+      const lineTops = collectLineTops(el, bodyY);
+
+      if (lineTops.length) {
+        const firstBaseline = elTop + bOff;
+        const baselineDelta = firstBaseline - lineTops[0];
+        for (const lineTop of lineTops) rawYs.push(lineTop + baselineDelta);
+      } else {
+        const numLines = Math.max(1, Math.round(rect.height / lh));
+        for (let i = 0; i < numLines; i++) rawYs.push(elTop + bOff + i * lh);
+      }
     }
 
     rawYs.sort((a, b) => a - b);
@@ -259,15 +301,48 @@
     canvas.style.opacity = '1';
   };
 
-  const schedule = () => requestAnimationFrame(() => requestAnimationFrame(draw));
+  let queued = false;
+  const schedule = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      queued = false;
+      draw();
+    }));
+  };
 
   schedule();
   window.addEventListener('resize', schedule, { passive: true });
   window.addEventListener('load',   schedule, { once: true });
+  window.addEventListener('pageshow', schedule, { passive: true });
+  window.addEventListener('orientationchange', schedule, { passive: true });
+
+  if (typeof ResizeObserver !== 'undefined') {
+    const ro = new ResizeObserver(schedule);
+    ro.observe(document.body);
+    const main = document.querySelector('.site-main');
+    if (main) ro.observe(main);
+  }
+
+  if (typeof MutationObserver !== 'undefined') {
+    const mo = new MutationObserver(schedule);
+    mo.observe(document.body, {
+      subtree: true,
+      childList: true,
+      characterData: true,
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+  }
+
   document.querySelectorAll('img').forEach(img => {
     if (!img.complete) img.addEventListener('load', schedule, { once: true });
   });
   if (document.fonts?.ready) document.fonts.ready.then(schedule);
+  if (document.fonts?.addEventListener) {
+    document.fonts.addEventListener('loadingdone', schedule);
+    document.fonts.addEventListener('loadingerror', schedule);
+  }
 })();
 
 

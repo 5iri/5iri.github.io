@@ -1,0 +1,9 @@
+---
+layout: null
+permalink: /robots.txt
+---
+User-agent: *
+Allow: /
+
+{% assign site_base_url = "https://5iri.me" %}
+Sitemap: {{ site_base_url }}{{ site.baseurl }}/sitemap.xml

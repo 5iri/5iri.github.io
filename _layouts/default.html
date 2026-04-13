@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% assign meta_title = page.title | default: site.title | default: "5iri" %}
+  {% capture raw_meta_description %}{{ page.description | default: page.excerpt | default: site.description | default: "Personal website and writing." }}{% endcapture %}
+  {% assign meta_description = raw_meta_description | markdownify | strip_html | strip_newlines | strip | truncate: 160 %}
+  {% assign site_base_url = "https://5iri.me" %}
+  {% assign canonical_path = page.url | default: "/" %}
+  {% assign canonical_url = site_base_url | append: site.baseurl | append: canonical_path %}
+  {% assign needs_math = false %}
+  {% if page.math %}
+    {% assign needs_math = true %}
+  {% elsif page.url == '/notes' or page.url contains '/notes/' %}
+    {% assign needs_math = true %}
+  {% endif %}
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title | default: "5iri" }}</title>
+  <meta name="description" content="{{ meta_description | escape }}">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#fbf8f0">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta property="og:site_name" content="{{ site.title | default: '5iri' | escape }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ meta_title | escape }}">
+  <meta property="og:description" content="{{ meta_description | escape }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ meta_title | escape }}">
+  <meta name="twitter:description" content="{{ meta_description | escape }}">
 
 
   <!-- Fonts (Playfair + IBM Plex Mono) -->
@@ -13,6 +38,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/socratica.css' | relative_url }}">
   
   <!-- MathJax for LaTeX math rendering -->
+  {% if needs_math %}
   <script>
     MathJax = {
       tex: {
@@ -27,13 +53,14 @@
     };
   </script>
   <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  {% endif %}
 </head>
 <body class="{% if page.url == '/' or page.permalink == '/aboutme' %}is-home{% endif %}">
   <header class="site-header">
     <a class="brand" href="{{ '/' | relative_url }}">
       <span class="brand-text">{{ site.title | default: '5iri' }}</span>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Primary">
       {% assign here = page.url %}
       <a href="{{ '/notes'   | relative_url }}" class="{% if here == '/notes' %}active{% endif %}">notes</a>
       <a href="{{ '/blog'    | relative_url }}" class="{% if here == '/blog' %}active{% endif %}">blog</a>
@@ -53,7 +80,7 @@
   </footer>
 
   <a href="https://sravjti.in/webring/" target="_blank" rel="noopener" class="webring-badge" title="SRA Webring">
-    <img src="{{ '/assets/img/khopdi.svg' | relative_url }}" alt="SRA Webring" />
+    <img src="{{ '/assets/img/khopdi.svg' | relative_url }}" alt="SRA Webring" width="40" height="40" loading="lazy" decoding="async" />
   </a>
 
   <script src="{{ '/assets/js/site.js' | relative_url }}"></script>

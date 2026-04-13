@@ -13,9 +13,9 @@ Here are some awesome people and their websites/accounts:
 - [Sriniketh Desikan](https://www.linkedin.com/in/sriniketh-desikan-9a4729286/) - My man studying Engineering Physics @ IIT, Madras.
 - [Atharva Kshirsagar](https://ksagar.site) - Research Intern @ [Lossfunk](https://lossfunk.com/)
 - [Prajwal Avhad](https://crisiumnih.github.io/) - Ex Research Intern @ IIT Kanpur
-- [Sujal Dwivedi](https://5usu.github.io/index.html) - My FPGA/ML buddy
+- [Sujal Dwivedi](https://5usu.github.io/index.html) - RL/Robotics Intern @ Eyecandy Robots
 - [Suchit Garad](https://ilegend509.me/) - FPGA guy but hates RISCV for some reason
-- [Shaunak Datar](https://shaunakkdatar.github.io/) - GSoC Rich (My go to embedded Buddy)
+- [Shaunak Datar](https://shaunakkdatar.github.io/) - Intern @ Mecha Systems
 - [Ansh Semwal](https://de-funkd.github.io/) - RL Super God
 
 ... and a lot more
