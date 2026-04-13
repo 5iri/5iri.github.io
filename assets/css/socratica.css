@@ -332,11 +332,19 @@ a:hover { color: var(--accent); border-color: var(--accent); }
 }
 
 /* Hover peek */
-.hover-peek { position: relative; display: inline; cursor: pointer; }
+.hover-peek {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  line-height: inherit;
+  vertical-align: baseline;
+}
 .hover-peek__trigger { border-bottom: 2px solid var(--accent); }
 .hover-peek__card {
+  display: block;
   position: absolute;
-  bottom: calc(100% + 8px);
+  top: auto;
+  bottom: calc(100% + 10px);
   left: 50%;
   transform: translate(-50%, 6px);
   opacity: 0;
@@ -345,11 +353,29 @@ a:hover { color: var(--accent); border-color: var(--accent); }
   background: #fff;
   border: 1px solid var(--border);
   padding: 8px;
-  width: 200px;
+  width: clamp(150px, 22vw, 220px);
+  max-width: calc(100vw - 48px);
   z-index: 20;
   line-height: normal;
+  box-shadow: 0 14px 24px -18px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
 }
-.hover-peek__card img { width: 100%; display: block; }
+.hover-peek__card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: -10px;
+  height: 10px;
+}
+.hover-peek__card img {
+  width: 100%;
+  max-height: 240px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
 .hover-peek:hover .hover-peek__card,
 .hover-peek:focus-within .hover-peek__card {
   opacity: 1;
