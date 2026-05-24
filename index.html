@@ -6,13 +6,21 @@ nav_order: 1
 description: Personal site of Shri Vishakh Devanand with projects, notes, blog posts, and current hardware work.
 ---
 
+{% assign by_parent = site.pages | where: "parent", "Blog" %}
+{% assign by_url = site.pages | where_exp: "p", "p.url contains '/blog'" %}
+{% assign blog_pages_all = by_parent | concat: by_url | uniq %}
+{% assign blog_pages = blog_pages_all | where_exp: "p", "p.url != '/blog'" %}
+{% assign dated = blog_pages | where_exp: "p", "p.date" | sort: "date" | reverse %}
+{% assign undated = blog_pages | where_exp: "p", "p.date == nil" | sort: "title" %}
+{% assign combined = dated | concat: undated %}
+
 <section class="hero reveal" data-parallax="0.02">
   <div class="hero-intro">
     <div class="hero-photo">
       <img src="/assets/img/siri.jpeg" alt="Portrait of Shri Vishakh Devanand" width="1200" height="1600" fetchpriority="high" decoding="async" />
     </div>
     <div class="hero-text">
-      <span class="hero-tag mono">lab log · April 2026</span>
+      <span class="hero-tag mono" data-live-month data-timezone="Asia/Kolkata">lab log · {{ site.time | date: "%B %Y" }}</span>
       <h1>always curious.</h1>
       <p class="hero-lede">I am
         <span class="hover-peek">
@@ -68,14 +76,6 @@ description: Personal site of Shri Vishakh Devanand with projects, notes, blog p
 <section class="section reveal">
   <h2 class="section-title">Latest writing</h2>
   <div class="grid grid-3">
-  {% assign by_parent = site.pages | where: "parent", "Blog" %}
-  {% assign by_url = site.pages | where_exp: "p", "p.url contains '/blog'" %}
-  {% assign blog_pages_all = by_parent | concat: by_url | uniq %}
-  {% assign blog_pages = blog_pages_all | where_exp: "p", "p.url != '/blog'" %}
-
-  {% assign dated = blog_pages | where_exp: "p", "p.date" | sort: "date" | reverse %}
-  {% assign undated = blog_pages | where_exp: "p", "p.date == nil" | sort: "title" %}
-  {% assign combined = dated | concat: undated %}
   {% for p in combined limit:3 %}
     <a class="card" href="{{ p.url | relative_url }}">
       <div class="card-kicker">blog</div>

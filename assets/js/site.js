@@ -11,6 +11,21 @@
   });
 })();
 
+// keep the landing page month label current without requiring a rebuild
+(function() {
+  const label = document.querySelector('[data-live-month]');
+  if (!label) return;
+
+  const timeZone = label.getAttribute('data-timezone') || undefined;
+  const formatter = new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    year: 'numeric',
+    timeZone
+  });
+
+  label.textContent = `lab log · ${formatter.format(new Date())}`;
+})();
+
 // keep the ruled-paper background perfectly synced to the real line height/baseline
 (function() {
   const root = document.documentElement;
