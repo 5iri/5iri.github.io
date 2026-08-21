@@ -147,7 +147,7 @@ the numerical error here is tiny. it is just bigger than the even tinier separat
 
 <figure style="margin: 2rem 0;">
   <img src="{{ '/markdown_files/posts/assets/taylor-comparison/good-bad-comparisons.png' | relative_url }}" alt="Two comparisons: a numerically bad approximation that preserves the ordering, and a tiny approximation error that reverses a very small true gap" style="display:block; width:100%; height:auto; border:1px solid #333;" />
-  <figcaption style="margin-top:.65rem; color:#aaa; font-size:.9rem;">the left one is badly wrong on the correct side. the right one is almost exact on the wrong side.</figcaption>
+  <figcaption style="margin-top:.65rem; color:#777; font-size:.9rem;">the left one is badly wrong on the correct side. the right one is almost exact on the wrong side.</figcaption>
 </figure>
 
 this is what sent me down the rabbit hole.
@@ -267,7 +267,7 @@ and $$Q$$ can be very negative too. that is what happens when the errors are hug
 
 <figure style="margin: 2rem 0;">
   <img src="{{ '/markdown_files/posts/assets/taylor-comparison/normalized-error-q.png' | relative_url }}" alt="Density plot of the normalized Taylor remainder ratio Q against the true gap E, with a horizontal failure boundary at Q equals one" style="display:block; width:100%; height:auto; border:1px solid #333;" />
-  <figcaption style="margin-top:.65rem; color:#aaa; font-size:.9rem;">the vertical scale is signed-log so the huge ratios near tiny gaps still fit. everything above the red $$Q=1$$ line is a wrong ordering.</figcaption>
+  <figcaption style="margin-top:.65rem; color:#777; font-size:.9rem;">the vertical scale is signed-log so the huge ratios near tiny gaps still fit. everything above the red $$Q=1$$ line is a wrong ordering.</figcaption>
 </figure>
 
 the funnel shape is basically the whole story. as $$E$$ shrinks, the same remainder mismatch gets divided by a smaller and smaller number, so $$|Q|$$ explodes. whether it explodes upward or downward decides whether the approximation flips the sign or becomes confidently wrong in the useful direction.
@@ -346,7 +346,7 @@ $$
 
 <figure style="margin: 2rem 0;">
   <img src="{{ '/markdown_files/posts/assets/taylor-comparison/ordering-probability.png' | relative_url }}" alt="Correct-ordering probability against true gap E for square root, cube root, power two thirds, exponential, logarithm, sine, cosine, and the pooled sample" style="display:block; width:100%; height:auto; border:1px solid #333;" />
-  <figcaption style="margin-top:.65rem; color:#aaa; font-size:.9rem;">each coloured curve is comparisons involving that family. the dashed white curve pools all distinct-family comparisons.</figcaption>
+  <figcaption style="margin-top:.65rem; color:#777; font-size:.9rem;">each coloured curve is comparisons involving that family. the dashed black curve pools all distinct-family comparisons.</figcaption>
 </figure>
 
 for this sampling rule, the pooled accuracy is about $$52.6\%$$ near $$E=10^{-6}$$, about $$60\%$$ around $$E=0.007$$, about $$90\%$$ around $$E=0.15$$, and basically perfect once the gap gets large enough.
@@ -371,7 +371,7 @@ it belongs to the problem family, not to Taylor series itself.
 
 <figure style="margin: 2rem 0;">
   <img src="{{ '/markdown_files/posts/assets/taylor-comparison/family-failure-behavior.png' | relative_url }}" alt="A heatmap showing failure concentration away from the common expansion value one, beside a matrix of tiny-gap ordering accuracy for each pair of standard function families" style="display:block; width:100%; height:auto; border:1px solid #333;" />
-  <figcaption style="margin-top:.65rem; color:#aaa; font-size:.9rem;">left: the dark funnel around true-value level $$1$$ is where all the Taylor remainders vanish. right: most distinct pairs become a coin flip near zero gap, while the normalized sin/cos pair stays at $$100\%$$.</figcaption>
+  <figcaption style="margin-top:.65rem; color:#777; font-size:.9rem;">left: the dark funnel around true-value level $$1$$ is where all the Taylor remainders vanish. right: most distinct pairs become a coin flip near zero gap, while the normalized sin/cos pair stays at $$100\%$$.</figcaption>
 </figure>
 
 the family geometry is not background detail. it is the answer.
