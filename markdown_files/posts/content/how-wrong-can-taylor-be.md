@@ -270,7 +270,7 @@ and $$Q$$ can be very negative too. that is what happens when the errors are hug
   <figcaption style="margin-top:.65rem; color:#777; font-size:.9rem;">the vertical scale is signed-log so the huge ratios near tiny gaps still fit. everything above the red $$Q=1$$ line is a wrong ordering.</figcaption>
 </figure>
 
-the funnel shape is basically the whole story. as $$E$$ shrinks, the same remainder mismatch gets divided by a smaller and smaller number, so $$|Q|$$ explodes. whether it explodes upward or downward decides whether the approximation flips the sign or becomes confidently wrong in the useful direction.
+the funnel shape is basically the whole story. as $E$ shrinks, the same remainder mismatch is divided by a smaller and smaller gap, so $|Q|$ grows. if $Q$ grows upward past $1$, the approximation flips the sign; if it grows downward, the approximation may be numerically wrong but still preserve the ordering with an increasingly large margin.
 
 ## being close is not enough to make it fail
 
