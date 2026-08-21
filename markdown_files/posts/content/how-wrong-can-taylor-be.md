@@ -382,40 +382,48 @@ then sin and cos can have stationary points where the first derivative becomes z
 
 there is no single distance where "Taylor stops working". the transition depends on the derivative, curvature, expansion point, branch, sampling rule, and most importantly the difference of the two remainders.
 
-## where i stopped
+## possible applications
 
-i started with
+the most obvious application is a cheap comparison filter.
 
-$$
-\sqrt2
-\quad\text{vs}\quad
-\sqrt[3]3.
-$$
-
-i just wanted a cheap comparison using one Taylor term.
-
-then one horribly inaccurate cube-root approximation happened to still give the right ordering, and i could not stop thinking about why.
-
-the question i care about now is closer to
+suppose i want to know whether $$A>B$$, but calculating either value accurately is expensive. i can first evaluate cheap approximations $$\hat A$$ and $$\hat B$$. if i also have remainder bounds
 
 $$
-P\left(
-\operatorname{sign}(T_1(A)-T_1(B))
-=
-\operatorname{sign}(A-B)
-\;\middle|\;
-|A-B|=E
-\right),
+|r_A|\leq u_A,
+\qquad
+|r_B|\leq u_B,
 $$
 
-and especially what happens as $$E\rightarrow0$$.
+then the comparison is certified whenever
 
-for some families it collapses toward a coin flip. for some structured comparisons it stays at $$1$$. for others the expansion point creates its own strange failure region.
+$$
+|\hat A-\hat B|>u_A+u_B.
+$$
 
-the counterexamples do not feel random anymore though. they happen exactly when the discarded nonlinear part grows large enough, in the harmful direction, to jump across the decision boundary.
+there is no need to compute more digits when the approximate gap is comfortably larger than the worst possible error. only the close cases need a better Taylor expansion, interval arithmetic, or exact evaluation.
 
-which is a much nicer answer than "Taylor becomes inaccurate".
+this could be useful anywhere a numerical calculation eventually becomes a yes-or-no decision: choosing the larger of two candidates, deciding whether a constraint is active, comparing competing roots, or ranking approximate objective values in an optimization loop.
 
-the approximation can be wildly inaccurate.
+the important thing is that the approximation does not need to be uniformly good. it only needs to be reliable relative to the decision boundary. a method that is mediocre for reporting values might still be excellent for deciding which branch of an algorithm to take.
 
-it just has to remain wrong on the correct side.
+there is also a natural connection to computational geometry. many geometric algorithms repeatedly ask questions such as whether a point is to the left of a line, whether two quantities have crossed, or which of two intersections comes first. these are sign tests. a fast approximate predicate can handle the easy cases, while a slower and more reliable predicate is reserved for inputs near the boundary.
+
+the probability curve gives a way to study that fallback rule empirically. if
+
+$$
+p(E)=P(\text{correct ordering}\mid |A-B|\approx E),
+$$
+
+then a system could use the true-gap scale, or an estimate of it, to decide when first-order arithmetic is probably safe and when it should spend more work. that would not replace rigorous error bounds, but it could help benchmark different approximations and allocate precision where failures actually concentrate.
+
+there is a broader lesson here for surrogate models too. a surrogate does not always need to reproduce the exact values of an expensive function. sometimes it only needs to preserve the ordering of nearby candidates. that is a weaker requirement in some regions and a much harder one in others, especially when the candidates are separated by less than the surrogate's error.
+
+so the practical question is not simply
+
+> how accurate is this approximation?
+
+it is
+
+> accurate enough for which decision, at what separation, and with what fallback when the answer is uncertain?
+
+that framing makes the strange Taylor examples feel less like curiosities. they are small versions of a very common numerical design pattern: use a fast approximate answer when the margin is large, detect when the margin is too small, and pay for accuracy only at the boundary.
