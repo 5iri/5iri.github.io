@@ -4,6 +4,7 @@ parent: Blog
 permalink: blog/the-work-got-more-real
 layout: content
 date: 2026-05-25
+description: On sitting in the messy middle of unfinished projects, tiny TPU work getting more real, and starting final year.
 ---
 
 It has been a while since I wrote here.

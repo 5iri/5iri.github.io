@@ -13,6 +13,15 @@
   --photo-edge: rgba(54, 45, 31, 0.3);
   --photo-shadow: rgba(31, 24, 14, 0.22);
   --rule-offset: calc(var(--grid) * 0.6875); /* kept for reference; canvas ignores this */
+
+  /* Signal trace panel — scope-and-schematic accents, used only inside .signal-strip */
+  --signal-bg: #12140f;
+  --signal-grid: rgba(180, 255, 210, 0.1);
+  --signal-text: #cfe8d8;
+  --signal-trace-a: #7fe3ae;   /* phosphor green */
+  --signal-trace-b: #e3b567;   /* amber */
+  --signal-trace-c: #6fa8dc;   /* schematic blue */
+  --signal-trace-d: #d98ec2;   /* magenta, for contrast on a dense row */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -158,13 +167,6 @@ a:hover { color: var(--accent); border-color: var(--accent); }
   margin-bottom: 8px;
 }
 
-.hero-note {
-  margin-top: var(--grid);
-  font-size: 14px;
-  color: var(--muted);
-  line-height: var(--grid);
-}
-
 /* Hero intro — photo + text side by side */
 .hero-intro {
   display: flex;
@@ -248,16 +250,74 @@ a:hover { color: var(--accent); border-color: var(--accent); }
   font-weight: 600;
 }
 
-.hero-status--links {
-  border-top: none;
-  margin-top: 0;
+/* Hero thesis — the lead sentence, now the primary visual anchor */
+.hero-thesis {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 34px;
+  line-height: calc(var(--grid) * 1.25);
+  font-weight: 700;
+  margin: calc(var(--grid) / 2) 0 var(--grid) 0;
+  max-width: 18ch;
+}
+@media (max-width: 640px) {
+  .hero-thesis { font-size: 28px; }
 }
 
-.hero-status--links .hero-status-item {
-  padding-left: calc(var(--grid) / 2);
-  border-left: 2px solid var(--accent);
-  border-bottom: none;
-  margin-bottom: calc(var(--grid) / 2);
+/* Signal strip — a GTKWave-style activity trace, the hero's signature element */
+.signal-strip {
+  margin: var(--grid) 0 calc(var(--grid) / 2) 0;
+}
+
+.signal-strip svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.signal-bg { fill: var(--signal-bg); }
+
+.signal-grid line {
+  stroke: var(--signal-grid);
+  stroke-width: 1;
+}
+
+.signal-ticks text,
+.signal-labels text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  fill: var(--signal-text);
+  opacity: 0.75;
+}
+
+.signal-trace {
+  fill: none;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+.signal-trace--a { stroke: var(--signal-trace-a); }
+.signal-trace--b { stroke: var(--signal-trace-b); }
+.signal-trace--c { stroke: var(--signal-trace-c); }
+.signal-trace--d { stroke: var(--signal-trace-d); }
+
+.signal-cursor {
+  fill: var(--signal-trace-a);
+  animation: signal-pulse 1.6s ease-in-out infinite;
+}
+@keyframes signal-pulse {
+  0%, 100% { opacity: 1; r: 3; }
+  50% { opacity: 0.35; r: 4.5; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signal-cursor { animation: none; }
+}
+
+.signal-strip-caption {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  margin-top: calc(var(--grid) / 4);
 }
 
 /* Sections */
@@ -457,6 +517,65 @@ a:hover { color: var(--accent); border-color: var(--accent); }
   color: var(--muted);
 }
 .page-content blockquote p { margin: 0; }
+
+/* Project cards */
+.project-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--grid) 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.project-card:last-child { border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+
+.project-card a {
+  display: block;
+  padding: calc(var(--grid) / 2) 0 calc(var(--grid) / 2) calc(var(--grid) / 2);
+  border-left: 2px solid var(--accent);
+  border-bottom: none;
+}
+.project-card a:hover { border-left-color: var(--fg); }
+
+.project-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: calc(var(--grid) / 2);
+}
+
+.project-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--fg);
+}
+.project-title .ext { opacity: 0.6; margin-left: 4px; font-size: 0.85em; }
+
+.project-meta {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-ink);
+  white-space: nowrap;
+}
+
+.project-summary {
+  display: block;
+  font-size: 15px;
+  color: var(--fg);
+  margin-top: 4px;
+}
+
+.project-role {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
 
 /* Footer */
 .site-footer {

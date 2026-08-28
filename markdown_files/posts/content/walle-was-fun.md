@@ -4,6 +4,7 @@ layout: content
 parent: Blog
 permalink: blog/wall-was-fun
 date: 2025-11-24
+description: Running SRA-VJTI's Wall-E robotics workshop again, and what four years of the same event taught me.
 ---
 
 Yesterday, We @ [SRA-VJTI](https://sravjti.in) completed our first robotics workshop of the academic year — Wall-Ev2.7.

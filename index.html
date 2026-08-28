@@ -15,62 +15,80 @@ description: Personal site of Shri Vishakh Devanand with projects, notes, blog p
 {% assign combined = dated | concat: undated %}
 
 <section class="hero reveal" data-parallax="0.02">
-  <div class="hero-intro">
-    <div class="hero-photo">
-      <img src="/assets/img/siri.jpeg" alt="Portrait of Shri Vishakh Devanand" width="1200" height="1600" fetchpriority="high" decoding="async" />
-    </div>
-    <div class="hero-text">
-      <span class="hero-tag mono" data-live-month data-timezone="Asia/Kolkata">lab log · {{ site.time | date: "%B %Y" }}</span>
+  <span class="hero-tag mono" data-live-month data-timezone="Asia/Kolkata">lab log · {{ site.time | date: "%B %Y" }}</span>
 
-      <p class="hero-lede">I am
-        <span class="hover-peek">
-          <span class="hover-peek__trigger">Shri</span>
-          <span class="hover-peek__card">
-            <img src="/markdown_files/posts/assets/me.jpeg" alt="Shri standing outdoors" width="833" height="908" loading="lazy" decoding="async">
-          </span>
-        </span>.
-        I love working on silicon, hardware, and seeing my vision come up everything from scratch. I’m 20, I love
-        <span class="hover-peek">
-          <span class="hover-peek__trigger">drinking redbull and eating chips</span>
-          <span class="hover-peek__card">
-            <img src="/markdown_files/posts/assets/catcoke.png" alt="Cat with a soda bottle" width="680" height="680" loading="lazy" decoding="async">
-          </span>
-        </span>.
-      </p>
-    </div>
-  </div>
+  <p class="hero-thesis">Building RISC-V GPUs, one systolic array at a time.</p>
 
   <div class="hero-status">
     <div class="hero-status-item">
-      <span class="hero-status-label">building</span>
-      <span class="hero-status-text">RISC-V GPUs using systolic arrays.</span>
-    </div>
-    <div class="hero-status-item">
       <span class="hero-status-label">focus</span>
-      <span class="hero-status-text">RTL development, CXL compute system architectures and HW/SW co-design.</span>
+      <span class="hero-status-text">RTL development, CXL compute system architectures, and HW/SW co-design.</span>
     </div>
   </div>
 
-  <div class="hero-status hero-status--links">
-    <div class="hero-status-item">
-      <span class="hero-status-text">Writing a complete view of computer architecture. <a href="https://comparch.5iri.me">comparch site &rarr;</a></span>
-    </div>
-    <div class="hero-status-item">
-      <span class="hero-status-text">Simultaneously working on a bunch of projects. <a href="/blog">Check my blogs! &rarr;</a></span>
-    </div>
-  </div>
+  <figure class="signal-strip">
+    <svg viewBox="0 0 600 176" role="img" preserveAspectRatio="xMidYMid meet"
+         aria-label="A waveform-style activity trace of four active projects — Prosperity PPU, Tiny TPU, Synapse-32, and the computer architecture notes — from January through August 2026, each shown as an intermittent high or low signal.">
+      <rect x="0" y="0" width="600" height="176" class="signal-bg" />
 
-  <p class="hero-note">Check out my <a href="/twitter"> twitter</a> for my sanity.</p>
+      <!-- month grid -->
+      <g class="signal-grid">
+        <line x1="132" y1="16" x2="132" y2="176" />
+        <line x1="188" y1="16" x2="188" y2="176" />
+        <line x1="244" y1="16" x2="244" y2="176" />
+        <line x1="300" y1="16" x2="300" y2="176" />
+        <line x1="356" y1="16" x2="356" y2="176" />
+        <line x1="412" y1="16" x2="412" y2="176" />
+        <line x1="468" y1="16" x2="468" y2="176" />
+        <line x1="524" y1="16" x2="524" y2="176" />
+        <line x1="580" y1="16" x2="580" y2="176" />
+      </g>
+
+      <!-- month ticks -->
+      <g class="signal-ticks mono">
+        <text x="160" y="11">JAN</text>
+        <text x="216" y="11">FEB</text>
+        <text x="272" y="11">MAR</text>
+        <text x="328" y="11">APR</text>
+        <text x="384" y="11">MAY</text>
+        <text x="440" y="11">JUN</text>
+        <text x="496" y="11">JUL</text>
+        <text x="552" y="11">AUG</text>
+      </g>
+
+      <!-- signal labels -->
+      <g class="signal-labels mono">
+        <text x="124" y="30" text-anchor="end">PROSPERITY_PPU</text>
+        <text x="124" y="70" text-anchor="end">TINY_TPU</text>
+        <text x="124" y="110" text-anchor="end">SYNAPSE32</text>
+        <text x="124" y="150" text-anchor="end">COMPARCH_NOTES</text>
+      </g>
+
+      <!-- traces -->
+      <path class="signal-trace signal-trace--a" d="M132,26 L244,26 L244,46 L356,46 L356,26 L468,26 L468,46 L524,46 L524,26 L580,26" />
+      <path class="signal-trace signal-trace--b" d="M132,66 L300,66 L300,86 L356,86 L356,66 L412,66 L412,86 L524,86 L524,66 L580,66" />
+      <path class="signal-trace signal-trace--c" d="M132,126 L188,126 L188,106 L244,106 L244,126 L300,126 L300,106 L356,106 L356,126 L468,126 L468,106 L524,106 L524,126 L580,126" />
+      <path class="signal-trace signal-trace--d" d="M132,146 L188,146 L188,166 L244,166 L244,146 L356,146 L356,166 L412,166 L412,146 L580,146" />
+
+      <circle class="signal-cursor" cx="580" cy="26" r="3" />
+    </svg>
+    <figcaption class="signal-strip-caption mono">what's had cycles since january, roughly</figcaption>
+  </figure>
 </section>
 
 <section class="section reveal">
   <h2 class="section-title">Current quests</h2>
   <p class="section-desc">Which tracks am I actively publishing about?</p>
   <ul class="list-ruled">
-    <li>CXL-accelerated inference: memory-pooled architectures for low-latency LLM serving</li>
-    <li>Tiny TPU: a fully FPGA-resident systolic array designed as a compute offload engine</li>
-    <li>Proud open sourcer</li>
+    <li>Tiny TPU — a fully FPGA-resident systolic array for RISC-V-adjacent matrix compute, running on real hardware.</li>
+    <li>Prosperity PPU: an SNN accelerator exploiting product sparsity via a TCAM-based pattern-reuse detector.</li>
+    <li>CXL-accelerated inference: memory-pooled architectures for low-latency LLM serving.</li>
   </ul>
+</section>
+
+<section class="section reveal">
+  <h2 class="section-title">Also writing</h2>
+  <p class="section-desc">A complete, start-to-finish reference on computer architecture — memory hierarchies, prefetchers, CXL, the whole stack, written as I learn it in public. <a href="https://comparch.5iri.me">comparch.5iri.me &rarr;</a></p>
 </section>
 
 <section class="section reveal">
@@ -78,9 +96,9 @@ description: Personal site of Shri Vishakh Devanand with projects, notes, blog p
   <div class="grid grid-3">
   {% for p in combined limit:3 %}
     <a class="card" href="{{ p.url | relative_url }}">
-      <div class="card-kicker">blog</div>
+      <div class="card-kicker">blog{% if p.date %} · {{ p.date | date: "%Y-%m-%d" }}{% endif %}</div>
       <div class="card-title">{{ p.title | default: p.url }}</div>
-      {% capture ex %}{{ p.content | markdownify | strip_html | strip_newlines | truncate: 140 }}{% endcapture %}
+      {% capture ex %}{{ p.description | default: p.excerpt | strip_html | strip_newlines | truncate: 140 }}{% endcapture %}
       <div class="card-excerpt">{{ ex }}</div>
     </a>
   {% endfor %}
@@ -88,8 +106,20 @@ description: Personal site of Shri Vishakh Devanand with projects, notes, blog p
 </section>
 
 <section class="section reveal">
+  <h2 class="section-title">About</h2>
+  <div class="hero-intro">
+    <div class="hero-photo">
+      <img src="/assets/img/siri.jpeg" alt="Portrait of Shri Vishakh Devanand" width="1200" height="1600" loading="lazy" decoding="async" />
+    </div>
+    <div class="hero-text">
+      <p class="hero-lede">I'm Shri, 20, final-year engineering student. I like watching silicon go from an idea to something that actually toggles — RTL by day, Red Bull, chips, and cat memes by night.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal">
   <h2 class="section-title">Contact</h2>
-  <p class="section-desc">Places where I might be alive or sane enough to respond.</p>
+  <p class="section-desc">Reply speed depends on how the RTL is behaving that week.</p>
   <div class="contact-links">
     <a class="contact-link" href="/email">email</a>
     <a class="contact-link" href="/github">github</a>
@@ -100,7 +130,7 @@ description: Personal site of Shri Vishakh Devanand with projects, notes, blog p
 
 <section class="section reveal">
   <h2 class="section-title">Hobbies</h2>
-  <p class="section-desc">What keeps me sane?</p>
+  <p class="section-desc">Off the clock, mostly.</p>
   <ul class="list-ruled">
     <li>I love mathematics! I try to sit down and work on some problems whenever I can! current progress in abstract algebra notes <a href="/notes/math/abstract_algebra">at this page</a></li>
     <li>I love listening to music!! Here's my <a href="https://open.spotify.com/user/wdzf3o8vx7fff8lxn35cxts43?si=ad4511d4896647aa">spotify </a>:)</li>

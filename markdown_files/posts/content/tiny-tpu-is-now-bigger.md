@@ -4,6 +4,7 @@ parent: Blog
 permalink: blog/tiny-tpu-is-now-bigger
 layout: content
 date: 2026-03-03
+description: Porting the tiny TPU from an Arty A7-35 to a Zynq ZC702 for more LUTRAM, DDR3 headroom, and an on-chip ARM core.
 ---
 
 its been a while since I updated on the work I have done on top of my earlier work.

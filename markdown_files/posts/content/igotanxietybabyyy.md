@@ -4,6 +4,7 @@ layout: content
 parent: Blog
 permalink: /blog/anxietyyyyy
 date: 2025-07-06
+description: On the anxious, twitchy kind of hardworking, and why I keep rewriting this website instead of my to-do list.
 ---
 
 I used to think I was just hardworking. Or at least I used to. But it's not the calm, confident kind of hardworking you would imagine. 
