@@ -4,6 +4,7 @@ layout: content
 parent: Blog
 permalink: blog/stopbeingoriginal
 date: 2025-07-06
+description: Why chasing "originality" as a freshman killed more projects than it started, and what fixed it.
 ---
 
 There was a point in my life where I was constantly chasing "originality".

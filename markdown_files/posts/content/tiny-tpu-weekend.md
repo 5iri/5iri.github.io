@@ -4,6 +4,7 @@ parent: Blog
 permalink: blog/tiny-tpu-week
 layout: content
 date: 2026-01-09
+description: Turning a 4x4 systolic array into a real MicroBlaze AXI peripheral in one week, on a dare from a tweet.
 ---
 
 I saw [Alan Ma's tweet](https://x.com/Alan_Ma_/status/2006636128091468167) about building a tiny TPU in less than a month and kept thinking, "Is it really easier than it sounds?" So I tried to walk the same path and see if I could ship something in a week.

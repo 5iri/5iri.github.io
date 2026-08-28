@@ -158,9 +158,10 @@
   const ctx = canvas.getContext('2d');
   const TEXT_LINE_SELECTOR = [
     'p', 'li', 'dt', 'dd', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-    '.hero-tag', '.hero-note', '.hero-status-label', '.hero-status-text',
+    '.hero-tag', '.hero-thesis', '.hero-status-label', '.hero-status-text',
     '.section-title', '.section-desc', '.card-kicker', '.card-title',
-    '.card-excerpt', '.contact-link'
+    '.card-excerpt', '.contact-link', '.signal-strip-caption',
+    '.project-title', '.project-summary', '.project-role', '.project-meta'
   ].join(', ');
 
   // A 0x0 inline-block at vertical-align:baseline: its bottom edge is placed
