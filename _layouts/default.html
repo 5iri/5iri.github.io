@@ -16,19 +16,22 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title | default: "5iri" }}</title>
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} · {% endif %}{{ site.title | default: "5iri" }}</title>
   <meta name="description" content="{{ meta_description | escape }}">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#fbfbf8">
   <link rel="canonical" href="{{ canonical_url }}">
+  {% assign og_image_url = site_base_url | append: site.baseurl | append: "/assets/img/siri.jpeg" %}
   <meta property="og:site_name" content="{{ site.title | default: '5iri' | escape }}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ meta_title | escape }}">
   <meta property="og:description" content="{{ meta_description | escape }}">
   <meta property="og:url" content="{{ canonical_url }}">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="{{ og_image_url }}">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ meta_title | escape }}">
   <meta name="twitter:description" content="{{ meta_description | escape }}">
+  <meta name="twitter:image" content="{{ og_image_url }}">
 
   <!-- Newsreader reads at text size; Plex Mono is for anything that is data -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
