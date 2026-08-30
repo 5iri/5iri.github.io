@@ -4,6 +4,7 @@ layout: content
 parent: Blog
 permalink: blog/why-people-should-ask-more-questions
 date: 2025-07-06
+description: The smartest people I know all have one thing in common — they never stop asking questions.
 ---
 
 ukw, most people are human. <br>

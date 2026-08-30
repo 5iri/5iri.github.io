@@ -14,3 +14,4 @@ collections:
   docs:
     permalink: "/:collection/:path/"
     output: true
+author_name: Shri Vishakh Devanand

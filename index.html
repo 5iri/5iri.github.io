@@ -6,104 +6,54 @@ nav_order: 1
 description: Personal site of Shri Vishakh Devanand with projects, notes, blog posts, and current hardware work.
 ---
 
-{% assign by_parent = site.pages | where: "parent", "Blog" %}
-{% assign by_url = site.pages | where_exp: "p", "p.url contains '/blog'" %}
-{% assign blog_pages_all = by_parent | concat: by_url | uniq %}
-{% assign blog_pages = blog_pages_all | where_exp: "p", "p.url != '/blog'" %}
-{% assign dated = blog_pages | where_exp: "p", "p.date" | sort: "date" | reverse %}
-{% assign undated = blog_pages | where_exp: "p", "p.date == nil" | sort: "title" %}
-{% assign combined = dated | concat: undated %}
+{% comment %} every written page carries a `parent`; the index pages do not {% endcomment %}
+{% assign everything = site.pages | where_exp: "p", "p.parent" %}
 
-<section class="hero reveal" data-parallax="0.02">
-  <div class="hero-intro">
-    <div class="hero-photo">
-      <img src="/assets/img/siri.jpeg" alt="Portrait of Shri Vishakh Devanand" width="1200" height="1600" fetchpriority="high" decoding="async" />
-    </div>
-    <div class="hero-text">
-      <span class="hero-tag mono" data-live-month data-timezone="Asia/Kolkata">lab log · {{ site.time | date: "%B %Y" }}</span>
+<div class="reg">
+  <div class="rail">
+    <figure class="rail-photo">
+      <img src="/assets/img/siri.jpeg" alt="Portrait of Shri Vishakh Devanand" width="1200" height="1600" fetchpriority="high" decoding="async">
+    </figure>
+  </div>
 
-      <p class="hero-lede">I am
-        <span class="hover-peek">
-          <span class="hover-peek__trigger">Shri</span>
-          <span class="hover-peek__card">
-            <img src="/markdown_files/posts/assets/me.jpeg" alt="Shri standing outdoors" width="833" height="908" loading="lazy" decoding="async">
-          </span>
-        </span>.
-        I love working on silicon, hardware, and seeing my vision come up everything from scratch. I’m 20, I love
-        <span class="hover-peek">
-          <span class="hover-peek__trigger">drinking redbull and eating chips</span>
-          <span class="hover-peek__card">
-            <img src="/markdown_files/posts/assets/catcoke.png" alt="Cat with a soda bottle" width="680" height="680" loading="lazy" decoding="async">
-          </span>
-        </span>.
-      </p>
+  <div class="body">
+    <div class="about">
+      <p>I am
+        <span class="hover-peek"><span class="hover-peek__trigger">Shri</span><span class="hover-peek__card"><img src="/markdown_files/posts/assets/me.jpeg" alt="Shri" width="833" height="908" loading="lazy" decoding="async"></span></span>.
+        I love building computer systems &mdash; from building a chip to working out the best system
+        design for what it has to run. I love picking apart the intricacies of every decision we have
+        made about computers over the years.</p>
+      <p class="quiet">I am
+        <span class="hover-peek"><span class="hover-peek__trigger">21</span><span class="hover-peek__card"><img src="/assets/img/catcoke.png" alt="A cat holding a soda bottle" width="680" height="680" loading="lazy" decoding="async"><em>accurate self-portrait</em></span></span>,
+        and I think a lot about how decisions compound over the long run. You cannot meaningfully
+        change an architecture without first looking back at the history of the choices that
+        shaped it.</p>
     </div>
   </div>
 
-  <div class="hero-status">
-    <div class="hero-status-item">
-      <span class="hero-status-label">building</span>
-      <span class="hero-status-text">RISC-V GPUs using systolic arrays.</span>
-    </div>
-    <div class="hero-status-item">
-      <span class="hero-status-label">focus</span>
-      <span class="hero-status-text">RTL development, CXL compute system architectures and HW/SW co-design.</span>
-    </div>
+  <div class="rail">Now</div>
+  <div class="body">
+    <ul class="now">
+      <li><b>Inference</b>Low-power LLM inference, at consumer-PC level.</li>
+      <li><b>Systolic arrays</b>They will be the moat for inference.</li>
+      <li><b>Writing</b>A complete view of what a computer needs to work, at <a href="https://comparch.5iri.me">comparch.5iri.me</a>.</li>
+    </ul>
   </div>
 
-  <div class="hero-status hero-status--links">
-    <div class="hero-status-item">
-      <span class="hero-status-text">Writing a complete view of computer architecture. <a href="https://comparch.5iri.me">comparch site &rarr;</a></span>
-    </div>
-    <div class="hero-status-item">
-      <span class="hero-status-text">Simultaneously working on a bunch of projects. <a href="/blog">Check my blogs! &rarr;</a></span>
-    </div>
+  <div class="rail">Publications</div>
+  <div class="body">
+    {% include pub-list.html %}
   </div>
 
-  <p class="hero-note">Check out my <a href="/twitter"> twitter</a> for my sanity.</p>
-</section>
-
-<section class="section reveal">
-  <h2 class="section-title">Current quests</h2>
-  <p class="section-desc">Which tracks am I actively publishing about?</p>
-  <ul class="list-ruled">
-    <li>CXL-accelerated inference: memory-pooled architectures for low-latency LLM serving</li>
-    <li>Tiny TPU: a fully FPGA-resident systolic array designed as a compute offload engine</li>
-    <li>Proud open sourcer</li>
-  </ul>
-</section>
-
-<section class="section reveal">
-  <h2 class="section-title">Latest writing</h2>
-  <div class="grid grid-3">
-  {% for p in combined limit:3 %}
-    <a class="card" href="{{ p.url | relative_url }}">
-      <div class="card-kicker">blog</div>
-      <div class="card-title">{{ p.title | default: p.url }}</div>
-      {% capture ex %}{{ p.content | markdownify | strip_html | strip_newlines | truncate: 140 }}{% endcapture %}
-      <div class="card-excerpt">{{ ex }}</div>
-    </a>
-  {% endfor %}
+  <div class="rail">Elsewhere</div>
+  <div class="body">
+    <p class="colophon">
+      <a href="/email">email</a> &middot;
+      <a href="/github">github</a> &middot;
+      <a href="/twitter">x/@lazybananann</a> &middot;
+      <a href="/linkedin">linkedin</a> &middot;
+      <a href="https://open.spotify.com/user/wdzf3o8vx7fff8lxn35cxts43?si=ad4511d4896647aa">spotify</a> &middot;
+      <a href="https://calendar.app.google/rmx736j7YZQj2EEn6">coffee chat</a>
+    </p>
   </div>
-</section>
-
-<section class="section reveal">
-  <h2 class="section-title">Contact</h2>
-  <p class="section-desc">Places where I might be alive or sane enough to respond.</p>
-  <div class="contact-links">
-    <a class="contact-link" href="/email">email</a>
-    <a class="contact-link" href="/github">github</a>
-    <a class="contact-link" href="/twitter">x / @lazybananann</a>
-    <a class="contact-link" href="/linkedin">linkedin</a>
-  </div>
-</section>
-
-<section class="section reveal">
-  <h2 class="section-title">Hobbies</h2>
-  <p class="section-desc">What keeps me sane?</p>
-  <ul class="list-ruled">
-    <li>I love mathematics! I try to sit down and work on some problems whenever I can! current progress in abstract algebra notes <a href="/notes/math/abstract_algebra">at this page</a></li>
-    <li>I love listening to music!! Here's my <a href="https://open.spotify.com/user/wdzf3o8vx7fff8lxn35cxts43?si=ad4511d4896647aa">spotify </a>:)</li>
-    <li>revamp my website for the 1000th time.</li>
-  </ul>
-</section>
+</div>

@@ -4,6 +4,7 @@ layout: content
 parent: Blog
 permalink: blog/2025-retro
 date: 2026-01-02
+description: A year in review, from knowing nothing about computer architecture to shipping cores.
 ---
 
 I had started 2025 with a singular, slightly terrifying motivation: I knew absolutely nothing about computer architecture, and I felt like I needed to learn everything to ensure I actually did something meaningful with my life. That realization hit me hard during the winter break of 2024—the kind of existential dread that makes you question every decision you've made. I remember sitting in my room, scrolling through research papers I couldn't understand, feeling like an imposter in my own field. But that fear became fuel. Looking back now, the year was an absolute roller coaster, and somehow, I loved every single bit of it.

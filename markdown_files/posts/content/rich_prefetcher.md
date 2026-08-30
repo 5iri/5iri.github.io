@@ -3,7 +3,7 @@ title: RICH Prefetcher
 parent: Computer Architecture
 permalink: notes/comp_arch/rich
 layout: content
-date: 02/12/2025
+date: 2025-12-02
 --- 
 
 ## Memory is a bottleneck.

@@ -4,6 +4,7 @@ parent: Blog
 layout: content
 permalink: blog/understanding-cxlmemsim
 date: 2025-11-08
+description: A beginner-friendly walkthrough of CXLMemSim, the emulator that fakes CXL-attached memory latency for your program.
 ---
 
 CXLMemSim is a software emulator that makes your program run “as if” some of its memory lived on slower, CXL‑attached devices. It does not change your code. It watches the app briefly, estimates how much extra time CXL would add, and pauses your app by that much. Do this every few milliseconds, and the whole run feels like a machine with far memory.

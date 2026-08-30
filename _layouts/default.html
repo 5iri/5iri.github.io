@@ -19,7 +19,7 @@
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title | default: "5iri" }}</title>
   <meta name="description" content="{{ meta_description | escape }}">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#fbf8f0">
+  <meta name="theme-color" content="#fbfbf8">
   <link rel="canonical" href="{{ canonical_url }}">
   <meta property="og:site_name" content="{{ site.title | default: '5iri' | escape }}">
   <meta property="og:type" content="website">
@@ -30,14 +30,12 @@
   <meta name="twitter:title" content="{{ meta_title | escape }}">
   <meta name="twitter:description" content="{{ meta_description | escape }}">
 
-
-  <!-- Fonts (Playfair + IBM Plex Mono) -->
+  <!-- Newsreader reads at text size; Plex Mono is for anything that is data -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/socratica.css' | relative_url }}">
-  
-  <!-- MathJax for LaTeX math rendering -->
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+
   {% if needs_math %}
   <script>
     MathJax = {
@@ -55,33 +53,34 @@
   <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   {% endif %}
 </head>
-<body class="{% if page.url == '/' or page.permalink == '/aboutme' %}is-home{% endif %}">
+<body class="{% if page.url == '/' %}is-home{% endif %}">
+  <a class="skip" href="#main">skip to content</a>
+
   <header class="site-header">
-    <a class="brand" href="{{ '/' | relative_url }}">
-      <span class="brand-text">{{ site.title | default: '5iri' }}</span>
-    </a>
-    <nav class="site-nav" aria-label="Primary">
-      {% assign here = page.url %}
-      <a href="{{ '/notes'   | relative_url }}" class="{% if here == '/notes' %}active{% endif %}">notes</a>
-      <a href="{{ '/blog'    | relative_url }}" class="{% if here == '/blog' %}active{% endif %}">blog</a>
-      <a href="{{ '/projects'| relative_url }}" class="{% if here == '/projects' %}active{% endif %}">projects</a>
-      <a href="{{ '/friends' | relative_url }}" class="{% if here == '/friends' %}active{% endif %}">friends</a>
-    </nav>
+    <div class="masthead">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <span class="brand-text">Shri Vishakh Devanand</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        {% assign here = page.url %}
+        <a href="{{ '/notes'   | relative_url }}" class="{% if here contains '/notes' %}active{% endif %}">notes</a>
+        <a href="{{ '/blog'    | relative_url }}" class="{% if here contains '/blog' %}active{% endif %}">blog</a>
+        <a href="{{ '/projects'| relative_url }}" class="{% if here == '/projects' %}active{% endif %}">projects</a>
+        <a href="{{ '/publications' | relative_url }}" class="{% if here == '/publications' %}active{% endif %}">publications</a>
+        <a href="https://calendar.app.google/rmx736j7YZQj2EEn6" target="_blank" rel="noopener">coffee&nbsp;chat</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="site-main">
+  <main class="site-main" id="main">
     {{ content }}
   </main>
 
   <footer class="site-footer">
-    <span>© {{ site.time | date: '%Y' }} {{ site.author | default: 'Shri Vishakh Devanand' }}</span>
-    <span class="sep">•</span>
-    <span>built on github pages</span>
+    <a href="https://sravjti.in/webring/" target="_blank" rel="noopener" class="webring-badge" title="SRA Webring">
+      <img src="{{ '/assets/img/khopdi.svg' | relative_url }}" alt="SRA Webring" width="48" height="48" loading="lazy" decoding="async" />
+    </a>
   </footer>
-
-  <a href="https://sravjti.in/webring/" target="_blank" rel="noopener" class="webring-badge" title="SRA Webring">
-    <img src="{{ '/assets/img/khopdi.svg' | relative_url }}" alt="SRA Webring" width="40" height="40" loading="lazy" decoding="async" />
-  </a>
 
   <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>

@@ -1,0 +1,16 @@
+# One entry per publication. `authors` is rendered in order; the name matching
+# `site.author_name` is bolded automatically.
+- title: "CXLMemSim: Practical Performance Simulation and Characterization of CXL 3.0 Memory Systems"
+  authors:
+    - Yiwei Yang
+    - Shri Vishakh Devanand
+    - Brian Zhao
+    - Yusheng Zheng
+    - Pooneh Safayenikoo
+    - Tanvir Ahmed Khan
+    - Andi Quinn
+  venue: "HPDC '26"
+  venue_full: "35th International Symposium on High-Performance Parallel and Distributed Computing"
+  pages: "567–569"
+  url: "https://dl.acm.org/doi/10.1145/3806645.3820069"
+  doi: "10.1145/3806645.3820069"
