@@ -2,56 +2,36 @@
 title: Projects
 layout: content
 permalink: /projects
-description: Stuff I have worked on.
+description: FPGA accelerators, RISC-V cores, and experiments in C and assembly.
+content_class: projects-content
 ---
 
-<ul class="project-grid">
-  <li class="project-card">
-    <a href="https://github.com/5iri/tt-riscv-gpu" target="_blank" rel="noopener">
-      <span class="project-title">tt-riscv-gpu <span class="ext">↗</span></span>
-      <span class="project-summary">4x4 uint8 matrix multiply accelerator with SPI for TinyTapeout SKY 26a</span>
-    </a>
-  </li>
-  <li class="project-card">
-    <a href="https://github.com/5iri/tt-riscv-cpu" target="_blank" rel="noopener">
-      <span class="project-title">tt-riscv-cpu <span class="ext">↗</span></span>
-      <span class="project-summary">8x8 systolic array producing the values for each pixel for vga</span>
-    </a>
-  </li>
-  <li class="project-card">
-    <a href="https://github.com/5iri/tiny3tpu" target="_blank" rel="noopener">
-      <span class="project-title">tiny3tpu <span class="ext">↗</span></span>
-      <span class="project-summary">made a tiny tpu and somehow it worked on an fpga lmao</span>
-    </a>
-  </li>
-  <li class="project-card">
-    <a href="https://github.com/5iri/ProsperityHDL" target="_blank" rel="noopener">
-      <span class="project-title">ProsperityHDL <span class="ext">↗</span></span>
-      <span class="project-summary">A Novel Product Sparsity Based Optimization for Accelerating Spiking Neural Networks</span>
-    </a>
-  </li>
-  <li class="project-card">
-    <a href="https://github.com/SRA-VJTI/synapse32" target="_blank" rel="noopener">
-      <span class="project-title">synapse32 <span class="ext">↗</span></span>
-      <span class="project-summary">An inhouse RISC-V 32-bits CPU</span>
-    </a>
-  </li>
-  <li class="project-card">
-    <a href="https://github.com/5iri/raytracing-in-c" target="_blank" rel="noopener">
-      <span class="project-title">raytracing-in-c <span class="ext">↗</span></span>
-      <span class="project-summary">I am bored so I am learning how to trace a ray in C cause why not</span>
-    </a>
-  </li>
-  <li class="project-card">
-    <a href="https://github.com/5iri/conway-in-asm" target="_blank" rel="noopener">
-      <span class="project-title">conway-in-asm <span class="ext">↗</span></span>
-      <span class="project-summary">game of life in riscv assembly</span>
-    </a>
-  </li>
-  <li class="project-card">
-    <a href="https://github.com/5iri/zig-led" target="_blank" rel="noopener">
-      <span class="project-title">zig-led <span class="ext">↗</span></span>
-      <span class="project-summary">running an led using zig programming language</span>
-    </a>
-  </li>
-</ul>
+<div class="project-list">
+  {% for project in site.data.projects %}
+  <section class="project-entry{% cycle '', ' project-entry--reverse' %}" aria-labelledby="project-{{ project.id }}">
+    {% if project.image %}
+    <figure class="project-media">
+      <a class="project-image-link" href="{{ project.image | relative_url }}" aria-label="View full image for {{ project.title | escape }}">
+        <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt | escape }}" width="{{ project.image_width }}" height="{{ project.image_height }}" decoding="async" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}>
+      </a>
+    </figure>
+    {% elsif project.schematic %}
+    <figure class="project-media project-media--schematic">
+      {% case project.schematic %}
+      {% when 'pipeline' %}{% include schematics/pipeline.svg %}
+      {% when 'conway' %}{% include schematics/conway.svg %}
+      {% endcase %}
+    </figure>
+    {% endif %}
+    <div class="project-copy">
+      <p class="project-kicker">{{ project.category | escape }}</p>
+      <h2 id="project-{{ project.id }}">{{ project.title | escape }}</h2>
+      <p>{{ project.description | escape }}</p>
+      <div class="project-links">
+        <a href="{{ project.repo }}" target="_blank" rel="noopener">Repository <span aria-hidden="true">&nearr;</span></a>
+        {% if project.details %}<a href="{{ project.details }}" target="_blank" rel="noopener">{{ project.details_label | escape }} <span aria-hidden="true">&rarr;</span></a>{% endif %}
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+</div>

@@ -28,7 +28,7 @@ layout: default
     {% endif %}
   </header>
 
-  <article class="page-content">
+  <article class="page-content{% if page.content_class %} {{ page.content_class | escape }}{% endif %}">
     {{ content }}
   </article>
 </section>

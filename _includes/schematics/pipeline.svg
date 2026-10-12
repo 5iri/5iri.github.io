@@ -1,0 +1,39 @@
+<svg viewBox="0 0 320 210" width="100%" height="100%" role="img" aria-label="Schematic sketch of a five-stage instruction pipeline: fetch, decode, execute, memory, writeback">
+  <g font-family="'IBM Plex Mono',monospace" font-size="10.5" letter-spacing=".04em">
+    <g transform="translate(10,80)">
+      <g fill="none" stroke="var(--ink)" stroke-width="1.2">
+        <rect x="0" y="0" width="54" height="44"/>
+        <rect x="64" y="0" width="54" height="44"/>
+        <rect x="128" y="0" width="54" height="44"/>
+        <rect x="192" y="0" width="54" height="44"/>
+        <rect x="256" y="0" width="54" height="44"/>
+      </g>
+      <g fill="var(--ink)" text-anchor="middle">
+        <text x="27" y="27">IF</text>
+        <text x="91" y="27">ID</text>
+        <text x="155" y="27">EX</text>
+        <text x="219" y="27">MEM</text>
+        <text x="283" y="27">WB</text>
+      </g>
+      <g stroke="var(--ink)" stroke-width="1.1" fill="none" marker-end="url(#arrow-pipe)">
+        <line x1="54" y1="22" x2="62" y2="22"/>
+        <line x1="118" y1="22" x2="126" y2="22"/>
+        <line x1="182" y1="22" x2="190" y2="22"/>
+        <line x1="246" y1="22" x2="254" y2="22"/>
+      </g>
+      <defs>
+        <marker id="arrow-pipe" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+          <path d="M0,0 L7,3.5 L0,7 Z" fill="var(--ink)"/>
+        </marker>
+      </defs>
+      <g stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4">
+        <line x1="27" y1="60" x2="283" y2="60"/>
+      </g>
+      <g fill="var(--soft)" font-size="8.5">
+        <text x="91" y="72" text-anchor="middle">CSR · Sv32 TLB</text>
+        <text x="247" y="86" text-anchor="middle">forwarding paths</text>
+      </g>
+    </g>
+  </g>
+  <text x="10" y="40" font-family="'IBM Plex Mono',monospace" font-size="9" fill="var(--soft)" letter-spacing=".04em">RV32IMA · 5-STAGE · HAZARD FWD</text>
+</svg>

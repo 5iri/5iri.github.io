@@ -1,0 +1,121 @@
+# Descriptions checked against repository documentation and source on 2026-10-12.
+# Images are existing repository assets, copied locally for reliable loading.
+- id: tiny3tpu
+  title: Tiny3TPU
+  category: FPGA accelerator · compiler · firmware
+  repo: https://github.com/5iri/tiny3tpu
+  description: >-
+    A small FPGA compute stack on the KC705: a 100 MHz VexRiscv CPU, two
+    4×4 int8 systolic cores, and a CORDIC exponential unit. A compiler lowers
+    a subset of StableHLO into RISC-V code and accelerator calls. Current
+    board demos include a trained digit classifier, mesh transforms,
+    causal attention, and cloth physics, within 64 KiB of on-chip RAM.
+  details: https://github.com/5iri/tiny3tpu#things-that-actually-ran-on-the-board
+  details_label: Board demos
+  image: /assets/img/projects/tiny3tpu-classifier.jpg
+  image_width: 644
+  image_height: 853
+  image_alt: KC705 classifier capture showing a digit 0, board prediction 0, verified logits, and 104.67 milliseconds of board compute.
+  image_source: https://github.com/5iri/tiny3tpu/blob/main/media/showcase/trained-classifier-viewer.jpg
+  # Image blob SHA: 09e83728cc00663e66991211748cc7c40deaadfe.
+
+- id: tt-riscv-gpu
+  title: SPI matrix accelerator
+  category: tt-riscv-gpu · Tiny Tapeout
+  repo: https://github.com/5iri/tt-riscv-gpu
+  description: >-
+    A 4×4 matrix accelerator with unsigned 8-bit inputs and ternary weights.
+    Two parallel lanes compute with add, subtract, and skip operations,
+    producing the full result in 32 compute cycles before SPI transfer
+    overhead. An SPI host loads operands, starts the engine, polls its
+    status, and reads signed 20-bit results.
+  details: https://github.com/5iri/tt-riscv-gpu/blob/main/docs/info.md
+  details_label: Design notes
+  image: /assets/img/projects/spi-matrix-gds.jpg
+  image_width: 661
+  image_height: 900
+  image_alt: Rendered GDS layout of the tt_um_riscv_gpu die, showing standard-cell rows and vertical power straps across all metal layers.
+  image_source: https://gds-viewer.tinytapeout.com (model from the tt-riscv-gpu gds GitHub Action)
+
+- id: tt-riscv-cpu
+  title: Systolic Array VGA
+  category: tt-riscv-cpu · Tiny Tapeout
+  repo: https://github.com/5iri/tt-riscv-cpu
+  description: >-
+    An 8×8 ternary matrix demo that reuses a 4×8 systolic slice across two
+    passes to fit 32 processing elements. The 64 computed outputs become
+    a full-screen VGA heatmap: green for positive values, red for negative,
+    and blue for zero. Input pins select hardcoded matrix demos, with
+    cocotb tests covering timing and result generation.
+  details: https://github.com/5iri/tt-riscv-cpu/blob/main/docs/info.md
+  details_label: Design notes
+  image: /assets/img/projects/systolic-array-gds.jpg
+  image_width: 900
+  image_height: 624
+  image_alt: Rendered GDS layout of the tt_um_systolic_vga die, showing standard-cell rows and vertical power straps across all metal layers.
+  image_source: https://gds-viewer.tinytapeout.com (model from the tt-riscv-cpu gds GitHub Action)
+
+- id: prosperity
+  title: ProsperityHDL
+  category: Spiking neural networks · RTL prototype
+  repo: https://github.com/5iri/ProsperityHDL
+  description: >-
+    A single-tile research implementation of a product-sparsity accelerator
+    for spiking neural networks. Its detector, pruner, and dispatcher find
+    shared spike patterns so a 128-PE processor can reuse work. The current
+    stack includes a LIF neuron backend, AXI4-Lite control, weight DMA, and
+    simulation benchmarks for sparse-versus-dense execution and MNIST parity.
+  details: https://github.com/5iri/ProsperityHDL/blob/main/BENCHMARKS.md
+  details_label: Benchmarks
+  image: /assets/img/projects/prosperity-tcam.png
+  image_width: 1685
+  image_height: 1191
+  image_alt: Repository TCAM component diagram showing parallel matching lines, a line encoder, and result RAM.
+  image_source: https://github.com/5iri/ProsperityHDL/blob/main/ppu/tcam/img/structure_top.gif
+  # Image blob SHA: fcc518f3bbc432f498a01bf4c70f5908506e1cf7; converted GIF to PNG.
+  # A full-pipeline simulation capture would be a better replacement when available.
+
+- id: synapse32
+  title: Synapse32
+  category: SRA-VJTI · RISC-V CPU
+  repo: https://github.com/SRA-VJTI/synapse32
+  description: >-
+    SRA-VJTI's five-stage RV32IMA core in Verilog, with forwarding,
+    pipeline hazard handling, CSRs, and Sv32 virtual memory. Its SoC
+    includes a timer, UART, and interrupt controller. The repo now has
+    Verilator flows for OpenSBI and Linux with a BusyBox initramfs and
+    an interactive serial console, alongside CPU regression tests.
+  details: https://github.com/SRA-VJTI/synapse32/blob/main/docs/system_diagram.md
+  details_label: Architecture
+  schematic: pipeline
+
+- id: raytracing
+  title: Ray tracing in C
+  category: C · graphics
+  repo: https://github.com/5iri/raytracing-in-c
+  description: >-
+    A small ray tracer built up from image gradients and vector math.
+    The current renderer casts camera rays, intersects a sphere,
+    colors its surface normals, and adds a sky gradient. It writes
+    PPM images directly; the image here is a rendered output already
+    checked into the repo.
+  details: https://github.com/5iri/raytracing-in-c/blob/main/use_vectors/ray_trace.c
+  details_label: Renderer source
+  image: /assets/img/projects/raytracing-sphere.png
+  image_width: 400
+  image_height: 225
+  image_alt: Ray-traced sphere colored by its surface normals against a blue-to-white sky gradient.
+  image_source: https://github.com/5iri/raytracing-in-c/blob/main/use_vectors/sphere_3d.ppm
+  # Image blob SHA: 93fe9a659b1d8648fef6b824e66f46808a0fb54d.
+
+- id: conway
+  title: Conway in RISC-V assembly
+  category: Assembly · cellular automata
+  repo: https://github.com/5iri/conway-in-asm
+  description: >-
+    Conway's Game of Life on an 8×8 grid, written in RISC-V assembly.
+    A glider evolves through the birth, survival, and death rules,
+    with VT100 cursor control redrawing the terminal in place.
+    The repo includes a configurable animation delay and Makefile
+    targets to assemble and run the program with Spike.
+  schematic: conway
