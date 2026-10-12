@@ -21,17 +21,14 @@
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#fbfbf8">
   <link rel="canonical" href="{{ canonical_url }}">
-  {% assign og_image_url = site_base_url | append: site.baseurl | append: "/assets/img/siri.jpeg" %}
   <meta property="og:site_name" content="{{ site.title | default: '5iri' | escape }}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ meta_title | escape }}">
   <meta property="og:description" content="{{ meta_description | escape }}">
   <meta property="og:url" content="{{ canonical_url }}">
-  <meta property="og:image" content="{{ og_image_url }}">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ meta_title | escape }}">
   <meta name="twitter:description" content="{{ meta_description | escape }}">
-  <meta name="twitter:image" content="{{ og_image_url }}">
 
   <!-- Newsreader reads at text size; Plex Mono is for anything that is data -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,7 +67,7 @@
         <a href="{{ '/blog'    | relative_url }}" class="{% if here contains '/blog' %}active{% endif %}">blog</a>
         <a href="{{ '/projects'| relative_url }}" class="{% if here == '/projects' %}active{% endif %}">projects</a>
         <a href="{{ '/publications' | relative_url }}" class="{% if here == '/publications' %}active{% endif %}">publications</a>
-        <a href="https://calendar.app.google/rmx736j7YZQj2EEn6" target="_blank" rel="noopener">coffee&nbsp;chat</a>
+        <a href="{{ '/coffeechat' | relative_url }}">coffee&nbsp;chat</a>
       </nav>
     </div>
   </header>
