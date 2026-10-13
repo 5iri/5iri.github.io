@@ -8,16 +8,16 @@
     A small FPGA compute stack on the KC705: a 100 MHz VexRiscv CPU, two
     4×4 int8 systolic cores, and a CORDIC exponential unit. A compiler lowers
     a subset of StableHLO into RISC-V code and accelerator calls. Current
-    board demos include a trained digit classifier, mesh transforms,
-    causal attention, and cloth physics, within 64 KiB of on-chip RAM.
+    board demos include a trained digit classifier, the banana spinner 369
+    mesh transform, causal attention, and cloth physics, within 64 KiB of
+    on-chip RAM.
   details: https://github.com/5iri/tiny3tpu#things-that-actually-ran-on-the-board
   details_label: Board demos
-  image: /assets/img/projects/tiny3tpu-classifier.jpg
-  image_width: 644
-  image_height: 853
-  image_alt: KC705 classifier capture showing a digit 0, board prediction 0, verified logits, and 104.67 milliseconds of board compute.
-  image_source: https://github.com/5iri/tiny3tpu/blob/main/media/showcase/trained-classifier-viewer.jpg
-  # Image blob SHA: 09e83728cc00663e66991211748cc7c40deaadfe.
+  image: /markdown_files/posts/assets/tiny3tpu-stack/banana.gif
+  image_width: 760
+  image_height: 720
+  image_alt: The banana spinner 369 demo — a rotating banana mesh drawn from coordinates the KC705 sent back.
+  image_source: https://github.com/SRA-VJTI/jaxsim/blob/c0a097bba1c6db10cac7b359fbac11cfedc48c6b/examples/softras_simple_render.py (mesh source), rendered via the board's own mesh transform
 
 - id: tt-riscv-gpu
   title: SPI matrix accelerator
