@@ -31,7 +31,7 @@
   <meta name="twitter:description" content="{{ meta_description | escape }}">
 
   <link rel="preload" href="{{ '/assets/fonts/paper-mono/PaperMono-Variable.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
   {% if needs_math %}
   <script>
