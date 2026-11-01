@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<section class="page-wrap">
+<section class="page-wrap{% if page.page_class %} {{ page.page_class | escape }}{% endif %}">
   <header class="page-hero">
     {% assign heading_text = page.title | default: site.title %}
     {% if page.hover_image %}

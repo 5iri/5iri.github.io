@@ -1,5 +1,5 @@
 <svg viewBox="0 0 320 210" width="100%" height="100%" role="img" aria-label="Schematic sketch of a five-stage instruction pipeline: fetch, decode, execute, memory, writeback">
-  <g font-family="'IBM Plex Mono',monospace" font-size="10.5" letter-spacing=".04em">
+  <g font-family="var(--mono)" font-size="10.5" letter-spacing=".04em">
     <g transform="translate(10,80)">
       <g fill="none" stroke="var(--ink)" stroke-width="1.2">
         <rect x="0" y="0" width="54" height="44"/>
@@ -35,5 +35,5 @@
       </g>
     </g>
   </g>
-  <text x="10" y="40" font-family="'IBM Plex Mono',monospace" font-size="9" fill="var(--soft)" letter-spacing=".04em">RV32IMA · 5-STAGE · HAZARD FWD</text>
+  <text x="10" y="40" font-family="var(--mono)" font-size="9" fill="var(--soft)" letter-spacing=".04em">RV32IMA · 5-STAGE · HAZARD FWD</text>
 </svg>

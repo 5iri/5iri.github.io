@@ -19,5 +19,5 @@
       <rect x="96" y="96" width="24" height="24"/>
     </g>
   </g>
-  <text x="64" y="203" font-family="'IBM Plex Mono',monospace" font-size="9" fill="var(--soft)" letter-spacing=".04em">8×8 GRID · GLIDER, GEN 0</text>
+  <text x="64" y="203" font-family="var(--mono)" font-size="9" fill="var(--soft)" letter-spacing=".04em">8×8 GRID · GLIDER, GEN 0</text>
 </svg>
