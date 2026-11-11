@@ -19,7 +19,7 @@ description: Three years of CPUs, memory, spiking networks, and trying to make r
 
 I was watching Santra play with her chew toy. A little later she was asleep, completely unbothered by anything around her. I kept wondering: what is happening in her brain through all of this?
 
-A bit philosophical, yes. But I have been thinking about what makes us think since I was a kid. In my second year of college, I started to understand that people were building language models and running them on chips. (The big GPT-2 moment, yes.) These systems needed enormous amounts of computation, yet could do things that looked surprisingly familiar. How the fuck are we making that happen with rocks?
+A bit philosophical, yes. But I have been thinking about what makes us think since I was a kid. In my second year of college, I started to understand that people were building language models and running them on chips. (The big GPT-2 moment, yes.) These systems needed enormous amounts of computation, yet could do things that looked surprisingly familiar. *How the fuck are we making that happen with rocks?*
 
 I don't think building a language model is the same thing as understanding a brain. But asking how a system computes, and how its pieces make that computation possible, felt like a place to start.
 
