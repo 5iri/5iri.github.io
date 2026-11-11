@@ -54,7 +54,7 @@ I knew I liked chips, but I had no idea where to begin. A senior at [SRA-VJTI](h
 
 </aside>
 
-I was studying electrical engineering at VJTI, where much of the coursework focused on large-scale and power systems. I wanted to understand chips, so I had to find that education elsewhere. SRA became the place where I could ask questions, get stuck, and learn from people building things around me. Atharva's [board progression](https://x.com/k7agar/status/2116453076806844468), [board builds](https://x.com/k7agar/status/2116477896483385855) and [PCB photos](https://x.com/k7agar/status/2116454170039582806) are worth a look too.
+I was studying electrical engineering at VJTI, where much of the coursework focused on large-scale and power systems. I wanted to understand chips, so I had to find that education elsewhere. SRA became the place where I could ask questions, get stuck, and learn from people building things around me. SRA's [board progression](https://x.com/k7agar/status/2116453076806844468), [board builds](https://x.com/k7agar/status/2116477896483385855) and [PCB photos](https://x.com/k7agar/status/2116454170039582806) are worth a look too.
 
 <aside class="story-side-fill story-side-fill--left story-side-fill--later" aria-label="Related photo or video">
 
