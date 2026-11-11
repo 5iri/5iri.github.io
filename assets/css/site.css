@@ -267,8 +267,8 @@ a{color:inherit;text-decoration:none}
 .page-content .media-peek img{margin:0;border:0;max-height:240px;object-fit:contain}
 .page-content::after{content:"";display:table;clear:both}
 @media (min-width:1350px){
-  .page-content .article-media--left{float:left;clear:left;width:230px;margin:6px 30px 24px -260px}
-  .page-content .article-media--right{float:right;clear:right;width:230px;margin:6px -260px 24px 30px}
+  .page-content .article-media--left{float:left;clear:left;width:230px;margin:6px 60px 24px -290px}
+  .page-content .article-media--right{float:right;clear:right;width:230px;margin:6px -290px 24px 60px}
 }
 
 .page-content pre{
@@ -375,8 +375,8 @@ a{color:inherit;text-decoration:none}
 .page-content .article-post .twitter-tweet{width:100%!important;max-width:100%!important;margin:0!important}
 .page-content .article-post blockquote{padding:12px;border:1px solid var(--rule);font-size:13px;font-style:normal}
 @media (min-width:1350px){
-  .page-content .article-post--left{float:left;clear:left;margin:6px 30px 24px -310px}
-  .page-content .article-post--right{float:right;clear:right;margin:6px -310px 24px 30px}
+  .page-content .article-post--left{float:left;clear:left;width:250px;margin:6px 60px 24px -310px}
+  .page-content .article-post--right{float:right;clear:right;width:250px;margin:6px -310px 24px 60px}
 }
 
 /* The story uses both margins and a full-width media grid. */
