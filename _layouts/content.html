@@ -5,16 +5,16 @@ layout: default
   <header class="page-hero">
     {% assign heading_text = page.title | default: site.title %}
     {% if page.hover_image %}
-      <h1 class="glitch" data-text="{{ heading_text | escape }}">
+      <h1>
         <span class="hover-peek">
-          <span class="hover-peek__trigger mono">{{ heading_text }}</span>
+          <span class="hover-peek__trigger">{{ heading_text }}</span>
           <span class="hover-peek__card">
             <img src="{{ page.hover_image | relative_url }}" alt="{{ page.hover_image_alt | default: heading_text }}">
           </span>
         </span>
       </h1>
     {% else %}
-      <h1 class="glitch" data-text="{{ heading_text | escape }}">{{ heading_text }}</h1>
+      <h1>{{ heading_text }}</h1>
     {% endif %}
     {% if page.description %}
     <p class="page-desc">{{ page.description }}</p>
@@ -31,4 +31,10 @@ layout: default
   <article class="page-content{% if page.content_class %} {{ page.content_class | escape }}{% endif %}">
     {{ content }}
   </article>
+  {% assign blog_prefix = page.url | slice: 0, 6 %}
+  {% if page.parent == 'Blog' or blog_prefix == '/blog/' %}
+  <nav class="article-end-nav" aria-label="Article navigation">
+    <a href="#top">Back to top ↑</a>
+  </nav>
+  {% endif %}
 </section>

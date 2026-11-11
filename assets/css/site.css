@@ -2,8 +2,10 @@
    5iri.me — the archive
    The writing is the page. Paper Mono throughout.
 
-   The interface is monochrome on purpose: the only colour on the
-   page comes from the photographs.
+   One accent, orange, for links and anything live.
+   Everything else is ink on paper.
+
+   Type scale — Paper Mono throughout, with smaller metadata and code.
    ============================================================= */
 
 /* Paper Mono v1.000, from paper-design/paper-mono. License: assets/fonts/paper-mono/. */
@@ -24,8 +26,17 @@
   --rule:#E0E0DA;
   --rule-2:#EFEFEA;
   --wash:#F4F4F0;
+  --accent:#FF5500;
+  --accent-soft:rgba(255,85,0,.35);
 
   --mono:'Paper Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --fs-s:15px;
+  --fs-m:17px;
+  --fs-l:22px;
+  --fs-xl:30px;
+  --fs-mono:12px;
+  --fs-code:14px;
 
   --col:1240px;
   --rail:160px;
@@ -52,11 +63,11 @@ body{
 }
 
 a{color:inherit;text-decoration:none}
-::selection{background:#DEDEDA}
+::selection{background:rgba(255,85,0,.16)}
 
-.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:8px 14px;z-index:100;font-size:14px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:8px 14px;z-index:100;font-size:var(--fs-s)}
 .skip:focus{left:8px;top:8px}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 .mono{font-family:var(--mono)}
 
@@ -73,17 +84,17 @@ a{color:inherit;text-decoration:none}
 
 .masthead{
   display:flex;justify-content:space-between;align-items:baseline;
-  gap:16px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1.5px solid var(--ink);
+  gap:16px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--ink);
 }
-.brand-text{font-size:19px;font-weight:600;letter-spacing:-.005em}
+.brand-text{font-size:var(--fs-l);font-weight:600;letter-spacing:-.01em}
 
 .site-nav{
-  display:flex;gap:20px;flex-wrap:wrap;
-  font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--soft);
+  display:flex;gap:22px;flex-wrap:wrap;
+  font-size:var(--fs-m);color:var(--soft);
 }
 .site-nav a{transition:color .16s var(--ease)}
-.site-nav a:hover{color:var(--ink)}
-.site-nav a.active{color:var(--ink);box-shadow:0 1px 0 var(--ink)}
+.site-nav a:hover{color:var(--accent)}
+.site-nav a.active{color:var(--ink);box-shadow:0 1px 0 var(--accent)}
 
 /* ---------- the two-column register ---------- */
 
@@ -91,8 +102,8 @@ a{color:inherit;text-decoration:none}
 
 .rail{
   grid-column:1;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--soft);
+  font-size:var(--fs-s);font-style:italic;color:var(--soft);
+  padding-top:2px;
 }
 
 .body{grid-column:2}
@@ -108,40 +119,30 @@ a{color:inherit;text-decoration:none}
 /* ---------- about ---------- */
 
 .about{max-width:var(--measure);margin-bottom:44px}
-.about p{font-size:17px;line-height:1.6;margin-bottom:12px}
+.about p{font-size:var(--fs-l);line-height:1.45;letter-spacing:-.005em;margin-bottom:16px}
 .about p:last-child{margin-bottom:0}
-.about .quiet{font-size:14.5px;color:var(--soft)}
+.about .quiet{font-size:var(--fs-m);line-height:1.55;letter-spacing:0;color:var(--soft)}
 .about em{font-style:italic}
-.about a:not(.hover-peek__trigger){border-bottom:1px solid var(--faint)}
-.about a:not(.hover-peek__trigger):hover{border-bottom-color:var(--ink)}
 
 /* ---------- now ---------- */
 
 .now{list-style:none;max-width:var(--measure);margin-bottom:44px}
-.now li{margin-bottom:15px;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+.now li{margin-bottom:12px;font-size:var(--fs-m);line-height:1.55;color:var(--ink-2)}
 .now li:last-child{margin-bottom:0}
-.now b{
-  font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.11em;
-  text-transform:uppercase;color:var(--soft);display:block;margin-bottom:1px;
-}
-.now a{border-bottom:1px solid var(--faint)}
-.now a:hover{border-bottom-color:var(--ink)}
+.now b{font-weight:600;color:var(--ink)}
 
 /* ---------- colophon ---------- */
 
 .colophon{
-  margin-top:0;font-family:var(--mono);font-size:11px;letter-spacing:.05em;
-  line-height:1.9;color:var(--soft);
+  margin-top:0;font-size:var(--fs-m);line-height:1.8;color:var(--faint);
 }
-.colophon a{border-bottom:1px solid var(--rule);transition:color .16s var(--ease)}
-.colophon a:hover{color:var(--ink);border-bottom-color:var(--ink)}
 
 /* ---------- hover peek ---------- */
 
 .hover-peek{position:relative;display:inline-block}
-.hover-peek__trigger{border-bottom:1px solid var(--faint);cursor:help;transition:border-color .16s var(--ease)}
+.hover-peek__trigger{border-bottom:1px dashed var(--accent);cursor:help;transition:color .16s var(--ease)}
 .hover-peek:hover .hover-peek__trigger,
-.hover-peek:focus-within .hover-peek__trigger{border-bottom-color:var(--ink)}
+.hover-peek:focus-within .hover-peek__trigger{color:var(--accent)}
 
 .hover-peek__card{
   /* --shift is set by site.js to keep the card inside the viewport */
@@ -158,9 +159,8 @@ a{color:inherit;text-decoration:none}
 .hover-peek__card::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:12px}
 .hover-peek__card img{width:100%;height:auto;max-height:215px;object-fit:cover;display:block}
 .hover-peek__card em{
-  display:block;font-family:var(--mono);font-style:normal;font-size:9px;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--soft);
-  line-height:1.5;margin-top:6px;
+  display:block;font-style:italic;font-size:var(--fs-s);color:var(--soft);
+  line-height:1.4;margin-top:6px;
 }
 
 /* flipped below the trigger when there is no room above */
@@ -177,12 +177,12 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- interior pages ---------- */
 
-.page-wrap{padding-top:0}
+.page-wrap{max-width:var(--measure);margin-inline:auto;padding-top:0}
 
-.page-hero{padding-bottom:16px;margin-bottom:30px;border-bottom:1.5px solid var(--ink)}
-.page-hero h1{font-size:29px;font-weight:600;line-height:1.15;letter-spacing:-.012em;max-width:26ch}
-.page-desc{margin-top:10px;font-size:15.5px;color:var(--soft);max-width:76ch}
-.page-meta{margin-top:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--soft)}
+.page-hero{padding-bottom:16px;margin-bottom:30px;border-bottom:1px solid var(--ink)}
+.page-hero h1{font-size:var(--fs-xl);font-weight:600;line-height:1.15;letter-spacing:-.015em;max-width:26ch}
+.page-desc{margin-top:10px;font-size:var(--fs-m);color:var(--soft);max-width:76ch}
+.page-meta{margin-top:12px;font-family:var(--mono);font-size:var(--fs-mono);color:var(--soft)}
 
 /* blog / notes indexes reuse the archive row */
 .post-list{list-style:none}
@@ -190,9 +190,9 @@ a{color:inherit;text-decoration:none}
   display:grid;grid-template-columns:1fr 96px;gap:12px 16px;align-items:baseline;
   padding:7px 0;
 }
-.post-list a{font-size:16px;line-height:1.35}
-.post-list li:hover a{box-shadow:0 1px 0 var(--ink)}
-.post-date{font-family:var(--mono);font-size:11px;color:var(--soft);text-align:right;white-space:nowrap}
+.post-list a{font-size:var(--fs-m);line-height:1.35;transition:color .16s var(--ease)}
+.post-list li:hover a{color:var(--accent)}
+.post-date{font-family:var(--mono);font-size:var(--fs-mono);color:var(--soft);text-align:right;white-space:nowrap}
 .post-date--muted{color:var(--faint)}
 
 /* projects */
@@ -200,46 +200,50 @@ a{color:inherit;text-decoration:none}
 .project-card{margin-bottom:14px}
 .project-card a{display:block;padding:13px 0;transition:padding-left .2s var(--ease)}
 .project-card a:hover{padding-left:10px}
-.project-title{display:block;font-size:16px;line-height:1.35;margin-bottom:2px}
-.project-card a:hover .project-title{box-shadow:0 1px 0 var(--ink)}
-.project-title .ext{font-family:var(--mono);font-size:11px;color:var(--faint)}
+.project-title{display:block;font-size:var(--fs-m);line-height:1.35;margin-bottom:2px}
+.project-card a:hover .project-title{color:var(--accent)}
+.project-title .ext{font-family:var(--mono);font-size:var(--fs-mono);color:var(--faint)}
 
 /* publications */
 .pubs{list-style:none;margin:22px 0}
 .pub{margin-bottom:30px}
 .pub:last-child{margin-bottom:0}
-.pub-title{display:block;font-size:17px;line-height:1.32;margin-bottom:5px}
-.pub:hover .pub-title{box-shadow:0 1px 0 var(--ink)}
-.pub-authors{font-size:14.5px;line-height:1.45;color:var(--soft);margin:0 0 5px}
+.pub-title{display:block;font-size:var(--fs-m);line-height:1.35;margin-bottom:5px;transition:color .16s var(--ease)}
+.pub:hover .pub-title{color:var(--accent)}
+.pub-authors{font-size:var(--fs-s);line-height:1.45;color:var(--soft);margin:0 0 5px}
 .pub-authors b{color:var(--ink);font-weight:600}
 .pub-meta{
-  font-family:var(--mono);font-size:11px;letter-spacing:.03em;
+  font-family:var(--mono);font-size:var(--fs-mono);
   line-height:1.8;color:var(--soft);margin:0;
 }
-.pub-meta a{border-bottom:1px solid var(--rule)}
-.pub-meta a:hover{color:var(--ink);border-bottom-color:var(--ink)}
-.project-summary{display:block;font-size:13.5px;line-height:1.5;color:var(--soft)}
+.project-summary{display:block;font-size:var(--fs-s);line-height:1.5;color:var(--soft)}
 
 /* the index lists sit inside .page-content — keep its link underline off them */
 .page-content .post-list a,
 .page-content .project-card a,
 .page-content .project-title,
-.page-content .pub-title{border-bottom:0}
+.page-content .pub-title{border-bottom:0;color:inherit}
+
+/* links: the only colour in the interface */
+.about a:not(.hover-peek__trigger),.now a,.colophon a,.pub-meta a,.page-content a{
+  color:var(--accent);border-bottom:1px solid var(--accent-soft);
+  transition:border-color .16s var(--ease);
+}
+.about a:not(.hover-peek__trigger):hover,.now a:hover,.colophon a:hover,.pub-meta a:hover,.page-content a:hover{
+  border-bottom-color:var(--accent);
+}
 
 /* ---------- long-form prose ---------- */
 
-.page-content{max-width:var(--measure);font-size:16.5px;line-height:1.68;color:var(--ink-2)}
+.page-content{max-width:var(--measure);font-size:var(--fs-m);line-height:1.68;color:var(--ink-2)}
 
 .page-content h1,.page-content h2,.page-content h3,.page-content h4{
   color:var(--ink);font-weight:600;letter-spacing:-.012em;line-height:1.22;
 }
-.page-content h1{font-size:25px;margin:44px 0 14px}
-.page-content h2{font-size:21.5px;margin:40px 0 12px}
-.page-content h3{font-size:18.5px;margin:30px 0 8px}
-.page-content h4{
-  font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--soft);margin:26px 0 8px;
-}
+.page-content h1{font-size:var(--fs-xl);margin:44px 0 14px}
+.page-content h2{font-size:var(--fs-l);margin:40px 0 12px}
+.page-content h3{font-size:var(--fs-m);margin:30px 0 8px}
+.page-content h4{font-size:var(--fs-m);font-weight:400;font-style:italic;color:var(--soft);margin:26px 0 8px}
 
 .page-content p{margin:0 0 20px}
 .page-content ul,.page-content ol{margin:0 0 20px;padding-left:22px}
@@ -248,16 +252,29 @@ a{color:inherit;text-decoration:none}
 .page-content hr{border:0;border-top:1px solid var(--rule);margin:36px 0}
 .page-content strong{color:var(--ink);font-weight:600}
 .page-content em{font-style:italic}
-.page-content a{border-bottom:1px solid var(--faint);transition:border-color .16s var(--ease)}
-.page-content a:hover{border-bottom-color:var(--ink)}
 
 /* images in posts keep their colour too */
 .page-content img{display:block;max-width:100%;height:auto;margin:26px 0 8px;border:1px solid var(--rule);background:var(--wash)}
 
+/* Project evidence can sit in the margins without narrowing the prose. */
+.page-content .article-media{max-width:480px;margin:28px auto 32px;break-inside:avoid}
+.page-content .article-media>a{display:block;border:0}
+.page-content .article-media img{width:100%;margin:0}
+.article-media video{display:block;width:100%;height:auto;background:var(--wash)}
+.article-media figcaption{margin-top:8px;font-size:12px;line-height:1.6;color:var(--soft)}
+.page-content .media-peek{border-bottom:0}
+.page-content .media-peek .hover-peek__card{width:300px;line-height:0}
+.page-content .media-peek img{margin:0;border:0;max-height:240px;object-fit:contain}
+.page-content::after{content:"";display:table;clear:both}
+@media (min-width:1350px){
+  .page-content .article-media--left{float:left;clear:left;width:230px;margin:6px 30px 24px -260px}
+  .page-content .article-media--right{float:right;clear:right;width:230px;margin:6px -260px 24px 30px}
+}
+
 .page-content pre{
   background:#F5F5F1;border:1px solid var(--rule);
   padding:15px 17px;margin:0 0 20px;overflow-x:auto;
-  font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--ink);
+  font-family:var(--mono);font-size:var(--fs-code);line-height:1.6;color:var(--ink);
 }
 .page-content pre code{background:none;border:0;padding:0;font-size:inherit;color:inherit}
 .page-content code{font-family:var(--mono);font-size:.84em;background:#F2F2EE;border:1px solid var(--rule);padding:1px 5px;color:var(--ink)}
@@ -265,11 +282,9 @@ a{color:inherit;text-decoration:none}
 .page-content blockquote{margin:0 0 20px;padding:2px 0 2px 20px;border-left:2px solid var(--rule);font-style:italic;color:var(--soft)}
 .page-content blockquote p{margin:0}
 
-.page-content table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:14px}
+.page-content table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:var(--fs-s)}
 .page-content th,.page-content td{border:1px solid var(--rule);padding:8px 12px;text-align:left}
-.page-content th{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--soft);background:#F5F5F1;font-weight:500}
-
-/* ---------- footer ---------- */
+.page-content th{color:var(--ink);background:#F5F5F1;font-weight:600}
 
 /* ---------- projects showcase ---------- */
 
@@ -303,14 +318,17 @@ a{color:inherit;text-decoration:none}
   .project-gallery{grid-template-columns:1fr;gap:22px}
 }
 
+/* ---------- footer ---------- */
+
 .site-footer{
   display:flex;align-items:center;gap:12px;flex-wrap:wrap;
-  padding-block:16px 30px;
+  padding-block:0 32px;
 }
+.site-footer::before{content:"";flex-basis:100%;border-top:1px solid var(--rule);margin-bottom:16px}
 
-.webring-badge{margin-right:auto;opacity:.5;transition:opacity .2s var(--ease)}
+.webring-badge{margin-right:auto;opacity:.75;transition:opacity .2s var(--ease)}
 .webring-badge:hover{opacity:1}
-.webring-badge img{display:block;width:48px;height:48px}
+.webring-badge img{display:block;width:32px;height:32px}
 
 /* ---------- motion ---------- */
 
@@ -331,18 +349,17 @@ a{color:inherit;text-decoration:none}
 
 @media (max-width:600px){
   :root{--gap:0px}
-  body{font-size:15px}
   .site-header,.site-main,.site-footer{padding-inline:20px}
+  .site-nav{gap:4px 14px;font-size:var(--fs-s)}
 
   .reg{grid-template-columns:1fr}
   .rail{grid-column:1;margin-bottom:8px}
   .body{grid-column:1}
   .rail-photo{max-width:132px;margin-bottom:22px}
 
-  .about p{font-size:16px}
+  .about p{font-size:20px}
   .post-list li{grid-template-columns:1fr;gap:3px}
   .post-date{text-align:left}
-  .page-content{font-size:16px}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -352,3 +369,84 @@ a{color:inherit;text-decoration:none}
   }
   .reveal{opacity:1;transform:none}
 }
+
+/* Keep embedded posts compact and move them into the article margins. */
+.page-content .article-post{width:280px;max-width:100%;margin:24px auto;break-inside:avoid}
+.page-content .article-post .twitter-tweet{width:100%!important;max-width:100%!important;margin:0!important}
+.page-content .article-post blockquote{padding:12px;border:1px solid var(--rule);font-size:13px;font-style:normal}
+@media (min-width:1350px){
+  .page-content .article-post--left{float:left;clear:left;margin:6px 30px 24px -310px}
+  .page-content .article-post--right{float:right;clear:right;margin:6px -310px 24px 30px}
+}
+
+/* The story uses both margins and a full-width media grid. */
+.building-story .article-section{margin:0 0 36px}
+.building-story .article-copy::after{content:"";display:table;clear:both}
+.page-content.building-story .article-media,
+.page-content.building-story .article-post{float:none;clear:none;max-width:100%;width:280px;margin:0 auto 24px;break-inside:avoid}
+.building-story .story-media-grid{margin:24px 0 36px;columns:2;column-gap:24px}
+.building-story .story-media-grid > *{break-inside:avoid;display:inline-block;width:100%;vertical-align:top}
+.building-story .article-friends{clear:both;margin-top:36px}
+@media (min-width:1350px){
+  .building-story .story-margin{width:250px}
+  .building-story .story-margin--left{float:left;clear:left;margin:6px 60px 24px -310px}
+  .building-story .story-margin--right{float:right;clear:right;margin:6px -310px 24px 60px}
+  .page-content.building-story .story-margin .article-media{width:100%}
+  .building-story .story-media-grid{width:calc(100% + 620px);margin-left:-310px;columns:4}
+  .building-story .article-friends{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;width:888px;max-width:calc(100vw - 64px);margin-left:50%;transform:translateX(-50%)}
+  .building-story .article-friends h3{flex-basis:100%;margin-bottom:0}
+  .page-content.building-story .article-friends .article-post{margin:0;flex:0 0 280px}
+}
+@media (max-width:600px){.building-story .story-media-grid{columns:1}}
+
+/* A map of the questions that connect the parts of the system. */
+.page-content .systems-map{clear:both;width:min(100%, 560px);margin:40px auto 22px}
+.systems-map svg{display:block;width:100%;height:auto}
+.systems-map-segment{font-family:var(--mono);font-size:18px;fill:var(--ink);font-weight:600}
+.systems-map-center{font-family:var(--mono);font-size:18px;fill:var(--ink);font-weight:600}
+.systems-map figcaption{text-align:center;font-size:12px;line-height:1.5;color:var(--soft);margin-top:10px}
+.systems-questions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;margin:0 auto 36px;max-width:680px;font-size:13px;line-height:1.5}
+.page-content .systems-questions p{margin:0}
+@media (max-width:480px){.systems-questions{grid-template-columns:1fr;gap:12px}}
+
+.page-content .pipeline-chart{clear:both;margin:32px auto;max-width:740px}
+.pipeline-chart svg{display:block;width:100%;height:auto}
+.pipeline-chart-title{font:600 16px var(--mono);fill:var(--ink)}
+.pipeline-chart-axis{font:13px var(--mono);fill:var(--soft)}
+.pipeline-chart-grid{stroke:var(--rule);stroke-width:1}
+.pipeline-chart-line{fill:none;stroke:#ec6b1d;stroke-width:3}
+.pipeline-chart-dot{fill:#ec6b1d}
+.pipeline-chart figcaption{font-size:12px;line-height:1.6;color:var(--soft);margin-top:8px}
+ .pipeline-chart-latency{fill:none;stroke:var(--ink);stroke-width:3}
+.pipeline-chart-latency-dot{fill:var(--ink)}
+
+.article-end-nav{clear:both;margin:48px 0 0;padding-top:20px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:13px}
+.article-end-nav a{color:var(--soft);text-decoration:none}
+.article-end-nav a:hover,.article-end-nav a:focus-visible{color:var(--ink)}
+
+/* Extra media uses the outer margins without changing the prose height. */
+.building-story .article-section{position:relative}
+.building-story .story-side-fill{width:280px;max-width:100%;margin:24px auto}
+.page-content.building-story .story-side-fill .article-media{width:100%;margin:0}
+.building-story .story-side-fill img,.building-story .story-side-fill video{max-height:190px;width:auto;max-width:100%;margin:0 auto;object-fit:contain}
+@media (min-width:1350px){
+  .building-story .story-side-fill{position:absolute;top:0;width:250px;margin:0}
+  .building-story .story-side-fill--left{left:-310px}
+  .building-story .story-side-fill--right{right:-310px}
+}
+
+/* Give the computer projects room in the story; supporting media stays in the margins. */
+.story-feature-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start;margin:28px 0 32px}
+.page-content.building-story .story-feature-pair .article-media{width:100%;margin:0}
+.story-feature-pair video{max-height:360px;object-fit:contain}
+@media (min-width:1350px){.building-story .story-side-fill--later{top:360px}}
+@media (max-width:600px){.story-feature-pair{grid-template-columns:1fr}}
+.page-content.building-story .article-copy > .article-media{width:min(100%,480px);margin:28px auto 32px}
+.page-content.building-story .article-copy > .article-media video{max-height:420px;object-fit:contain}
+
+/* Embedded project posts stay in the reading column, next to their context. */
+.page-content .story-post{float:none;clear:both;width:400px;max-width:100%;margin:28px auto 32px}
+.page-content .story-post .twitter-tweet{max-width:100%!important;margin:0!important}
+.page-content .story-post blockquote{padding:12px;border:1px solid var(--rule);font-style:normal;font-size:13px}
+
+@media (min-width:1350px){.building-story .story-side-fill--third{top:680px}}

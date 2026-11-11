@@ -1,0 +1,22 @@
+<svg viewBox="0 0 600 380" role="img" aria-labelledby="pipeline-chart-title pipeline-chart-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="pipeline-chart-title">Frequency and latency as pipeline stages increase</title>
+<desc id="pipeline-chart-desc">An illustrative workload: orange shows clock frequency rising on the left scale; black shows end-to-end latency falling and then rising on the right scale as pipeline stages increase. The curves are hypothetical and actual designs may behave differently.</desc>
+<text x="78" y="25" class="pipeline-chart-axis">GHz</text><text x="508" y="25" text-anchor="end" class="pipeline-chart-axis">ns</text>
+<line x1="78" y1="280" x2="508" y2="280" class="pipeline-chart-grid"/><text x="66" y="285" text-anchor="end" class="pipeline-chart-axis">0</text><text x="520" y="285" class="pipeline-chart-axis">8</text>
+<line x1="78" y1="180" x2="508" y2="180" class="pipeline-chart-grid"/><text x="66" y="185" text-anchor="end" class="pipeline-chart-axis">0.5</text><text x="520" y="185" class="pipeline-chart-axis">9</text>
+<line x1="78" y1="80" x2="508" y2="80" class="pipeline-chart-grid"/><text x="66" y="85" text-anchor="end" class="pipeline-chart-axis">1</text><text x="520" y="85" class="pipeline-chart-axis">10</text>
+<text x="78.00" y="304" text-anchor="middle" class="pipeline-chart-axis">1</text>
+<text x="139.43" y="304" text-anchor="middle" class="pipeline-chart-axis">2</text>
+<text x="262.29" y="304" text-anchor="middle" class="pipeline-chart-axis">4</text>
+<text x="385.14" y="304" text-anchor="middle" class="pipeline-chart-axis">6</text>
+<text x="508.00" y="304" text-anchor="middle" class="pipeline-chart-axis">8</text>
+<polyline points="78.00,255.16 139.43,231.22 200.86,208.99 262.29,189.09 323.71,171.89 385.14,157.55 446.57,146.03 508.00,137.14" class="pipeline-chart-line"/>
+<path d="M 78 160 Q 293 370 508 90" class="pipeline-chart-latency"/>
+<circle cx="78.00" cy="255.16" r="3.5" class="pipeline-chart-dot"/><circle cx="78.00" cy="160" r="3.5" class="pipeline-chart-latency-dot"/>
+<circle cx="139.43" cy="231.22" r="3.5" class="pipeline-chart-dot"/><circle cx="139.43" cy="210" r="3.5" class="pipeline-chart-latency-dot"/>
+<circle cx="262.29" cy="189.09" r="3.5" class="pipeline-chart-dot"/><circle cx="262.29" cy="250" r="3.5" class="pipeline-chart-latency-dot"/>
+<circle cx="508.00" cy="137.14" r="3.5" class="pipeline-chart-dot"/><circle cx="508.00" cy="90" r="3.5" class="pipeline-chart-latency-dot"/>
+<text x="293" y="330" text-anchor="middle" class="pipeline-chart-axis">pipeline stages</text>
+<line x1="112" y1="356" x2="140" y2="356" class="pipeline-chart-line"/><text x="150" y="361" class="pipeline-chart-axis">frequency (left)</text>
+<line x1="328" y1="356" x2="356" y2="356" class="pipeline-chart-latency"/><text x="366" y="361" class="pipeline-chart-axis">latency (right)</text>
+</svg>

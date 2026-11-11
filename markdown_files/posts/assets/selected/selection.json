@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "purpose": "Selected assets for the blog",
+  "assets": [
+    {
+      "path": "demos/fpga-serial-demo-2026-01-08.mp4",
+      "title": "FPGA board and serial terminal demo \u00b7 2026-01-08",
+      "category": "videos",
+      "type": "video",
+      "caption": "26-second board and monitor clip showing a serial-terminal session. SDR preview; HDR original IMG_7814.MOV retained privately. Project context unconfirmed.",
+      "poster": "demos/fpga-serial-demo-2026-01-08.jpg"
+    },
+    {
+      "path": "media/virtex7-board-2025-05-22.jpg",
+      "title": "Xilinx Virtex-7 bench setup \u00b7 2025-05-22",
+      "category": "projects",
+      "type": "image",
+      "caption": "JPEG saved from WhatsApp in iCloud. Powered Xilinx Virtex-7 board, cooling fan, LCD add-on and programming cable. Project ownership and context unconfirmed."
+    },
+    {
+      "path": "media/relaxed-orange-cat-2025-04-02.jpg",
+      "title": "Relaxed orange cat with red collar \u00b7 2025-04-02",
+      "category": "cat-candidates",
+      "type": "image",
+      "caption": "IMG_4765 from iCloud. Close-up of an orange cat resting with eyes closed. Santra identity unconfirmed."
+    },
+    {
+      "path": "demos/legged-robot-floor-2025-02-19.mp4",
+      "title": "Legged robot on the lab floor \u00b7 2025-02-19",
+      "category": "videos",
+      "type": "video",
+      "caption": "IMG_4271 from iCloud. Forty-eight-second robot floor-test session with a wired controller. Handheld framing and zoom vary. Project context unconfirmed.",
+      "poster": "demos/legged-robot-floor-2025-02-19.jpg"
+    },
+    {
+      "path": "media/sensor-workshop-2025-02-09.jpg",
+      "title": "Sensor workshop presenter \u00b7 2025-02-09",
+      "category": "projects",
+      "type": "image",
+      "caption": "IMG_1919 from iCloud. Presenter in an SRA shirt explaining a Sensors slide. Presenter identity and event context unconfirmed."
+    },
+    {
+      "path": "demos/arty-board-closeup-2024-08-31.mp4",
+      "title": "Arty FPGA board close-up \u00b7 2024-08-31",
+      "category": "videos",
+      "type": "video",
+      "caption": "51-second overhead clip of the USB-connected Digilent Arty board with illuminated LEDs. Recovered from the pending cloud downloads. Specific design running on it is unconfirmed.",
+      "poster": "demos/arty-board-closeup-2024-08-31.jpg"
+    },
+    {
+      "path": "media/santra-laptop.webp",
+      "title": "Santra on the laptop",
+      "category": "santra",
+      "type": "image",
+      "caption": "26 September 2026."
+    },
+    {
+      "path": "media/fpga-workbench.webp",
+      "title": "Workbench",
+      "category": "projects",
+      "type": "image",
+      "caption": "Photos: IMG_9013.HEIC, 30 September 2026. Exported from the locally rendered photo."
+    },
+    {
+      "path": "media/banana.gif",
+      "title": "Mesh transform",
+      "category": "projects",
+      "type": "image",
+      "caption": "Existing board demo; FPGA returns vertices, laptop draws them."
+    },
+    {
+      "path": "media/mnist-demo.mp4",
+      "title": "Early MNIST video",
+      "category": "videos",
+      "type": "video",
+      "caption": "Existing MP4 demo from the tiny TPU article.",
+      "poster": "media/mnist-demo-1.png"
+    },
+    {
+      "path": "media/system-config.png",
+      "title": "System configuration",
+      "category": "projects",
+      "type": "image",
+      "caption": "Existing system diagram/screenshot."
+    },
+    {
+      "path": "media/spi-matrix-gds.jpg",
+      "title": "Tiny Tapeout die layout",
+      "category": "projects",
+      "type": "image",
+      "caption": "Rendered GDS layout; all metal layers visible."
+    },
+    {
+      "path": "media/prosperity-tcam.png",
+      "title": "Prosperity TCAM",
+      "category": "projects",
+      "type": "image",
+      "caption": "Component structure from repository documentation."
+    },
+    {
+      "path": "media/uart-gemm-console.png",
+      "title": "UART GEMM console",
+      "category": "projects",
+      "type": "image",
+      "caption": "Existing board output screenshot."
+    },
+    {
+      "path": "media/udp-summary-20-samples.png",
+      "title": "UDP measurements",
+      "category": "projects",
+      "type": "image",
+      "caption": "Existing measurements screenshot."
+    }
+  ]
+}

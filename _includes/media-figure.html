@@ -1,0 +1,13 @@
+<figure class="article-media article-media--{{ include.side | default: 'inline' }}">
+  {% if include.video %}
+  <video autoplay muted loop controls playsinline preload="metadata"{% if include.poster %} poster="{{ include.poster | relative_url }}"{% endif %} aria-label="{{ include.alt | escape }}">
+    <source src="{{ include.video | relative_url }}" type="video/mp4">
+    <a href="{{ include.video | relative_url }}">Watch the video</a>
+  </video>
+  {% else %}
+  <a href="{{ include.image | relative_url }}" aria-label="{{ include.alt | escape }} — open full image">
+    <img src="{{ include.image | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy" decoding="async">
+  </a>
+  {% endif %}
+  {% if include.caption %}<figcaption>{{ include.caption | escape }}</figcaption>{% endif %}
+</figure>

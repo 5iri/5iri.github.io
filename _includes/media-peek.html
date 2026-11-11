@@ -1,0 +1,7 @@
+<a aria-label="{{ include.text | escape }}" class="hover-peek media-peek" href="{{ include.link | default: include.image | relative_url }}">
+  <span class="hover-peek__trigger">{{ include.text | escape }}</span>
+  <span class="hover-peek__card">
+    <img src="{{ include.image | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy" decoding="async">
+    {% if include.caption %}<em>{{ include.caption | escape }}</em>{% endif %}
+  </span>
+</a>

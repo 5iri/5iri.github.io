@@ -1,0 +1,25 @@
+<svg viewBox="0 0 600 600" role="img" aria-labelledby="systems-map-title systems-map-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="systems-map-title">Questions around making rocks think</title>
+<desc id="systems-map-desc">Six connected areas of a computing system surround the question: how do we make rocks think? The questions for each area are listed below the diagram.</desc>
+<path d="M 248.00 209.93 L 167.50 70.50 A 265 265 0 0 1 432.50 70.50 L 352.00 209.93 A 104 104 0 0 0 248.00 209.93 Z" fill="#ffede0" stroke="#dc8c54" stroke-width="1.4"/>
+<text x="300.00" y="108.00" text-anchor="middle" class="systems-map-segment">Models</text>
+<text x="300.00" y="132.00" text-anchor="middle" class="systems-map-segment">&amp; learning</text>
+<path d="M 352.00 209.93 L 432.50 70.50 A 265 265 0 0 1 565.00 300.00 L 404.00 300.00 A 104 104 0 0 0 352.00 209.93 Z" fill="#fff5eb" stroke="#dc8c54" stroke-width="1.4"/>
+<text x="461.95" y="201.50" text-anchor="middle" class="systems-map-segment">Applications</text>
+<text x="461.95" y="225.50" text-anchor="middle" class="systems-map-segment">&amp; workloads</text>
+<path d="M 404.00 300.00 L 565.00 300.00 A 265 265 0 0 1 432.50 529.50 L 352.00 390.07 A 104 104 0 0 0 404.00 300.00 Z" fill="#fce3cf" stroke="#dc8c54" stroke-width="1.4"/>
+<text x="461.95" y="388.50" text-anchor="middle" class="systems-map-segment">Processors</text>
+<text x="461.95" y="412.50" text-anchor="middle" class="systems-map-segment">&amp; accelerators</text>
+<path d="M 352.00 390.07 L 432.50 529.50 A 265 265 0 0 1 167.50 529.50 L 248.00 390.07 A 104 104 0 0 0 352.00 390.07 Z" fill="#fff0e5" stroke="#dc8c54" stroke-width="1.4"/>
+<text x="300.00" y="482.00" text-anchor="middle" class="systems-map-segment">Memory</text>
+<text x="300.00" y="506.00" text-anchor="middle" class="systems-map-segment">&amp; interconnect</text>
+<path d="M 248.00 390.07 L 167.50 529.50 A 265 265 0 0 1 35.00 300.00 L 196.00 300.00 A 104 104 0 0 0 248.00 390.07 Z" fill="#f9e2d2" stroke="#dc8c54" stroke-width="1.4"/>
+<text x="138.05" y="388.50" text-anchor="middle" class="systems-map-segment">Devices</text>
+<text x="138.05" y="412.50" text-anchor="middle" class="systems-map-segment">&amp; materials</text>
+<path d="M 196.00 300.00 L 35.00 300.00 A 265 265 0 0 1 167.50 70.50 L 248.00 209.93 A 104 104 0 0 0 196.00 300.00 Z" fill="#fff5ed" stroke="#dc8c54" stroke-width="1.4"/>
+<text x="138.05" y="201.50" text-anchor="middle" class="systems-map-segment">Compilers</text>
+<text x="138.05" y="225.50" text-anchor="middle" class="systems-map-segment">&amp; tools</text>
+<circle cx="300" cy="300" r="104" fill="#f8f8f5" stroke="#ed6c20" stroke-width="2"/>
+<text x="300" y="285" text-anchor="middle" class="systems-map-center">how do we make</text>
+<text x="300" y="310" text-anchor="middle" class="systems-map-center">rocks think?</text>
+</svg>
