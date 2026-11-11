@@ -4,7 +4,7 @@ parent: Blog
 permalink: blog/building-computers
 layout: content
 content_class: building-story
-date: 2026-11-03
+date: 2026-11-11
 published: true
 description: Three years of CPUs, memory, spiking networks, and trying to make rocks think.
 ---
