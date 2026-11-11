@@ -55,11 +55,9 @@
 
   <header class="site-header">
     <div class="masthead">
-      <a class="brand" href="{{ '/' | relative_url }}">
-        <span class="brand-text">Shri Vishakh Devanand</span>
-      </a>
       <nav class="site-nav" aria-label="Primary">
         {% assign here = page.url %}
+        <a href="{{ '/' | relative_url }}" class="{% if here == '/' %}active{% endif %}">home</a>
         <a href="{{ '/notes'   | relative_url }}" class="{% if here contains '/notes' %}active{% endif %}">notes</a>
         <a href="{{ '/blog'    | relative_url }}" class="{% if here contains '/blog' %}active{% endif %}">blog</a>
         <a href="{{ '/projects'| relative_url }}" class="{% if here == '/projects' %}active{% endif %}">projects</a>
