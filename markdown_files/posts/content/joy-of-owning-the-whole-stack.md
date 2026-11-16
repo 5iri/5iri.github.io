@@ -1,5 +1,5 @@
 ---
-title: "The array was the easy part"
+title: "The joy of owning the stack"
 parent: Blog
 permalink: blog/joy-of-owning-the-whole-stack
 layout: content
