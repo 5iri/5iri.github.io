@@ -3,6 +3,7 @@ title: RICH Prefetcher
 parent: Computer Architecture
 permalink: notes/comp_arch/rich
 layout: content
+published: false
 date: 2025-12-02
 --- 
 

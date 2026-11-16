@@ -3,6 +3,7 @@ title: Agents for Microprocessor Evolution
 parent: Computer Architecture
 permalink: notes/comp_arch/agents_for_micro_eval
 layout: content
+published: false
 --- 
 
 ## Requirements, Bottlenecks, and Good Fortune: Agents for Microprocessor Evolution

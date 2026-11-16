@@ -3,6 +3,7 @@ title: Abstract Algebra
 parent: Math 
 permalink: notes/math/abstract_algebra
 layout: content
+published: false
 --- 
 
 ## What is Abstract Algebra?

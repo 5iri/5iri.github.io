@@ -3,6 +3,7 @@ title: Multi-Agent Path Finding Algorithms
 parent: Other
 permalink: /notes/mapf
 layout: content
+published: false
 --- 
 
 ## Multi-Agent Path Finding

@@ -3,6 +3,7 @@ title: Memory Performance Attacts and DOS Attacks
 parent: Computer Architecture
 permalink: notes/comp_arch/DDOS_attacks
 layout: content
+published: false
 --- 
 
 ## Memory Performance Attacks: Denial of Memory Service in Multi-Core Systems
