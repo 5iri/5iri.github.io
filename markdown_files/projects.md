@@ -1,9 +1,8 @@
 ---
-title: Projects
+title: stuff made here
 layout: content
 permalink: /work
 redirect_from: /projects
-description: Small computers, chips, and the software around them. A few things I've been building.
 content_class: projects-content
 page_class: projects-page
 ---
