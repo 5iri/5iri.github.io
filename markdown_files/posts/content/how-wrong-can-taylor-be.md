@@ -267,10 +267,10 @@ and $$Q$$ can be very negative too. that is what happens when the errors are hug
 
 <figure style="margin: 2rem 0;">
   <img src="{{ '/markdown_files/posts/assets/taylor-comparison/normalized-error-q.png' | relative_url }}" alt="Density plot of the normalized Taylor remainder ratio Q against the true gap E, with a horizontal failure boundary at Q equals one" style="display:block; width:100%; height:auto; border:1px solid #333;" />
-  <figcaption style="margin-top:.65rem; color:#777; font-size:.9rem;">the vertical scale is signed-log so the huge ratios near tiny gaps still fit. everything above the red $$Q=1$$ line is a wrong ordering.</figcaption>
+  <figcaption style="margin-top:.65rem; color:#777; font-size:.9rem;">the vertical scale is signed-log so the huge ratios near tiny gaps still fit. everything above the red \(Q=1\) line is a wrong ordering.</figcaption>
 </figure>
 
-the funnel shape is basically the whole story. as $E$ shrinks, the same remainder mismatch is divided by a smaller and smaller gap, so $|Q|$ grows. if $Q$ grows upward past $1$, the approximation flips the sign; if it grows downward, the approximation may be numerically wrong but still preserve the ordering with an increasingly large margin.
+the funnel shape is basically the whole story. as $E$ shrinks, the same remainder mismatch is divided by a smaller and smaller gap, so $\lvert Q\rvert$ grows. if $Q$ grows upward past $1$, the approximation flips the sign; if it grows downward, the approximation may be numerically wrong but still preserve the ordering with an increasingly large margin.
 
 ## being close is not enough to make it fail
 
@@ -371,7 +371,7 @@ it belongs to the problem family, not to Taylor series itself.
 
 <figure style="margin: 2rem 0;">
   <img src="{{ '/markdown_files/posts/assets/taylor-comparison/family-failure-behavior.png' | relative_url }}" alt="A heatmap showing failure concentration away from the common expansion value one, beside a matrix of tiny-gap ordering accuracy for each pair of standard function families" style="display:block; width:100%; height:auto; border:1px solid #333;" />
-  <figcaption style="margin-top:.65rem; color:#777; font-size:.9rem;">left: the dark funnel around true-value level $$1$$ is where all the Taylor remainders vanish. right: most distinct pairs become a coin flip near zero gap, while the normalized sin/cos pair stays at $$100\%$$.</figcaption>
+  <figcaption style="margin-top:.65rem; color:#777; font-size:.9rem;">left: the dark funnel around true-value level \(1\) is where all the Taylor remainders vanish. right: most distinct pairs become a coin flip near zero gap, while the normalized sin/cos pair stays at \(100\%\).</figcaption>
 </figure>
 
 the family geometry is not background detail. it is the answer.
